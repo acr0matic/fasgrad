@@ -1,3 +1,58 @@
 // -----------------------------------------------------------------------------
 // В этом файле прописываются все стили относящиеся к шапке сайта
 // -----------------------------------------------------------------------------
+header {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  &__row {
+    @include flex();
+    padding: 23px 0;
+
+    &--underline {
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+
+  &__communication {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__contact {
+    position: relative;
+  }
+
+  &__copy {
+    @include flex($justify: flex-start);
+
+    cursor: pointer;
+
+    &:hover {
+      path {
+        fill: #000000;
+      }
+    }
+
+    span {
+      font-size: $font-size-5;
+
+      @include breakpoint($breakpoint-computer) {
+        font-size: $font-size-7;
+      }
+    }
+
+    path {
+      transition: all 0.15s ease;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    margin-right: 20px;
+  }
+}

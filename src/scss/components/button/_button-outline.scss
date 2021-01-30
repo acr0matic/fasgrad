@@ -1,0 +1,19 @@
+.button-outline {
+  border: 2px solid $button-outline;
+
+  padding: 15px 40px;
+
+  @include breakpoint($breakpoint-computer) {
+    padding: 12px 30px;
+  }
+
+  &:hover {
+    color: $text-white;
+    background-color: $button-outline__hover;
+  }
+
+  &:active {
+    color: $text-white;
+    background-color: $button-outline__active;
+  }
+}

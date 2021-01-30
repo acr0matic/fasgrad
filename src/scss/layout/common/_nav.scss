@@ -1,0 +1,26 @@
+.nav {
+  width: 100%;
+
+  &__list {
+    @include flex();
+  }
+
+  &__item {
+    &:hover {
+      .nav__link {
+        color: $text-orange;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: $weight-bold;
+    font-size: $font-size-6 + 2;
+
+    transition: color 0.15s ease;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-8;
+    }
+  }
+}
