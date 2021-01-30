@@ -3,4 +3,20 @@
 // и подключение дополнительных вариаций
 // -----------------------------------------------------------------------------
 
-@import 'button';
+$button-cta: #f97700;
+$button-cta__hover: #ff912c;
+$button-cta__active: #f45800;
+
+$button-cta-outline: #f97700;
+$button-cta-outline__hover: #f97700;
+$button-cta-outline__active: #f45800;
+
+$button-primary: #f97700;
+$button-primary__hover: #ff912c;
+$button-primary__active: #f45800;
+
+$button-outline: #f97700;
+$button-outline__hover: #f97700;
+$button-outline__active: #f45800;
+
+@import "button";

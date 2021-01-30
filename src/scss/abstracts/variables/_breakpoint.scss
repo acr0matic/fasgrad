@@ -1,6 +1,8 @@
 // Брейпоинты разных экранов для адаптива
-$breakpoint-laptop: max-width 1024px;
+$breakpoint-computer: max-width 1740px;
+$breakpoint-laptop: max-width 1200px;
+$breakpoint-tablet-large: max-width 996px;
 $breakpoint-tablet: max-width 768px;
-$breakpoint-mobile-large: max-width 425px;
+$breakpoint-mobile-large: max-width 576px;
 $breakpoint-mobile-medium: max-width 375px;
 $breakpoint-mobile-small: max-width 320px;
