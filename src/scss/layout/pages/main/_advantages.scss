@@ -1,0 +1,52 @@
+#advantages {
+  background-color: $palette-gray;
+}
+
+.advantages {
+  position: relative;
+  top: -60px;
+  left: 0;
+
+  padding-bottom: 20px;
+
+  &__item {
+    @include flex($justify: flex-start);
+    flex-direction: column;
+
+    height: 100%;
+
+    padding: 50px 25px 60px 25px;
+
+    background-color: $palette-white;
+
+    border-radius: 32px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+
+    transition: box-shadow 0.35s ease;
+
+    &:hover {
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__icon {
+  }
+
+  &__title {
+    font-size: $font-size-2;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-5;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-4;
+    line-height: 32px;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-7;
+      line-height: 25px;
+    }
+  }
+}
