@@ -1,0 +1,40 @@
+#map {
+  background-color: $palette-gray;
+}
+
+.map {
+  &__container {
+    max-width: 670px;
+    height: 670px;
+    overflow: hidden;
+
+    border-radius: 32px;
+    margin: 0 auto;
+
+    box-shadow: -17px 17px 0 #f97700;
+
+    @include breakpoint($breakpoint-computer) {
+      height: 550px;
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    @include flex($justify: flex-start);
+  }
+
+  &__icon {
+  }
+
+  &__address {
+    font-family: NotoSans, sans-serif;
+    font-weight: $weight-bold;
+    font-size: $font-size-4;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-7;
+    }
+  }
+}
