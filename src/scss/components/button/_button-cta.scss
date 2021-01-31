@@ -1,0 +1,24 @@
+.button-cta {
+  background-color: $button-cta;
+  color: $text-white;
+
+  padding: 20px 60px;
+
+  font-size: $font-size-6 + 2;
+
+
+  @include breakpoint($breakpoint-computer) {
+    padding: 18px 50px;
+
+    font-size: $font-size-6 - 1;
+  }
+
+  &:hover {
+    background-color: $button-cta__hover;
+  }
+
+  &:active {
+    color: $text-white;
+    background-color: $button-cta__active;
+  }
+}

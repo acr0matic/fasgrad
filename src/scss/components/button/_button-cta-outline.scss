@@ -1,0 +1,23 @@
+.button-cta-outline {
+  border: 2px solid $button-cta-outline;
+
+  padding: 20px 40px;
+
+  font-size: $font-size-6 + 2;
+
+  @include breakpoint($breakpoint-computer) {
+    padding: 18px 40px;
+
+    font-size: $font-size-6 - 1;
+  }
+
+  &:hover {
+    color: $text-white;
+    background-color: $button-cta-outline__hover;
+  }
+
+  &:active {
+    color: $text-white;
+    background-color: $button-cta-outline__active;
+  }
+}

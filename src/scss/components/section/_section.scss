@@ -1,0 +1,16 @@
+.section {
+  &__title {
+    font-family: NotoSans, sans-serif;
+    font-weight: $weight-extrabold;
+  }
+
+  &__description {
+    font-size: $font-size-4;
+    line-height: 32px;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-6;
+      line-height: 28px;
+    }
+  }
+}
