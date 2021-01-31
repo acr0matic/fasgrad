@@ -3,7 +3,6 @@
   padding-bottom: 48px;
 
   &__title {
-    display: inline-block;
     margin-bottom: 32px;
 
     font-family: NotoSans, sans-serif;
@@ -15,6 +14,8 @@
     }
 
     &--underline {
+      display: inline-block;
+
       &::after {
         content: '';
         display: block;
@@ -28,6 +29,10 @@
           height: 5px;
         }
       }
+    }
+
+    &--center {
+      text-align: center;
     }
   }
 
