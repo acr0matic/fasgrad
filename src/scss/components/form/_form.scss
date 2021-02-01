@@ -1,0 +1,8 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    max-width: 200px;
+  }
+}

@@ -1,0 +1,59 @@
+.input {
+  position: relative;
+  outline: none;
+
+  &::after {
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.15s ease;
+  }
+
+  &__field {
+    width: 100%;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+
+    padding: 22px 32px;
+
+    background-color: $input__bg;
+
+    transition: all 0.15s ease;
+
+    @include breakpoint($breakpoint-computer) {
+      padding: 15px 32px;
+    }
+
+    &:hover {
+      border-color: #a5a5a5;
+    }
+
+    &:focus {
+      background-color: $input__active;
+    }
+
+    &::placeholder {
+      color: $input__placeholder;
+    }
+  }
+
+  &__error {
+    .input__field {
+      border-color: $input__error;
+    }
+
+    &::after {
+      content: url("../img/icons/warning.svg");
+      position: absolute;
+      top: 50%;
+      right: 23px;
+
+      transform: translateY(-50%);
+
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

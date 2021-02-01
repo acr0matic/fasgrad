@@ -992,12 +992,74 @@
   <!-- Подвал -->
   <footer></footer>
 
+  <div class="modal micromodal-slide" id="modal-callback">
+    <div class="modal__overlay" data-micromodal-close>
+      <div class="modal__container">
+        <div class="modal__header">
+          <h2 class="modal__title mb-4">Обратный звонок</h2>
+          <p class="modal__description">Укажите свой номер, чтобы мы могли с вами связаться</p>
+
+          <button class="modal__close" data-micromodal-close>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.69859 19.2231L9.57446 13.3473L15.4503 19.2231L19.0745 15.599L13.1986 9.72314L19.0745 3.84727L15.4503 0.223145L9.57446 6.09902L3.69859 0.223145L0.0744629 3.84727L5.95034 9.72314L0.0744629 15.599L3.69859 19.2231Z" fill="#DFDFDF" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal__content">
+          <form action="" class="form form-callback">
+            <div class="input input__error mb-3">
+              <input class="input__field" type="text" placeholder="Как к вам обращаться" name="user_name">
+            </div>
+            <!-- /.input -->
+
+            <div class="input mb-3">
+              <input class="input__field" type="tel" placeholder="Телефон" name="user_phone">
+            </div>
+            <!-- /.input -->
+
+            <div class="input mb-3">
+              <input class="input__field" type="text" onfocus="(this.type='time')" onblur="(this.type='text')" placeholder="Удобное время для звонка" name="user_time">
+            </div>
+            <!-- /.input -->
+
+            <button class="form__button button button-primary mx-auto">Отправить</button>
+          </form>
+        </div>
+        <!-- /.modal__content -->
+      </div>
+      <!-- /.modal__container -->
+    </div>
+    <!-- /.modal__overlay -->
+  </div>
+  <!-- /.modal -->
+
+  <div class="modal modal-callback micromodal-slide" id="modal-accept">
+    <div class="modal__overlay" data-micromodal-close>
+      <div class="modal__container">
+        <div class="modal__header">
+          <h2 class="modal__title">Спасибо! <br> Скоро свяжемся с вами</h2>
+
+          <button class="modal__close" data-micromodal-close>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.69859 19.2231L9.57446 13.3473L15.4503 19.2231L19.0745 15.599L13.1986 9.72314L19.0745 3.84727L15.4503 0.223145L9.57446 6.09902L3.69859 0.223145L0.0744629 3.84727L5.95034 9.72314L0.0744629 15.599L3.69859 19.2231Z" fill="#DFDFDF" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- /.modal__container -->
+    </div>
+    <!-- /.modal__overlay -->
+  </div>
+  <!-- /.modal -->
+
   <!-- Скрипты -->
 
   <!-- build:js -->
   <script src="scripts/libraries/clipboard.js"></script>
   <script src="scripts/libraries/swiper.js"></script>
   <script src="scripts/libraries/fslightbox.js"></script>
+  <script src="scripts/libraries/micromodal.js"></script>
 
   <script src="scripts/script.js"></script>
   <script src="scripts/sliders.js"></script>

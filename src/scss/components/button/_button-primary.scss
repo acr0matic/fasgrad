@@ -1,0 +1,15 @@
+.button-primary {
+  background-color: $button-primary;
+  color: $text-white;
+
+  padding: 18px 40px;
+
+  &:hover {
+    background-color: $button-primary__hover;
+  }
+
+  &:active {
+    color: $text-white;
+    background-color: $button-primary__active;
+  }
+}

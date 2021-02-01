@@ -13,3 +13,12 @@ headerContact.forEach(contact => {
     setTimeout(() => tooltip.classList.remove("tooltip--visible"), 1000);
   });
 });
+
+
+const modalParams = {
+  awaitCloseAnimation: true,
+  disableScroll: true,
+  disableFocus: false,
+};
+
+MicroModal.init(modalParams);

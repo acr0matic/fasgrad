@@ -1,0 +1,10 @@
+.modal-callback {
+  .modal__container {
+    max-width: 700px;
+    padding: 65px 25px 65px 25px;
+
+    @include breakpoint($breakpoint-computer) {
+      max-width: 600px;
+    }
+  }
+}

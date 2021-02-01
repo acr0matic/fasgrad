@@ -5,9 +5,10 @@
 
 $checkbox__bg: #efefef;
 
-$input__bg: #a5a5a5;
+$input__bg: #f9f9f9;
 $input__hover: #a5a5a5;
-$input__active: #a5a5a5;
+$input__active: #ffffff;
 $input__placeholder: #a5a5a5;
+$input__error: #ff0000;
 
 @import "input";
