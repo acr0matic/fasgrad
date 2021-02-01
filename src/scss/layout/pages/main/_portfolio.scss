@@ -1,0 +1,133 @@
+#portfolio {
+  overflow: hidden;
+
+  background-color: $palette-gray;
+}
+
+.portfolio {
+  position: relative;
+
+  &__hide {
+    display: none;
+  }
+
+  &__card {
+    background-color: $palette-white;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    height: 194px;
+
+    padding: 20px;
+  }
+
+  &__picture {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .portfolio__zoom {
+        opacity: 1;
+      }
+
+      &::after {
+        opacity: 0.3;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 53px;
+      height: 53px;
+
+      background-color: #000000;
+      opacity: 0;
+
+      border-radius: 50%;
+
+      transform: translate(-50%, -50%);
+      transition: opacity 0.15s ease;
+
+      pointer-events: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__zoom {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+
+    opacity: 0;
+
+    transform: translate(-50%, -50%);
+
+    transition: opacity 0.15s ease;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-size: $font-size-4;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-5;
+    }
+  }
+
+  &__characteristic {
+    font-size: $font-size-6;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-7;
+    }
+  }
+
+  &__parameter {
+  }
+
+  &__key {
+    color: $text-gray;
+  }
+
+  &__value {
+    font-weight: $weight-medium;
+  }
+
+  &__description {
+    margin-bottom: auto;
+
+    font-weight: $weight-medium;
+    line-height: 150%;
+  }
+
+  &__action {
+    @include flex($justify: flex-start);
+    color: $text-orange;
+
+    font-size: $font-size-7;
+
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-top: 3px;
+
+    transition: transform 0.15s ease;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+}
