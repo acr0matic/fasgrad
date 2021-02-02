@@ -1,18 +1,21 @@
-const select = document.querySelectorAll('.select');
+function ResetSelect(select) {
+  const selected = select.querySelector('.select__item--selected');
+  if (selected) selected.classList.remove('select__item--selected');
+}
 
-select.forEach(selectItem => {
-  const defaultItem = selectItem.querySelector('.select__item--default');
-  const hiddenItems = selectItem.querySelectorAll('.select__item--hide');
-  const selectArrow = selectItem.querySelector('.select__arrow');
+function InitSelect(select) {
+  const defaultItem = select.querySelector('.select__item--default');
+  const hiddenItems = select.querySelectorAll('.select__item--hide');
+  const selectArrow = select.querySelector('.select__arrow');
 
-  selectItem.addEventListener('click', () => {
-    selectItem.classList.toggle('select--open');
+  select.addEventListener('click', () => {
+    select.classList.toggle('select--open');
     selectArrow.classList.toggle('select__arrow--rotate');
 
     hiddenItems.forEach(item => {
       item.addEventListener('click', () => {
         defaultItem.style.display = 'none';
-        ResetSelect(selectItem);
+        ResetSelect(select);
         item.classList.add('select__item--selected');
       });
 
@@ -21,8 +24,8 @@ select.forEach(selectItem => {
 
     // закрыть, если клик не по селекту
     window.addEventListener('click', (e) => {
-      if (!selectItem.contains(e.target)) {
-        selectItem.classList.remove('select--open');
+      if (!select.contains(e.target)) {
+        select.classList.remove('select--open');
         selectArrow.classList.remove('select__arrow--rotate');
 
         hiddenItems.forEach(item => {
@@ -31,10 +34,4 @@ select.forEach(selectItem => {
       }
     });
   });
-});
-
-function ResetSelect(select) {
-  const selected = select.querySelector('.select__item--selected');
-  if (selected) selected.classList.remove('select__item--selected');
 }
-

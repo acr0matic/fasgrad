@@ -1,12 +1,13 @@
 const CalculatorData = {
-  "Цвет"            : "Не указан",
-  "3D-Визуализация" : "Нет",
-  "Утепление"       : "Нет",
-  "Ветрозащита"     : "Нет",
+  "Цвет": "Не указан",
+  "3D-Визуализация": "Нет",
+  "Утепление": "Нет",
+  "Ветрозащита": "Нет",
 };
 
 const Calculator = (() => {
   let calculator,
+    calculatorMaterial,
     calculatorSelect,
     calculatorInput,
     calculatorColor,
@@ -21,13 +22,14 @@ const Calculator = (() => {
   }
 
   return {
-    Init: () => {
+    Init: (data) => {
       calculator = document.getElementById('calculator');
       calculatorInput = calculator.querySelector('.input__field');
       calculatorSelect = calculator.querySelector('.select');
       calculatorSelectItems = calculatorSelect.querySelectorAll('.select__item');
       calculatorTotal = calculator.querySelector('.calculator-total');
       calculatorService = calculatorTotal.querySelectorAll('.calculator-total__service');
+      calculatorMaterial = calculatorTotal.querySelector('.calculator-total__material');
 
       calculatorColor = calculator.querySelector('.calculator-paint');
       calculatorCurrentColor = calculatorColor.querySelector('.calculator-paint__current .calculator-paint__color');
@@ -40,19 +42,29 @@ const Calculator = (() => {
 
       IMask(calculatorInput, inputPattern);
 
+      Calculator.SetList(data);
       Calculator.SetListeners();
       Calculator.SetTooltip();
 
-      fetch('../src/data/calculator.json')
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          calculatorData = data;
+      calculatorData = data;
 
-          Calculator.ChangePrice(calculatorInput.value);
-          Calculator.ChangeFinal();
-        });
+      Calculator.ChangePrice(calculatorInput.value);
+      Calculator.ChangeFinal();
+
+    },
+
+    SetList: (data) => {
+      const list = calculatorSelect.querySelector('.select__list');
+      const materials = data.material;
+      list.innerHTML = '<li class="select__item select__item--default">Выберите услугу</li>';
+
+      for (const key in materials) {
+        const material = materials[key];
+
+        list.innerHTML += `<li data-material="${key}" data-name="${material.name}" class="select__item select__item--hide">${material.name}</li>`
+      }
+
+      InitSelect(calculatorSelect);
     },
 
     SetListeners: () => {
@@ -107,6 +119,7 @@ const Calculator = (() => {
 
     SelectMaterial: () => {
       const selected = calculatorSelect.querySelector('.select__item--selected');
+      calculatorMaterial.innerHTML = selected.getAttribute('data-name');
 
       if (selected) {
         Calculator.SetMaterial(selected.getAttribute('data-material'))
@@ -267,5 +280,11 @@ const Calculator = (() => {
   }
 })();
 
-Calculator.Init();
-// Calculator.Log();
+fetch('../src/data/production.json')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    Calculator.Init(data);
+  });
+
