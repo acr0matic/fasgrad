@@ -119,9 +119,10 @@ const Calculator = (() => {
 
     SelectMaterial: () => {
       const selected = calculatorSelect.querySelector('.select__item--selected');
-      calculatorMaterial.innerHTML = selected.getAttribute('data-name');
 
       if (selected) {
+        calculatorMaterial.innerHTML = selected.getAttribute('data-name');
+
         Calculator.SetMaterial(selected.getAttribute('data-material'))
         Calculator.WriteTotal('size');
 
