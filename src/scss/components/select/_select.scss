@@ -1,0 +1,123 @@
+.select {
+  position: relative;
+
+  width: 100%;
+  padding: 50px 0;
+
+  font-size: $font-size-5;
+
+  cursor: pointer;
+
+  @include breakpoint($breakpoint-computer) {
+    padding: 32px 0;
+    font-size: $font-size-7;
+  }
+
+  @include breakpoint($breakpoint-mobile-large) {
+    font-size: 12px;
+  }
+
+  &:hover &__list {
+    border-color: $select__hover;
+  }
+
+  &--open {
+    cursor: default;
+
+    .select__list {
+      border-color: $select__active;
+      background-color: $palette-white;
+    }
+
+    &:hover .select__list {
+      background-color: $palette-white;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+  }
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    max-height: 410px;
+    overflow-y: auto;
+
+    border-radius: 12px;
+    border: 2px solid transparent;
+
+    padding: 0 32px;
+
+    background-color: $select__bg;
+    transition: all 0.15s ease;
+
+    @include breakpoint($breakpoint-computer) {
+      max-height: 358px;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      border-radius: 30px;
+      padding: 0 15px;
+    }
+  }
+
+  &__item {
+    padding: 28px 0;
+
+    transition: all 0.15s ease;
+
+    @include all-but-first-last(2) {
+      border-bottom: 1px solid #f3f3f3;
+    }
+
+    @include breakpoint($breakpoint-computer) {
+      padding: 22px 0;
+    }
+
+    &:not(.select__item--default) {
+      cursor: pointer;
+
+      &:hover {
+        color: $text-orange;
+      }
+    }
+
+    &--default {
+      color: $text-gray;
+    }
+
+    &--hide {
+      display: none;
+    }
+
+    &--selected {
+      display: block;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 35px;
+    right: 32px;
+
+    width: 24px;
+
+    cursor: pointer;
+
+    @include breakpoint($breakpoint-computer) {
+      top: 30px;
+
+      width: 16px;
+    }
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+  }
+}

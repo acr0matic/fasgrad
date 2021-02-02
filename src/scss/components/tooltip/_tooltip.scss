@@ -1,5 +1,9 @@
 .tooltip {
+  z-index: 1000;
   border-radius: 16px 0 16px 16px;
+
+  width: max-content;
+
   padding: 20px;
 
   color: $text-white;

@@ -1,3 +1,13 @@
+[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .input {
   position: relative;
   outline: none;
@@ -16,14 +26,16 @@
     border-radius: 12px;
     outline: none;
 
-    padding: 22px 32px;
+    padding: 28px 32px;
 
     background-color: $input__bg;
+    font-size: $font-size-4;
 
     transition: all 0.15s ease;
 
     @include breakpoint($breakpoint-computer) {
-      padding: 15px 32px;
+      font-size: $font-size-7;
+      padding: 22px 32px;
     }
 
     &:hover {
@@ -31,11 +43,17 @@
     }
 
     &:focus {
+      border-color: #a5a5a5;
       background-color: $input__active;
     }
 
     &::placeholder {
       color: $input__placeholder;
+      font-size: $font-size-4;
+
+      @include breakpoint($breakpoint-computer) {
+        font-size: $font-size-7;
+      }
     }
   }
 
@@ -54,6 +72,16 @@
 
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  &__label {
+    font-family: NotoSans, sans-serif;
+    font-weight: $weight-extrabold;
+    font-size: $font-size-4;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-7;
     }
   }
 }

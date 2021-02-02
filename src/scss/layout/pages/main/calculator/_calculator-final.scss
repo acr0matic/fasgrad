@@ -1,0 +1,124 @@
+.calculator-final {
+  display: flex;
+  align-items: flex-end;
+
+  border-top: 1px solid #d8d8d8;
+  padding-top: 25px;
+
+  font-family: NotoSans, sans-serif;
+  font-weight: $weight-bold;
+
+  &__label {
+    margin-right: 15px;
+
+    font-size: $font-size-2;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-3 - 4;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    font-size: $font-size-2;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-3 - 4;
+    }
+  }
+
+  &__cost {
+    position: relative;
+
+    &::after {
+      content: " ₽";
+    }
+
+    &::before {
+      color: $text-gray;
+      content: "~";
+    }
+
+    &--old {
+      color: $text-gray;
+      font-size: 22px;
+
+      margin-bottom: 5px;
+
+      @include breakpoint($breakpoint-computer) {
+        font-size: $font-size-7;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 40%;
+        left: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 3px;
+
+        background-color: #ff0000;
+
+        transform: rotate(-10deg);
+      }
+    }
+  }
+
+  &__discount {
+    position: relative;
+
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__reduction {
+    display: inline-block;
+
+    border: 2px solid #f67601;
+    padding: 3px 16px;
+
+    color: $text-orange;
+  }
+
+  &__percent {
+    &::before {
+      content: "-";
+    }
+
+    &::after {
+      content: "%";
+    }
+  }
+
+  &__info {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    display: inline-block;
+
+    cursor: help;
+  }
+
+  &__icon {
+  }
+
+  &__tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+
+    @include breakpoint($breakpoint-computer) {
+      right: 20px;
+      left: unset;
+
+      border-radius: 16px 16px 0 16px;
+    }
+  }
+}

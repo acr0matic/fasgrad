@@ -1,0 +1,73 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  input {
+    display: none;
+
+    &:checked ~ .checkbox__mark::after {
+      opacity: 1;
+    }
+  }
+
+  &__mark {
+    position: relative;
+    display: block;
+
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: 15px;
+
+    background-color: #f9f9f9;
+    border-radius: 12px;
+
+    transition: opacity 0.15s ease;
+
+    @include breakpoint($breakpoint-computer) {
+      width: 30px;
+      height: 30px;
+
+      border-radius: 5px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &::after {
+      content: url("../img/icons/control/checkmark.svg");
+      position: absolute;
+      top: 4px;
+      right: -5px;
+
+      width: 37px;
+
+      opacity: 0;
+
+      transition: opacity 0.15s ease;
+
+      @include breakpoint($breakpoint-computer) {
+        top: 0;
+        right: -5px;
+
+        width: 28px;
+      }
+    }
+  }
+
+  &__label {
+    font-size: $font-size-5;
+    line-height: 15px;
+
+    transition: color 0.15s ease;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-7;
+    }
+  }
+}

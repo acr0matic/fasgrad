@@ -1,0 +1,28 @@
+.calculator-advanced {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__extra {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+
+    cursor: help;
+  }
+
+  &__tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+
+    max-width: 520px;
+  }
+}

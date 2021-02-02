@@ -1,0 +1,35 @@
+.calculator-total {
+  &__service {
+    display: flex;
+    align-items: baseline;
+
+    font-size: $font-size-4;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-7;
+    }
+  }
+
+  &__value {
+
+  }
+
+  &__size {
+    &::after {
+      content: " м²";
+    }
+  }
+
+  &__price {
+    &::after {
+      content: " ₽";
+    }
+  }
+
+  &__dots {
+    flex: 1;
+    overflow: hidden;
+
+    color: #a5a5a5;
+  }
+}

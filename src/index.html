@@ -597,6 +597,216 @@
       <!-- /.container -->
     </section>
 
+    <section id="calculator" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="section__title">Калькулятор стоимости фасадных работ</h2>
+          </div>
+          <!-- /.col-12 -->
+
+          <div class="col-6">
+            <p class="section__description mb-2">Заполните данные о вашем объекте, чтобы узнать примерную стоимость работ.</p>
+          </div>
+          <!-- /.col-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="calculator">
+          <div class="row">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <div class="select">
+                    <div class="select__wrapper">
+                      <ul class="select__list">
+                        <li class="select__item select__item--default">Выберите услугу</li>
+                        <li class="select__item select__item--hide">Композит</li>
+                        <li class="select__item select__item--hide">Керамогранит</li>
+                        <li class="select__item select__item--hide">Услуга 3</li>
+                        <li class="select__item select__item--hide">Услуга 4</li>
+                        <li class="select__item select__item--hide">Услуга 5</li>
+                        <li class="select__item select__item--hide">Услуга 6</li>
+                      </ul>
+                      <img src="img/icons/control/arrow__small--gray.svg" alt="" class="select__arrow">
+                    </div>
+                    <!-- /.select__background -->
+                  </div>
+                  <!-- /.select -->
+                </div>
+                <!-- /.col-12 -->
+
+                <div class="col-4 mb-5">
+                  <div class="input d-flex align-items-center">
+                    <input class="input__field" type="number">
+                    <span class="input__label ms-3">м²</span>
+                  </div>
+                  <!-- /.input -->
+                </div>
+                <!-- /.col-2 -->
+
+                <div class="col-8"></div>
+                <!-- /.col-8 -->
+
+                <div class="col-5 col-xxl-4">
+                  <div class="calculator__paint calculator-paint">
+                    <div class="calculator-paint__current">
+                      Цвет:
+                      <div class="calculator-paint__color ms-4"></div>
+                    </div>
+                    <!-- /.calculator-paint__current -->
+
+                    <div class="calculator-paint__palette">
+                      <div class="calculator-paint__color" style="background-color: #9C0505;"></div>
+                      <div class="calculator-paint__color" style="background-color: #867676;"></div>
+                      <div class="calculator-paint__color" style="background-color: #5D98BA;"></div>
+                      <div class="calculator-paint__color" style="background-color: #326708;"></div>
+                      <div class="calculator-paint__color" style="background-color: #059C8A;"></div>
+                      <div class="calculator-paint__color" style="background-color: #393939;"></div>
+
+                      <div class="calculator-paint__color" style="background-color: #CE7C00;"></div>
+                      <div class="calculator-paint__color" style="background-color: #FF4949;"></div>
+                      <div class="calculator-paint__color" style="background-color: #B4D100;"></div>
+                      <div class="calculator-paint__color" style="background-color: #B1B1B1;"></div>
+                    </div>
+                    <!-- /.calculator-paint__palette -->
+                  </div>
+                  <!-- /.calculator-paint -->
+                </div>
+                <!-- /.col-4 -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.col-6 -->
+
+            <div class="col-6 ps-5">
+              <div class="calculator__total calculator-total">
+                <div data-calculator="size" class="calculator-total__service mb-4">
+                  <div class="calculator-total__value">Композит <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                  <div class="calculator-total__price">76 000</div>
+                </div>
+                <!-- /.calculator__service -->
+
+                <div data-calculator="visualization" class="calculator-total__service mb-4">
+                  <div class="calculator-total__value">3D Визуализация</span></div>
+                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                  <div class="calculator-total__price">6 000</div>
+                </div>
+                <!-- /.calculator__service -->
+
+                <div data-calculator="warming" class="calculator-total__service mb-4">
+                  <div class="calculator-total__value">Утепление <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                  <div class="calculator-total__price">36 000</div>
+                </div>
+                <!-- /.calculator__service -->
+
+                <div data-calculator="wind" class="calculator-total__service mb-4">
+                  <div class="calculator-total__value">Ветрозащита <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                  <div class="calculator-total__price">36 000</div>
+                </div>
+                <!-- /.calculator__service -->
+              </div>
+              <!-- /.calculator__total -->
+            </div>
+            <!-- /.col-6 -->
+          </div>
+          <!-- /.row -->
+
+          <div class="row align-items-end mt-4 mt-xxl-0">
+            <div class="col-6">
+              <div class="calculator__advanced calculator-advanced">
+                <label class="checkbox me-5">
+                  <input type="checkbox">
+                  <span class="checkbox__mark"></span>
+                  <span class="checkbox__label">3d-визуализация</span>
+                </label>
+
+                <label class="checkbox me-5">
+                  <input type="checkbox">
+                  <span class="checkbox__mark"></span>
+                  <span class="checkbox__label">Утепление</span>
+                </label>
+
+                <div class="calculator-advanced__extra mt-3 mt-xxl-0">
+                  <label class="checkbox me-2">
+                    <input type="checkbox">
+                    <span class="checkbox__mark"></span>
+                    <span class="checkbox__label">Ветрозащита</span>
+                  </label>
+
+                  <div class="calculator-advanced__info">
+                    <svg class="calculator-advanced__icon" width="13" height="13" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.906 24.917C6.27859 24.917 0.906006 19.5444 0.906006 12.917C0.906006 6.28958 6.27859 0.916992 12.906 0.916992C19.5334 0.916992 24.906 6.28958 24.906 12.917C24.906 19.5444 19.5334 24.917 12.906 24.917ZM12.906 22.7352C18.3284 22.7352 22.7242 18.3394 22.7242 12.917C22.7242 7.49456 18.3284 3.09881 12.906 3.09881C7.48357 3.09881 3.08782 7.49456 3.08782 12.917C3.08782 18.3394 7.48357 22.7352 12.906 22.7352ZM12.9064 18.3697C12.3037 18.3697 11.8151 17.8813 11.8151 17.2788C11.8151 16.6763 12.3037 16.1879 12.9064 16.1879C13.5091 16.1879 13.9976 16.6763 13.9976 17.2788C13.9976 17.8813 13.5091 18.3697 12.9064 18.3697ZM13.9969 15.0988H11.8151C11.8151 13.2425 12.4965 12.4475 14.0545 11.6685C14.951 11.2203 15.0878 11.0606 15.0878 10.1897C15.0878 9.16035 14.2993 8.55336 12.906 8.55336C11.701 8.55336 10.7242 9.53019 10.7242 10.7352H8.54237C8.54237 8.3252 10.496 6.37154 12.906 6.37154C15.398 6.37154 17.2696 7.81222 17.2696 10.1897C17.2696 12.0461 16.5883 12.841 15.0302 13.62C14.1337 14.0683 13.9969 14.2279 13.9969 15.0988Z"
+                        fill="#A5A5A5" />
+                    </svg>
+
+                    <div class="calculator-advanced__tooltip tooltip tooltip-calculator">
+                      Ветрозащита нужна для... Ветрозащита нужна для... Ветрозащита нужна для... Ветрозащита нужна для... Ветрозащита нужна для... Ветрозащита нужна для... Ветрозащита нужна для...
+                    </div>
+                    <!-- /.calculator-advanced__tooltip -->
+                  </div>
+                  <!-- /.calculator-advanced__info -->
+                </div>
+                <!-- /.calculator-advanced__extra -->
+              </div>
+              <!-- /.calculator__advanced calculator-advanced -->
+            </div>
+            <!-- /.col-6 -->
+
+            <div class="col-6">
+              <div class="calculator__final calculator-final">
+                <div class="calculator-final__label">
+                  Итого:
+                </div>
+                <!-- /.calculator-price__label -->
+
+                <div class="calculator-final__price">
+                  <div class="calculator-final__cost calculator-final__cost--old">
+                    100 000 000
+                  </div>
+                  <!-- /.calculator-final__cost calculator-final__cost--old -->
+
+                  <div class="calculator-final__cost">1 000 000</div>
+                  <!-- /.calculator-final__cost -->
+                </div>
+                <!-- /.calculator-final__price -->
+
+                <div class="calculator-final__discount">
+                  <div class="calculator-final__reduction">
+                    <span class="calculator-final__percent">10</span>
+                  </div>
+                  <!-- /.discount-final__reduction -->
+
+                  <div class="calculator-final__info">
+                    <svg class="calculator-final__icon" width="13" height="13" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.906 24.917C6.27859 24.917 0.906006 19.5444 0.906006 12.917C0.906006 6.28958 6.27859 0.916992 12.906 0.916992C19.5334 0.916992 24.906 6.28958 24.906 12.917C24.906 19.5444 19.5334 24.917 12.906 24.917ZM12.906 22.7352C18.3284 22.7352 22.7242 18.3394 22.7242 12.917C22.7242 7.49456 18.3284 3.09881 12.906 3.09881C7.48357 3.09881 3.08782 7.49456 3.08782 12.917C3.08782 18.3394 7.48357 22.7352 12.906 22.7352ZM12.9064 18.3697C12.3037 18.3697 11.8151 17.8813 11.8151 17.2788C11.8151 16.6763 12.3037 16.1879 12.9064 16.1879C13.5091 16.1879 13.9976 16.6763 13.9976 17.2788C13.9976 17.8813 13.5091 18.3697 12.9064 18.3697ZM13.9969 15.0988H11.8151C11.8151 13.2425 12.4965 12.4475 14.0545 11.6685C14.951 11.2203 15.0878 11.0606 15.0878 10.1897C15.0878 9.16035 14.2993 8.55336 12.906 8.55336C11.701 8.55336 10.7242 9.53019 10.7242 10.7352H8.54237C8.54237 8.3252 10.496 6.37154 12.906 6.37154C15.398 6.37154 17.2696 7.81222 17.2696 10.1897C17.2696 12.0461 16.5883 12.841 15.0302 13.62C14.1337 14.0683 13.9969 14.2279 13.9969 15.0988Z"
+                        fill="#A5A5A5" />
+                    </svg>
+
+                    <div class="calculator-final__tooltip tooltip tooltip-calculator">
+                      За каждые 150 м² скидка <span class="tooltip__important">5%</span>
+                    </div>
+                  </div>
+                  <!-- /.calculator-final__info -->
+                </div>
+                <!-- /.calculator-final__discount -->
+              </div>
+              <!-- /.calculator-final -->
+            </div>
+            <!-- /.col-6 -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.calculator -->
+      </div>
+      <!-- /.container -->
+    </section>
+
     <section id="portfolio" class="section">
       <div class="container">
         <div class="row">
@@ -1065,6 +1275,7 @@
   <script src="scripts/sliders.js"></script>
   <script src="scripts/yMap.js"></script>
   <script src="scripts/portfolio.js"></script>
+  <script src="scripts/customSelect.js"></script>
   <!-- endbuild -->
 </body>
 
