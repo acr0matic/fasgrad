@@ -1,12 +1,16 @@
 .calculator-total {
   &__service {
-    display: flex;
+    display: none;
     align-items: baseline;
 
     font-size: $font-size-4;
 
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-7;
+    }
+
+    &--visible {
+      display: flex;
     }
   }
 

@@ -621,12 +621,12 @@
                     <div class="select__wrapper">
                       <ul class="select__list">
                         <li class="select__item select__item--default">Выберите услугу</li>
-                        <li class="select__item select__item--hide">Композит</li>
-                        <li class="select__item select__item--hide">Керамогранит</li>
-                        <li class="select__item select__item--hide">Услуга 3</li>
-                        <li class="select__item select__item--hide">Услуга 4</li>
-                        <li class="select__item select__item--hide">Услуга 5</li>
-                        <li class="select__item select__item--hide">Услуга 6</li>
+                        <li data-material="composite" class="select__item select__item--hide">Композит</li>
+                        <li data-material="stone" class="select__item select__item--hide">Керамогранит</li>
+                        <li data-material="concrete" class="select__item select__item--hide">Фиброцемент</li>
+                        <li data-material="" class="select__item select__item--hide">Услуга 4</li>
+                        <li data-material="" class="select__item select__item--hide">Услуга 5</li>
+                        <li data-material="" class="select__item select__item--hide">Услуга 6</li>
                       </ul>
                       <img src="img/icons/control/arrow__small--gray.svg" alt="" class="select__arrow">
                     </div>
@@ -638,7 +638,7 @@
 
                 <div class="col-4 mb-5">
                   <div class="input d-flex align-items-center">
-                    <input class="input__field" type="number">
+                    <input oninput="this.value = Math.abs(this.value)" class="input__field" type="number">
                     <span class="input__label ms-3">м²</span>
                   </div>
                   <!-- /.input -->
@@ -657,17 +657,6 @@
                     <!-- /.calculator-paint__current -->
 
                     <div class="calculator-paint__palette">
-                      <div class="calculator-paint__color" style="background-color: #9C0505;"></div>
-                      <div class="calculator-paint__color" style="background-color: #867676;"></div>
-                      <div class="calculator-paint__color" style="background-color: #5D98BA;"></div>
-                      <div class="calculator-paint__color" style="background-color: #326708;"></div>
-                      <div class="calculator-paint__color" style="background-color: #059C8A;"></div>
-                      <div class="calculator-paint__color" style="background-color: #393939;"></div>
-
-                      <div class="calculator-paint__color" style="background-color: #CE7C00;"></div>
-                      <div class="calculator-paint__color" style="background-color: #FF4949;"></div>
-                      <div class="calculator-paint__color" style="background-color: #B4D100;"></div>
-                      <div class="calculator-paint__color" style="background-color: #B1B1B1;"></div>
                     </div>
                     <!-- /.calculator-paint__palette -->
                   </div>
@@ -684,28 +673,28 @@
                 <div data-calculator="size" class="calculator-total__service mb-4">
                   <div class="calculator-total__value">Композит <b>x</b> <span class="calculator-total__size">1 000</span></div>
                   <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price">76 000</div>
+                  <div class="calculator-total__price"></div>
                 </div>
                 <!-- /.calculator__service -->
 
                 <div data-calculator="visualization" class="calculator-total__service mb-4">
                   <div class="calculator-total__value">3D Визуализация</span></div>
                   <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price">6 000</div>
+                  <div class="calculator-total__price"></div>
                 </div>
                 <!-- /.calculator__service -->
 
                 <div data-calculator="warming" class="calculator-total__service mb-4">
                   <div class="calculator-total__value">Утепление <b>x</b> <span class="calculator-total__size">1 000</span></div>
                   <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price">36 000</div>
+                  <div class="calculator-total__price"></div>
                 </div>
                 <!-- /.calculator__service -->
 
                 <div data-calculator="wind" class="calculator-total__service mb-4">
                   <div class="calculator-total__value">Ветрозащита <b>x</b> <span class="calculator-total__size">1 000</span></div>
                   <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price">36 000</div>
+                  <div class="calculator-total__price"></div>
                 </div>
                 <!-- /.calculator__service -->
               </div>
@@ -719,20 +708,20 @@
             <div class="col-6">
               <div class="calculator__advanced calculator-advanced">
                 <label class="checkbox me-5">
-                  <input type="checkbox">
+                  <input data-calculator="visualization" type="checkbox">
                   <span class="checkbox__mark"></span>
                   <span class="checkbox__label">3d-визуализация</span>
                 </label>
 
                 <label class="checkbox me-5">
-                  <input type="checkbox">
+                  <input data-calculator="warming" type="checkbox">
                   <span class="checkbox__mark"></span>
                   <span class="checkbox__label">Утепление</span>
                 </label>
 
                 <div class="calculator-advanced__extra mt-3 mt-xxl-0">
                   <label class="checkbox me-2">
-                    <input type="checkbox">
+                    <input data-calculator="wind" type="checkbox">
                     <span class="checkbox__mark"></span>
                     <span class="checkbox__label">Ветрозащита</span>
                   </label>
@@ -765,12 +754,10 @@
                 <!-- /.calculator-price__label -->
 
                 <div class="calculator-final__price">
-                  <div class="calculator-final__cost calculator-final__cost--old">
-                    100 000 000
-                  </div>
+                  <div class="calculator-final__cost calculator-final__cost--old"></div>
                   <!-- /.calculator-final__cost calculator-final__cost--old -->
 
-                  <div class="calculator-final__cost">1 000 000</div>
+                  <div class="calculator-final__cost calculator-final__cost--new"></div>
                   <!-- /.calculator-final__cost -->
                 </div>
                 <!-- /.calculator-final__price -->
@@ -1271,12 +1258,14 @@
   <script src="scripts/libraries/fslightbox.js"></script>
   <script src="scripts/libraries/micromodal.js"></script>
   <script src="scripts/libraries/smoothScroll.js"></script>
+  <script src="scripts/libraries/imask.js"></script>
 
   <script src="scripts/script.js"></script>
   <script src="scripts/sliders.js"></script>
   <script src="scripts/yMap.js"></script>
   <script src="scripts/portfolio.js"></script>
   <script src="scripts/customSelect.js"></script>
+  <script src="scripts/calculator.js"></script>
   <!-- endbuild -->
 </body>
 

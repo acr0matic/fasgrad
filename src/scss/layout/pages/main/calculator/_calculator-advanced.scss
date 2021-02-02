@@ -5,6 +5,19 @@
   &__extra {
     display: flex;
     align-items: center;
+
+    margin-bottom: -60px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.15s ease;
+
+    &--visible {
+      margin-bottom: 0;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &__info {
