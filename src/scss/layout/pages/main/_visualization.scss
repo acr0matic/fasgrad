@@ -1,0 +1,9 @@
+.visualization {
+  margin-top: 65px;
+
+  height: 900px;
+
+  @include breakpoint($breakpoint-computer) {
+    height: 640px;
+  }
+}
