@@ -1,3 +1,59 @@
 // -----------------------------------------------------------------------------
 // В этом файле прописываются все стили относящиеся к подвалу сайта
 // -----------------------------------------------------------------------------
+
+.footer {
+  @include flex();
+
+  font-size: $font-size-5;
+
+  @include breakpoint($breakpoint-computer) {
+    font-size: $font-size-7;
+  }
+
+  &__company {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact {
+    display: flex;
+  }
+
+  &__logo {
+    position: relative;
+  }
+
+  &__copyright {
+    position: absolute;
+    top: -10px;
+    right: -55px;
+  }
+
+  &__privacy {
+    margin-top: auto;
+
+    .footer__link {
+      justify-content: flex-end;
+      color: $text-orange;
+    }
+  }
+
+  &__link {
+    @include flex($justify: flex-start);
+
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: $text-orange;
+
+      path {
+        fill: $text-orange;
+      }
+    }
+
+    path {
+      transition: fill 0.15s ease;
+    }
+  }
+}
