@@ -115,7 +115,7 @@
           </div>
           <!-- /.header__communication -->
 
-          <button class="button button-outline">Обратный звонок</button>
+          <button data-micromodal-trigger="modal-callback" class="button button-outline">Обратный звонок</button>
         </div>
         <!-- /.header__row -->
 
@@ -1309,17 +1309,17 @@
 
         <div class="modal__content">
           <form action="" class="form form-callback">
-            <div class="input input__error mb-3">
+            <div class="input input__error mb-4">
               <input class="input__field" type="text" placeholder="Как к вам обращаться" name="user_name">
             </div>
             <!-- /.input -->
 
-            <div class="input mb-3">
-              <input class="input__field" type="tel" placeholder="Телефон" name="user_phone">
+            <div class="input mb-4">
+              <input pattern="+7" class="input__field" type="tel" placeholder="Телефон" name="user_phone">
             </div>
             <!-- /.input -->
 
-            <div class="input mb-3">
+            <div class="input mb-5">
               <input class="input__field" type="text" onfocus="(this.type='time')" onblur="(this.type='text')" placeholder="Удобное время для звонка" name="user_time">
             </div>
             <!-- /.input -->
