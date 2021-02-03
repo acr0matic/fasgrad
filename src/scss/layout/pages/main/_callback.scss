@@ -1,0 +1,11 @@
+#callback {
+  @include background('../img/section/callback/background.svg', $position: center -80px);
+  background-color: #f3f3f3;
+}
+
+.callback {
+  border-radius: 12px;
+  padding: 64px 40px;
+
+  background-color: $palette-white;
+}
