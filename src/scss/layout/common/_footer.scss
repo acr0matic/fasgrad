@@ -11,9 +11,19 @@
     font-size: $font-size-7;
   }
 
+  @include breakpoint($breakpoint-laptop) {
+    flex-wrap: wrap;
+  }
+
   &__company {
     display: flex;
     flex-direction: column;
+
+    @include breakpoint($breakpoint-laptop) {
+      width: 50%;
+
+      margin-bottom: 30px;
+    }
   }
 
   &__contact {
@@ -28,6 +38,10 @@
     position: absolute;
     top: -10px;
     right: -55px;
+
+    @include breakpoint($breakpoint-laptop) {
+      right: 0;
+    }
   }
 
   &__privacy {
@@ -36,6 +50,10 @@
     .footer__link {
       justify-content: flex-end;
       color: $text-orange;
+    }
+
+    @include breakpoint($breakpoint-laptop) {
+      margin-left: auto;
     }
   }
 

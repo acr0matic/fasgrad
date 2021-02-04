@@ -6,12 +6,23 @@
   position: relative;
   top: -50px;
 
+  @include breakpoint($breakpoint-laptop) {
+    top: 0;
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
+
   &__circle {
     position: absolute;
     top: 50%;
     left: 50%;
 
     transform: translate(-47%, -56%);
+
+    @include breakpoint($breakpoint-laptop) {
+      width: 113%;
+      transform: translate(-48%, -50%);
+    }
   }
 
   &__wrapper {

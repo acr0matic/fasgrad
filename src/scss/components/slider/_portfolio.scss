@@ -3,9 +3,14 @@
 
   .swiper-slide {
     width: calc((100% / 4) - 30px);
+    height: unset;
 
     @include breakpoint($breakpoint-computer) {
       width: calc((100% / 3) - 30px);
+    }
+
+    @include breakpoint($breakpoint-laptop) {
+      width: calc((100% / 2) - 30px);
     }
   }
 

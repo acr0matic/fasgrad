@@ -38,6 +38,11 @@
     box-shadow: 0 5px 9px rgba($color: #000000, $alpha: 0.1);
     transition: box-shadow 0.3s ease;
 
+    @include breakpoint($breakpoint-laptop) {
+      width: 150px;
+      height: 150px;
+    }
+
     &:hover {
       box-shadow: 0 5px 9px rgba($color: #000000, $alpha: 0.18);
     }
@@ -52,6 +57,9 @@
   }
 
   &__icon {
+    @include breakpoint($breakpoint-laptop) {
+      width: 50%;
+    }
   }
 
   &__info {
@@ -69,6 +77,10 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-5;
     }
+
+    @include breakpoint($breakpoint-laptop) {
+      font-size: $font-size-6;
+    }
   }
 
   &__description {
@@ -79,6 +91,11 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-6;
       line-height: 24px;
+    }
+
+    @include breakpoint($breakpoint-laptop) {
+      font-size: $font-size-8;
+      line-height: 20px;
     }
   }
 
@@ -93,6 +110,10 @@
       right: -20px;
     }
 
+    @include breakpoint($breakpoint-laptop) {
+      margin-bottom: 80px;
+    }
+
     .stage-item__wrapper {
       margin-left: auto;
       margin-right: 20%;
@@ -100,10 +121,20 @@
       @include breakpoint($breakpoint-computer) {
         margin-right: 10%;
       }
+
+      @include breakpoint($breakpoint-laptop) {
+        margin-right: 25%;
+      }
     }
 
     .stage-item__step {
       left: -50px;
+    }
+
+    .stage-item__icon {
+      @include breakpoint($breakpoint-laptop) {
+        width: 30%;
+      }
     }
 
     .stage-item__info {
@@ -112,6 +143,11 @@
 
       @include breakpoint($breakpoint-computer) {
         right: 0;
+      }
+
+      @include breakpoint($breakpoint-laptop) {
+        top: 0;
+        right: -150px;
       }
     }
   }
@@ -140,6 +176,11 @@
       @include breakpoint($breakpoint-computer) {
         bottom: 240px;
         left: 20px;
+      }
+
+      @include breakpoint($breakpoint-laptop) {
+        bottom: 180px;
+        left: 0;
       }
     }
 
@@ -172,6 +213,11 @@
       @include breakpoint($breakpoint-computer) {
         right: 50px;
         bottom: 240px;
+      }
+
+      @include breakpoint($breakpoint-laptop) {
+        right: 0;
+        bottom: 0;
       }
     }
 
@@ -243,6 +289,10 @@
 
     @include breakpoint($breakpoint-computer) {
       top: -75px;
+    }
+
+    @include breakpoint($breakpoint-laptop) {
+      top: -25px;
     }
 
     .stage-item__wrapper {

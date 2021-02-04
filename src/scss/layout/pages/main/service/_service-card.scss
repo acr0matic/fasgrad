@@ -53,12 +53,23 @@
     border: 3px solid transparent;
     border-radius: 5px;
     margin-bottom: 12px;
+    margin-right: 12px;
 
     cursor: pointer;
 
     @include breakpoint($breakpoint-computer) {
       width: 27px;
       height: 27px;
+    }
+
+    &:not(:nth-child(6n)) {
+      margin-right: 8px;
+    }
+
+    @include breakpoint($breakpoint-computer) {
+      &:not(:nth-child(5n)) {
+        margin-right: 8px;
+      }
     }
 
     &::after {
@@ -74,14 +85,6 @@
       transition: all 0.15s ease;
     }
 
-    &:not(:nth-child(6n)) {
-      margin-right: 12px;
-
-      @include breakpoint($breakpoint-computer) {
-        margin-right: 0;
-      }
-    }
-
     &--selected {
       border: 3px solid #f97700;
 
@@ -92,12 +95,6 @@
         @include breakpoint($breakpoint-computer) {
           transform: translate(-50%, -50%);
         }
-      }
-    }
-
-    @include breakpoint($breakpoint-computer) {
-      &:not(:nth-child(4n)) {
-        margin-right: 8px;
       }
     }
   }
@@ -161,13 +158,19 @@
     }
   }
 
+  &__info {
+    position: relative;
+  }
+
   &__tooltip {
     position: absolute;
-    bottom: 30px;
-    left: 45%;
+    bottom: 25px;
+    left: 30px;
 
-    @include breakpoint($breakpoint-computer) {
-      left: 50%;
+    &--left {
+      right: 30px;
+      left: unset;
+      border-radius: 16px 16px 0 16px;
     }
   }
 }
