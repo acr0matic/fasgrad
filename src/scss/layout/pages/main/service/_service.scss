@@ -1,0 +1,30 @@
+#service {
+  background-color: $palette-gray;
+
+  padding-top: 190px;
+  padding-bottom: 130px;
+
+  @include breakpoint($breakpoint-computer) {
+    padding-top: 130px;
+    padding-bottom: 70px;
+  }
+
+  .col-4 {
+    @include each(3) {
+      .tooltip {
+        right: 63%;
+        left: unset;
+
+        border-radius: 16px 16px 0 16px;
+
+        @include breakpoint($breakpoint-computer) {
+          right: 58%;
+        }
+      }
+    }
+  }
+}
+
+.service {
+  margin-top: 60px;
+}

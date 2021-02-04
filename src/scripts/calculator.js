@@ -280,12 +280,3 @@ const Calculator = (() => {
     SetMaterial: (material) => currentMaterial = material,
   }
 })();
-
-fetch('../src/data/production.json')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    Calculator.Init(data);
-  });
-

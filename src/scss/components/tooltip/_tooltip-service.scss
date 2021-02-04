@@ -1,0 +1,15 @@
+.tooltip-service {
+  max-width: 520px;
+  border-radius: 16px 16px 16px 0;
+
+  color: $text-black;
+  background-color: $tooltip-calculator__bg;
+
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.1);
+
+  font-size: $font-size-6;
+
+  @include breakpoint($breakpoint-computer) {
+    font-size: $font-size-7;
+  }
+}

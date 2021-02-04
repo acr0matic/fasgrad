@@ -1,0 +1,173 @@
+.service-card {
+  border-radius: 32px;
+  background-color: $palette-white;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__wrapper {
+    padding: 20px 20px 30px 20px;
+  }
+
+  &__header {
+    position: relative;
+    @include flex($justify: flex-start);
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: NotoSans, sans-serif;
+    font-size: $font-size-2;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-4;
+    }
+  }
+
+  &__subtitle {
+    color: $text-gray;
+
+    font-weight: $weight-medium;
+    font-size: $font-size-5;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-6;
+    }
+  }
+
+  &__section {
+  }
+
+  &__palette {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__color {
+    position: relative;
+
+    width: 29px;
+    height: 29px;
+
+    border: 3px solid transparent;
+    border-radius: 5px;
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    @include breakpoint($breakpoint-computer) {
+      width: 27px;
+      height: 27px;
+    }
+
+    &::after {
+      content: url("../img/section/service/icons/cross.svg");
+      position: absolute;
+      top: 60%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.15s ease;
+    }
+
+    &:not(:nth-child(6n)) {
+      margin-right: 12px;
+
+      @include breakpoint($breakpoint-computer) {
+        margin-right: 0;
+      }
+    }
+
+    &--selected {
+      border: 3px solid #f97700;
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+
+        @include breakpoint($breakpoint-computer) {
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    @include breakpoint($breakpoint-computer) {
+      &:not(:nth-child(4n)) {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__price {
+    @include flex($justify: flex-start);
+  }
+
+  &__cost {
+    font-family: NotoSans, sans-serif;
+    font-size: $font-size-4;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-5;
+    }
+
+    &::after {
+      content: " руб./м² ";
+    }
+  }
+
+  &__icon {
+    margin-top: 10px;
+
+    cursor: help;
+
+    @include breakpoint($breakpoint-computer) {
+      margin-top: 5px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+
+    padding: 25px 0;
+
+    color: $text-white;
+    font-size: $font-size-3;
+    font-family: NotoSans, sans-serif;
+
+    background-color: $button-service;
+
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    @include breakpoint($breakpoint-computer) {
+      padding: 15px 0;
+      font-size: $font-size-5;
+    }
+
+    &:hover {
+      background-color: $button-service__hover;
+    }
+
+    &:active {
+      background-color: $button-service__active;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    bottom: 30px;
+    left: 45%;
+
+    @include breakpoint($breakpoint-computer) {
+      left: 50%;
+    }
+  }
+}
