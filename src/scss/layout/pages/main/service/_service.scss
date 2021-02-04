@@ -9,7 +9,7 @@
     padding-bottom: 70px;
   }
 
-  .col-4 {
+  .col-xl-4 {
     @include each(3) {
       .tooltip {
         right: 63%;
