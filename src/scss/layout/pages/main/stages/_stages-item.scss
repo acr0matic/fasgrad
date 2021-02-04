@@ -1,0 +1,266 @@
+.stage-item {
+  position: relative;
+  display: flex;
+
+  &--main {
+    text-align: center;
+
+    .stage-item__wrapper {
+      flex-direction: column;
+
+      width: 350px;
+      height: 350px;
+    }
+
+    .stage-item__step {
+      position: static;
+
+      margin-top: 10px;
+
+      font-size: $font-size-2;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    width: 200px;
+    height: 200px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 5px 9px rgba($color: #000000, $alpha: 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 5px 9px rgba($color: #000000, $alpha: 0.18);
+    }
+  }
+
+  &__step {
+    position: absolute;
+
+    font-family: NotoSans, sans-serif;
+    font-weight: $weight-extrabold;
+    font-size: $font-size-1;
+  }
+
+  &__icon {
+  }
+
+  &__info {
+    position: absolute;
+    width: max-content;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-family: NotoSans, sans-serif;
+    font-weight: $weight-extrabold;
+    font-size: $font-size-4;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-5;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-5;
+
+    line-height: 29px;
+
+    @include breakpoint($breakpoint-computer) {
+      font-size: $font-size-6;
+      line-height: 24px;
+    }
+  }
+
+  // Верхняя
+  &:nth-child(1) {
+    width: 100%;
+
+    margin-bottom: 100px;
+
+    @include breakpoint($breakpoint-computer) {
+      top: -10px;
+      right: -20px;
+    }
+
+    .stage-item__wrapper {
+      margin-left: auto;
+      margin-right: 20%;
+
+      @include breakpoint($breakpoint-computer) {
+        margin-right: 10%;
+      }
+    }
+
+    .stage-item__step {
+      left: -50px;
+    }
+
+    .stage-item__info {
+      top: -150px;
+      right: -150px;
+
+      @include breakpoint($breakpoint-computer) {
+        right: 0;
+      }
+    }
+  }
+
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4) {
+    width: 33%;
+
+    .stage-item__wrapper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // Слева сверху
+  &:nth-child(2) {
+    .stage-item__step {
+      right: -50px;
+    }
+
+    .stage-item__info {
+      bottom: -80px;
+      left: -170px;
+
+      @include breakpoint($breakpoint-computer) {
+        bottom: 240px;
+        left: 20px;
+      }
+    }
+
+    .stage-item__wrapper {
+      @include breakpoint($breakpoint-computer) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // Центральная
+  &:nth-child(3) {
+    margin-bottom: 80px;
+
+    @include breakpoint($breakpoint-computer) {
+      margin-bottom: 30px;
+    }
+  }
+
+  // Справа сверху
+  &:nth-child(4) {
+    .stage-item__step {
+      left: -50px;
+    }
+
+    .stage-item__info {
+      top: -150px;
+      right: -200px;
+
+      @include breakpoint($breakpoint-computer) {
+        right: 50px;
+        bottom: 240px;
+      }
+    }
+
+    .stage-item__wrapper {
+      @include breakpoint($breakpoint-computer) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Слева снизу
+  &:nth-child(5) {
+    width: 50%;
+
+    .stage-item__wrapper {
+      margin-left: 40%;
+      margin-right: auto;
+
+      @include breakpoint($breakpoint-computer) {
+        margin-left: 20%;
+      }
+    }
+
+    .stage-item__step {
+      top: -20px;
+      right: -50px;
+    }
+
+    .stage-item__info {
+      right: 0;
+      bottom: -110px;
+    }
+  }
+
+  // Справа снизу
+  &:nth-child(6) {
+    width: 50%;
+
+    .stage-item__wrapper {
+      margin-left: auto;
+      margin-right: 40%;
+
+      @include breakpoint($breakpoint-computer) {
+        margin-right: 20%;
+      }
+    }
+
+    .stage-item__step {
+      top: -20px;
+      left: -50px;
+    }
+
+    .stage-item__info {
+      right: -300px;
+      bottom: -70px;
+
+      @include breakpoint($breakpoint-computer) {
+        right: -20px;
+        bottom: -180px;
+      }
+    }
+  }
+
+  // Нижний
+  &:nth-child(7) {
+    position: relative;
+    top: -100px;
+    width: 100%;
+
+    @include breakpoint($breakpoint-computer) {
+      top: -75px;
+    }
+
+    .stage-item__wrapper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stage-item__step {
+      top: -70px;
+    }
+
+    .stage-item__info {
+      right: -250px;
+      bottom: -120px;
+
+      @include breakpoint($breakpoint-computer) {
+        right: -20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+#stages {
+  overflow: hidden;
+}
+
+.stages {
+  position: relative;
+  top: -50px;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-47%, -56%);
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @include flex();
+    flex-wrap: wrap;
+
+    width: 85%;
+
+    margin: 0 auto;
+
+    @include breakpoint($breakpoint-computer) {
+      width: 100%;
+    }
+  }
+}
