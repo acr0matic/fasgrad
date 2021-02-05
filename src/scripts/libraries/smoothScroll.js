@@ -1,15 +1,11 @@
 // Vanilla JavaScript Scroll to Anchor
 // @ https://perishablepress.com/vanilla-javascript-scroll-anchor/
 
-scrollTo();
-
 function scrollTo() {
-  var links = document.getElementsByTagName('a');
+  var links = document.querySelectorAll('nav li a, button[href]');
   for (var i = 0; i < links.length; i++) {
     var link = links[i];
-    if ((link.href && link.href.indexOf('#') != -1) && ((link.pathname == location.pathname) || ('/' + link.pathname == location.pathname)) && (link.search == location.search)) {
-      link.onclick = scrollAnchors;
-    }
+        link.onclick = scrollAnchors;
   }
 }
 

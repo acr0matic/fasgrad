@@ -67,6 +67,10 @@ const Calculator = (() => {
       InitSelect(calculatorSelect);
     },
 
+    GetList: () => {
+      return calculatorSelect;
+    },
+
     SetListeners: () => {
       calculatorInput.addEventListener('input', () => {
         Calculator.ChangePrice(calculatorInput.value);

@@ -15,9 +15,26 @@ const Service = (() => {
       serviceCards.forEach(card => {
         const colors = card.querySelectorAll('.service-card__color');
         const icon = card.querySelector('.service-card__icon');
+        const button = card.querySelector('.service-card__button');
+        const cardMaterial = card.getAttribute('data-material');
+
         const tooltip = card.querySelector('.service-card__tooltip');
         const tooltipBounding = tooltip.getBoundingClientRect();
 
+        button.addEventListener('click', () => {
+          const select = Calculator.GetList();
+          const material = select.querySelector(`[data-material=${cardMaterial}]`)
+
+          const defaultItem = select.querySelector('.select__item--default');
+
+          ResetSelect(select);
+
+          material.classList.add('select__item--selected');
+          defaultItem.style.display = 'none';
+
+          Calculator.SelectMaterial();
+          Calculator.SetPalette();
+        });
 
         icon.addEventListener('mouseover', () => {
           if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
@@ -53,7 +70,7 @@ const Service = (() => {
         for (const key in materials) {
           const material = materials[key];
 
-          container.innerHTML += ServiceLaptopTemplate(material);
+          container.innerHTML += ServiceLaptopTemplate(material, key);
         }
       }
 
@@ -87,7 +104,7 @@ const Service = (() => {
 })();
 
 
-function ServiceLaptopTemplate(data) {
+function ServiceLaptopTemplate(data, key) {
   let advantages = '';
   let colors = '';
 
@@ -102,7 +119,7 @@ function ServiceLaptopTemplate(data) {
 
   return `
 <div class="col-12 col-lg-6 col-xl-4 mb-5">
-<div class="service__card service-card">
+<div class="service__card service-card" data-material=${key}>
   <div class="service-card__picture">
     <img src="${data.picture}" data-color-default="${data.picture}" alt="" class="service-card__image">
   </div>
@@ -160,7 +177,7 @@ function ServiceLaptopTemplate(data) {
   </div>
   <!-- /.service-card__wrapper -->
 
-  <button class="service-card__button">Заказать</button>
+  <button href="#calculator" class="service-card__button">Заказать</button>
 </div>
 <!-- /.service__card service-card -->
 </div>

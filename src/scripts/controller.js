@@ -3,5 +3,7 @@ fetch('../src/data/production.json')
 .then((data) => {
   Calculator.Init(data);
   Service.Init(data);
+
+  scrollTo();
 });
 
