@@ -13,9 +13,10 @@ const Calculator = (() => {
     calculatorColor,
     calculatorTotal,
     calculatorAdvanced,
-    calculatorFinal;
+    calculatorFinal,
+    calculatorCurrent;
 
-  let calculatorData, currentMaterial;
+  let calculatorData, materialData, sizeData, currentMaterial;
 
   const inputPattern = {
     mask: /^[1-9]\d{0,3}$/
@@ -39,6 +40,8 @@ const Calculator = (() => {
       calculatorFinal = calculator.querySelector('.calculator-final');
       calculatorOptions = calculatorAdvanced.querySelectorAll('input[type="checkbox"');
       calculatorOptionExtra = calculatorAdvanced.querySelector('.calculator-advanced__extra');
+
+      materialData = data;
 
       IMask(calculatorInput, inputPattern);
 
@@ -125,9 +128,11 @@ const Calculator = (() => {
       const selected = calculatorSelect.querySelector('.select__item--selected');
 
       if (selected) {
+        let material = selected.getAttribute('data-material')
         calculatorMaterial.innerHTML = selected.getAttribute('data-name');
 
-        Calculator.SetMaterial(selected.getAttribute('data-material'))
+        calculatorCurrent = material;
+        Calculator.SetMaterial(material)
         Calculator.WriteTotal('size');
 
         Calculator.SetPalette();
@@ -197,6 +202,8 @@ const Calculator = (() => {
     },
 
     ChangePrice: (value) => {
+      sizeData = value;
+
       calculatorService.forEach(service => {
         const size = service.querySelector('.calculator-total__size');
         const price = service.querySelector('.calculator-total__price');
@@ -221,18 +228,33 @@ const Calculator = (() => {
     },
 
     ChangeFinal: () => {
-      const totalPrice = calculatorTotal.querySelectorAll('[data-calculator=size] .calculator-total__price, .calculator-total__service--checked .calculator-total__price');
+      const Format = number => parseInt(number.innerHTML.replace(/(&nbsp;)|\s/g, ''));
+      const materials = materialData.material;
+      const material = materials[currentMaterial];
+
       const price = calculatorFinal.querySelector('.calculator-final__cost--new');
       const oldPrice = calculatorFinal.querySelector('.calculator-final__cost--old');
 
-      let cost = 0;
+      const discount = Calculator.GetDiscount();
+      let cost, costFinal;
 
-      totalPrice.forEach(price => cost += parseInt(price.innerHTML.replace(/(&nbsp;)|\s/g, '')));
+      if (currentMaterial) {
+        let first = sizeData * material.work_price + ((sizeData * 1.1) * 250);
+        let second = ((sizeData * 1.05) * 480) + sizeData * 200;
+        let third = ((sizeData * 1.1) * 46) + sizeData * 130;
+        let fourth = 20000;
+        let five = sizeData * 1.05 * material.price;
 
-      if (Calculator.GetDiscount() !== 1) {
+        cost = (first + second + third + fourth + five) * 1.02;
+        costFinal = cost * ((100 - discount) / 100);
+      }
+
+      else cost = 0;
+
+      if (discount !== 1 && currentMaterial) {
         oldPrice.classList.remove('calculator-final__cost--hide')
         oldPrice.innerHTML = Calculator.FormatNumber(cost);
-        price.innerHTML = Calculator.FormatNumber((cost - (cost / 100) * Calculator.GetDiscount()));
+        price.innerHTML = Calculator.FormatNumber(costFinal);
       }
 
       else {
@@ -247,7 +269,7 @@ const Calculator = (() => {
       const discountBlock = calculatorFinal.querySelector('.calculator-final__discount');
       const percent = discountBlock.querySelector('.calculator-final__percent');
 
-      if (discount === 1) discountBlock.classList.add('calculator-final__discount--hide');
+      if (discount === 1 || !currentMaterial) discountBlock.classList.add('calculator-final__discount--hide');
       else {
         discountBlock.classList.remove('calculator-final__discount--hide');
         percent.innerHTML = discount;
@@ -256,15 +278,10 @@ const Calculator = (() => {
 
     GetDiscount: () => {
       const inputValue = calculatorInput.value;
-      let multiplier, discount;
+      let discount;
 
-      if (inputValue >= 150) {
-        multiplier = Math.floor(inputValue / 150);
-        discount = 5 * multiplier;
-
-        if (discount > 95) discount = 95;
-      }
-
+      if (inputValue > 600) discount = 8;
+      else if (inputValue > 200) discount = 5;
       else discount = 1;
 
       return discount;

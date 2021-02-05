@@ -20,4 +20,8 @@
     visibility: visible;
     opacity: 1;
   }
+
+  &__important {
+    color: $text-orange;
+  }
 }

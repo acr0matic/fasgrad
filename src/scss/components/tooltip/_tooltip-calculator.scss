@@ -8,7 +8,9 @@
 
   box-shadow: 0 20px 42px rgba(0, 0, 0, 0.1);
 
+  font-family: OpenSans, sans-serif;
   font-size: $font-size-6;
+  font-weight: $weight-regular;
 
   @include breakpoint($breakpoint-computer) {
     font-size: $font-size-7;
