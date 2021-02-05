@@ -1,47 +1,43 @@
 {
   "material": {
     "composite": {
+      "picture": "https://fasgrad.ru/api/material/composite/picture.jpg",
       "name": "Композит",
+      "description": "Керамогранит – это особо прочный облицовочный материал экстра-класса. Делают его из различных смесей молотых горных пород (кварц, шпат) на основе глин высокого качества и естественных минеральных красителей.",
       "price": 6000,
       "color": [
-        ["Красный", "#9C0505"],
-        ["Не указан", "#867676"],
-        ["Синий", "#5D98BA"],
-        ["Зеленый", "#326708"],
-        ["Бирюзовый", "#059C8A"],
-        ["Черный", "#393939"],
-        ["Оранжевый", "#CE7C00"],
-        ["Розовый", "#FF4949"],
-        ["Салатовый", "#B4D100"],
-        ["Серый", "#B1B1B1"]
+        ["Цвет 1", "#F0FBFD", "https://fasgrad.ru/api/material/composite/color/1.jpg"],
+        ["Цвет 2", "#979797", "https://fasgrad.ru/api/material/composite/color/2.jpg"],
+        ["Цвет 3", "#485464", "https://fasgrad.ru/api/material/composite/color/3.jpg"],
+        ["Цвет 4", "#205490", "https://fasgrad.ru/api/material/composite/color/4.jpg"],
+        ["Цвет 5", "#1E2142", "https://fasgrad.ru/api/material/composite/color/5.jpg"],
+        ["Цвет 6", "#014327", "https://fasgrad.ru/api/material/composite/color/6.jpg"],
+        ["Цвет 7", "#0E0701", "https://fasgrad.ru/api/material/composite/color/7.jpg"],
+        ["Цвет 8", "#482917", "https://fasgrad.ru/api/material/composite/color/8.jpg"],
+        ["Цвет 9", "#69191C", "https://fasgrad.ru/api/material/composite/color/9.jpg"]
+      ],
+      "advantage": [
+        "Разнообразие цветов",
+        "Сложные архитектурные формы"
       ]
     },
 
-    "concrete": {
-      "name": "Бетон",
-      "price": 5300,
+    "stoneware": {
+      "picture": "https://fasgrad.ru/api/material/stoneware/picture.jpg",
+      "name": "Керамогранит",
+      "description": "Композитный материал - неоднородный сплошной материал, состоящий из двух или более компонентов, среди которых можно выделить армирующие элементы, обеспечивающие необходимые механические характеристики материала, обеспечивающую совместную работу армирующих элементов.",
+      "price": 6000,
       "color": [
-        ["Красный", "#9C0505"],
-        ["Бирюзовый", "#059C8A"],
-        ["Черный", "#393939"],
-        ["Оранжевый", "#CE7C00"],
-        ["Розовый", "#FF4949"],
-        ["Салатовый", "#B4D100"],
-        ["Серый", "#B1B1B1"]
-      ]
-    },
-
-    "stone": {
-      "name": "Камень",
-      "price": 1200,
-      "color": [
-        ["Красный", "#9C0505"],
-        ["Не указан", "#867676"],
-        ["Синий", "#5D98BA"],
-        ["Зеленый", "#326708"],
-        ["Бирюзовый", "#059C8A"],
-        ["Черный", "#393939"],
-        ["Оранжевый", "#CE7C00"]
+        ["Цвет 1", "#656968", "https://fasgrad.ru/api/material/stoneware/color/1.jpg"],
+        ["Цвет 2", "#D3CBC0", "https://fasgrad.ru/api/material/stoneware/color/2.jpg"],
+        ["Цвет 3", "#F2EEEB", "https://fasgrad.ru/api/material/stoneware/color/3.jpg"],
+        ["Цвет 4", "#82A2AF", "https://fasgrad.ru/api/material/stoneware/color/4.jpg"],
+        ["Цвет 5", "#D3B26D", "https://fasgrad.ru/api/material/stoneware/color/5.jpg"],
+        ["Цвет 6", "#7C8C71", "https://fasgrad.ru/api/material/stoneware/color/6.jpg"]
+      ],
+      "advantage": [
+        "Красивый дизайн",
+        "Долговечен и ремонтопригоден"
       ]
     }
   },
