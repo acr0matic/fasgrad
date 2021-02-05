@@ -64,6 +64,7 @@ const Calculator = (() => {
       for (const key in materials) {
         const material = materials[key];
 
+        if (key !== "carving" && key !== "warming")
         list.innerHTML += `<li data-material="${key}" data-name="${material.name}" class="select__item select__item--hide">${material.name}</li>`
       }
 

@@ -81,10 +81,15 @@
     margin-right: 12px;
 
     cursor: pointer;
+    transition: opacity 0.15s ease;
 
     @include breakpoint($breakpoint-computer) {
       width: 27px;
       height: 27px;
+    }
+
+    &:hover {
+      opacity: 0.7;
     }
 
     &:not(:nth-child(6n)) {
@@ -140,6 +145,12 @@
 
     &::after {
       content: " руб./м² ";
+    }
+
+    &--empty {
+      &::after {
+        content: "";
+      }
     }
   }
 

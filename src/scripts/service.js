@@ -107,15 +107,23 @@ const Service = (() => {
 function ServiceLaptopTemplate(data, key) {
   let advantages = '';
   let colors = '';
+  let price = ''
 
   data.advantage.forEach(element => advantages += `<li class="list__item">${element}</li>`);
-  data.color.forEach(colorName => colors +=
-    `<div
-      data-color="${colorName[0]}"
-      style="background-color: ${colorName[1]};"
-      data-picture="${colorName[2]}"
-      class="service-card__color"></div>`
-  );
+
+  if (data.color === 'Отсутсвуют') colors = `<div class="pt-1">Зависит от материала</div>`;
+  else {
+    data.color.forEach(colorName => colors +=
+      `<div
+        data-color="${colorName[0]}"
+        style="background-color: ${colorName[1]};"
+        data-picture="${colorName[2]}"
+        class="service-card__color"></div>`
+    );
+  }
+
+  if (data.price === 'Не указана') price = `<span class="service-card__cost service-card__cost--empty">Не указана</span>`;
+  else price = `<span class="service-card__cost">${data.price}</span>`;
 
   return `
 <div class="col-12 col-lg-6 col-xl-4 mb-5">
@@ -171,7 +179,7 @@ function ServiceLaptopTemplate(data, key) {
 
     <div class="service-card__price pt-3">
       <span class="service-card__subtitle me-3">Стоимость</span>
-      <span class="service-card__cost">${data.price}</span>
+      ${price}
     </div>
     <!-- /.service-card__price -->
   </div>
