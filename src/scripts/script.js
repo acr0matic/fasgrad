@@ -32,3 +32,11 @@ forms.forEach(form => {
     prepare: (appended, masked) => (appended === '8' && masked.value === '') ? '' : appended
   });
 });
+
+// Прелоадер
+const preloader = document.getElementById('preloader');
+document.addEventListener("DOMContentLoaded", function () {
+  window.setTimeout(function () {
+    preloader.classList.add('preloader--hide');
+  }, 1500);
+});
