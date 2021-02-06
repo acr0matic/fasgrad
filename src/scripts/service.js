@@ -22,18 +22,21 @@ const Service = (() => {
         const tooltipBounding = tooltip.getBoundingClientRect();
 
         button.addEventListener('click', () => {
-          const select = Calculator.GetList();
-          const material = select.querySelector(`[data-material=${cardMaterial}]`)
+          const href = button.getAttribute('href');
+          if (href === "#calculator") {
+            const select = Calculator.GetList();
+            const material = select.querySelector(`[data-material=${cardMaterial}]`)
 
-          const defaultItem = select.querySelector('.select__item--default');
+            const defaultItem = select.querySelector('.select__item--default');
 
-          ResetSelect(select);
+            ResetSelect(select);
 
-          material.classList.add('select__item--selected');
-          defaultItem.style.display = 'none';
+            material.classList.add('select__item--selected');
+            defaultItem.style.display = 'none';
 
-          Calculator.SelectMaterial();
-          Calculator.SetPalette();
+            Calculator.SelectMaterial();
+            Calculator.SetPalette();
+          }
         });
 
         icon.addEventListener('mouseover', () => {
@@ -108,6 +111,7 @@ function ServiceLaptopTemplate(data, key) {
   let advantages = '';
   let colors = '';
   let price = ''
+  let link = ''
 
   data.advantage.forEach(element => advantages += `<li class="list__item">${element}</li>`);
 
@@ -124,6 +128,9 @@ function ServiceLaptopTemplate(data, key) {
 
   if (data.price === 'Не указана') price = `<span class="service-card__cost service-card__cost--empty">Не указана</span>`;
   else price = `<span class="service-card__cost">${data.price}</span>`;
+
+  if (key === "carving" || key === "warming") link = "#callback";
+  else link = "#calculator";
 
   return `
 <div class="col-12 col-lg-6 col-xl-4 mb-5">
@@ -185,7 +192,7 @@ function ServiceLaptopTemplate(data, key) {
   </div>
   <!-- /.service-card__wrapper -->
 
-  <button href="#calculator" class="service-card__button">Заказать</button>
+  <button href="${link}" class="service-card__button">Заказать</button>
 </div>
 <!-- /.service__card service-card -->
 </div>

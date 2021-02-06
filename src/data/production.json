@@ -27,8 +27,8 @@
       "picture": "https://fasgrad.ru/api/material/stoneware/picture.jpg",
       "name": "Керамогранит",
       "description": "Композитный материал - неоднородный сплошной материал, состоящий из двух или более компонентов, среди которых можно выделить армирующие элементы, обеспечивающие необходимые механические характеристики материала, обеспечивающую совместную работу армирующих элементов.",
-      "price": 1100,
-      "work_price": 1800,
+      "price": 1800,
+      "work_price": 1100,
       "color": [
         ["Цвет 1", "#656968", "https://fasgrad.ru/api/material/stoneware/color/1.jpg"],
         ["Цвет 2", "#D3CBC0", "https://fasgrad.ru/api/material/stoneware/color/2.jpg"],
@@ -300,7 +300,7 @@
   },
 
   "option": {
-    "visualization": 3000,
+    "visualization": 20000,
     "warming": 2000,
     "wind": 1000
   }

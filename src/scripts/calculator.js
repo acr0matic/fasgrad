@@ -5,6 +5,8 @@ const CalculatorData = {
   "Ветрозащита": "Нет",
 };
 
+let totalPrice;
+
 const Calculator = (() => {
   let calculator,
     calculatorMaterial,
@@ -14,9 +16,9 @@ const Calculator = (() => {
     calculatorTotal,
     calculatorAdvanced,
     calculatorFinal,
-    calculatorCurrent;
+    inputMask;
 
-  let calculatorData, materialData, sizeData, currentMaterial;
+  let calculatorData, materialData, currentMaterial;
 
   const inputPattern = {
     mask: /^[1-9]\d{0,3}$/
@@ -38,12 +40,20 @@ const Calculator = (() => {
 
       calculatorAdvanced = calculator.querySelector('.calculator-advanced');
       calculatorFinal = calculator.querySelector('.calculator-final');
-      calculatorOptions = calculatorAdvanced.querySelectorAll('input[type="checkbox"');
+      calculatorOptions = calculatorAdvanced.querySelectorAll('input[type=checkbox]');
       calculatorOptionExtra = calculatorAdvanced.querySelector('.calculator-advanced__extra');
 
       materialData = data;
 
-      IMask(calculatorInput, inputPattern);
+      totalPrice = {
+        "base": 0,
+        "visualization": materialData.option.visualization,
+        "wind": 0,
+        "warming": 0,
+        "final": 0,
+      }
+
+      inputMask = IMask(calculatorInput, inputPattern);
 
       Calculator.SetList(data);
       Calculator.SetListeners();
@@ -51,9 +61,9 @@ const Calculator = (() => {
 
       calculatorData = data;
 
+      Calculator.Activate();
       Calculator.ChangePrice(calculatorInput.value);
       Calculator.ChangeFinal();
-
     },
 
     SetList: (data) => {
@@ -65,7 +75,7 @@ const Calculator = (() => {
         const material = materials[key];
 
         if (key !== "carving" && key !== "warming")
-        list.innerHTML += `<li data-material="${key}" data-name="${material.name}" class="select__item select__item--hide">${material.name}</li>`
+          list.innerHTML += `<li data-material="${key}" data-name="${material.name}" class="select__item select__item--hide">${material.name}</li>`
       }
 
       InitSelect(calculatorSelect);
@@ -76,7 +86,13 @@ const Calculator = (() => {
     },
 
     SetListeners: () => {
+      calculatorInput.addEventListener('blur', () => {
+        if (!calculatorInput.value) calculatorInput.value = 1;
+        inputMask.updateValue();
+      });
+
       calculatorInput.addEventListener('input', () => {
+        Calculator.Activate(calculatorInput.value);
         Calculator.ChangePrice(calculatorInput.value);
         Calculator.ChangeFinal();
       });
@@ -93,6 +109,9 @@ const Calculator = (() => {
 
             if (checkbox.checked) CalculatorData['3D-Визуализация'] = 'Да';
             else CalculatorData['3D-Визуализация'] = 'Нет';
+
+            Calculator.ChangePrice(calculatorInput.value);
+            Calculator.ChangeFinal();
           });
         }
 
@@ -111,6 +130,9 @@ const Calculator = (() => {
             calculatorOptionExtra.classList.toggle('calculator-advanced__extra--visible')
 
             Calculator.WriteTotal(type);
+
+            Calculator.ChangePrice(calculatorInput.value);
+            Calculator.ChangeFinal();
           });
         }
 
@@ -120,7 +142,28 @@ const Calculator = (() => {
 
             if (checkbox.checked) CalculatorData['Ветрозащита'] = 'Да';
             else CalculatorData['Ветрозащита'] = 'Нет';
+
+            Calculator.ChangePrice(calculatorInput.value);
+            Calculator.ChangeFinal();
           });
+        }
+      });
+    },
+
+    Activate: () => {
+      calculatorOptions.forEach(option => {
+        if (currentMaterial) {
+          calculatorInput.parentElement.classList.remove('input--disabled')
+          calculatorInput.removeAttribute("disabled");
+          option.parentElement.classList.remove('checkbox--disabled');
+          option.removeAttribute("disabled");
+        }
+
+        else {
+          calculatorInput.parentElement.classList.add('input--disabled');
+          calculatorInput.setAttribute("disabled", "disabled");
+          option.parentElement.classList.add('checkbox--disabled');
+          option.setAttribute("disabled", "disabled");
         }
       });
     },
@@ -137,6 +180,7 @@ const Calculator = (() => {
         Calculator.WriteTotal('size');
 
         Calculator.SetPalette();
+        Calculator.Activate();
       }
 
       Calculator.ChangePrice(calculatorInput.value);
@@ -203,7 +247,26 @@ const Calculator = (() => {
     },
 
     ChangePrice: (value) => {
+      const materials = materialData.material;
+      const material = materials[currentMaterial];
+
       sizeData = value;
+
+      if (currentMaterial) {
+        totalPrice.base = value * material.price + ((value * 1.1) * 250);
+        totalPrice.warming = ((value * 1.1) * 46) + value * 130;
+        totalPrice.wind = ((value * 1.05) * 480) + value * 200;
+
+
+        if (currentMaterial === 'stoneware')
+          totalPrice.final = value * 1.05 * material.work_price;
+
+        else if (currentMaterial === 'composite')
+          totalPrice.final = value * 1.3 * material.work_price;
+
+        else
+          totalPrice.final = value * 1.1 * material.work_price;
+      }
 
       calculatorService.forEach(service => {
         const size = service.querySelector('.calculator-total__size');
@@ -223,16 +286,12 @@ const Calculator = (() => {
 
         if (type === 'size') price.innerHTML = Calculator.FormatNumber(size.innerHTML * materialPrice);
         if (type === 'visualization') price.innerHTML = Calculator.FormatNumber(calculatorData.option.visualization);
-        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(size.innerHTML * calculatorData.option.warming);
-        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(size.innerHTML * calculatorData.option.wind);
+        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
+        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
       });
     },
 
     ChangeFinal: () => {
-      const Format = number => parseInt(number.innerHTML.replace(/(&nbsp;)|\s/g, ''));
-      const materials = materialData.material;
-      const material = materials[currentMaterial];
-
       const price = calculatorFinal.querySelector('.calculator-final__cost--new');
       const oldPrice = calculatorFinal.querySelector('.calculator-final__cost--old');
 
@@ -240,14 +299,23 @@ const Calculator = (() => {
       let cost, costFinal;
 
       if (currentMaterial) {
-        let first = sizeData * material.work_price + ((sizeData * 1.1) * 250);
-        let second = ((sizeData * 1.05) * 480) + sizeData * 200;
-        let third = ((sizeData * 1.1) * 46) + sizeData * 130;
-        let fourth = 20000;
-        let five = sizeData * 1.05 * material.price;
+        let total = totalPrice.base + totalPrice.final;
 
-        cost = (first + second + third + fourth + five) * 1.02;
-        costFinal = cost * ((100 - discount) / 100);
+        if (CalculatorData["3D-Визуализация"] === "Да")
+          total += totalPrice.visualization;
+
+        if (totalPrice.warming !== 0 && CalculatorData["Утепление"] === "Да")
+          total += totalPrice.warming;
+
+        if (totalPrice.wind !== 0 && CalculatorData["Ветрозащита"] === "Да")
+          total += totalPrice.wind;
+
+        cost = total * 1.02;
+
+        if (discount !== 1)
+          costFinal = Math.ceil(cost * ((100 - discount) / 100));
+        else
+          costFinal = cost
       }
 
       else cost = 0;

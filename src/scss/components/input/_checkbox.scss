@@ -3,6 +3,12 @@
   align-items: center;
 
   cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
 
   input {
     display: none;
