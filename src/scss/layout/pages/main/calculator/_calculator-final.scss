@@ -16,6 +16,10 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-3 - 4;
     }
+
+    @include breakpoint($breakpoint-tablet-large) {
+      font-size: $font-size-5;
+    }
   }
 
   &__price {
@@ -27,6 +31,10 @@
 
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-3 - 4;
+    }
+
+    @include breakpoint($breakpoint-tablet-large) {
+      font-size: $font-size-5;
     }
   }
 

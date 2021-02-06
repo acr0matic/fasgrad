@@ -105,13 +105,8 @@ const Calculator = (() => {
 
         if (type === 'visualization') {
           checkbox.addEventListener('change', () => {
-            Calculator.WriteTotal(type);
-
             if (checkbox.checked) CalculatorData['3D-Визуализация'] = 'Да';
             else CalculatorData['3D-Визуализация'] = 'Нет';
-
-            Calculator.ChangePrice(calculatorInput.value);
-            Calculator.ChangeFinal();
           });
         }
 
@@ -194,8 +189,16 @@ const Calculator = (() => {
       const advancedIcon = calculatorAdvanced.querySelector('.calculator-advanced__icon');
       const advancedTooltip = calculatorAdvanced.querySelector('.tooltip');
 
+      const tooltipBounding = advancedTooltip.getBoundingClientRect();
+
       function Hover(trigger, element) {
-        trigger.addEventListener('mouseover', () => element.classList.add('tooltip--visible'));
+        trigger.addEventListener('mouseover', () => {
+          if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+            element.classList.add('service-card__tooltip--left');
+
+          element.classList.add('tooltip--visible');
+        });
+
         trigger.addEventListener('mouseout', () => element.classList.remove('tooltip--visible'));
       }
 
@@ -254,8 +257,8 @@ const Calculator = (() => {
 
       if (currentMaterial) {
         totalPrice.base = value * material.price + ((value * 1.1) * 250);
-        totalPrice.warming = ((value * 1.1) * 46) + value * 130;
-        totalPrice.wind = ((value * 1.05) * 480) + value * 200;
+        totalPrice.warming = ((value * 1.05) * 480) + value * 200;
+        totalPrice.wind = ((value * 1.1) * 46) + value * 130;
 
 
         if (currentMaterial === 'stoneware')
@@ -349,8 +352,8 @@ const Calculator = (() => {
       const inputValue = calculatorInput.value;
       let discount;
 
-      if (inputValue > 600) discount = 8;
-      else if (inputValue > 200) discount = 5;
+      if (inputValue > 1000) discount = 8;
+      else if (inputValue > 500) discount = 5;
       else discount = 1;
 
       return discount;
