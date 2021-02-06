@@ -973,13 +973,13 @@
               <p class="section__description section__description--center mb-5">Наш специалист свяжется с вами для обсуждения проекта</p>
 
               <form action="" class="form form-callback">
-                <div class="input input__error mb-4">
-                  <input class="input__field" type="text" placeholder="Как к вам обращаться" name="user_name">
+                <div class="input mb-4">
+                  <input data-required  class="input__field" type="text" placeholder="Как к вам обращаться" name="user_name">
                 </div>
                 <!-- /.input -->
 
                 <div class="input mb-4">
-                  <input class="input__field" type="tel" placeholder="Телефон" name="user_phone">
+                  <input data-required  class="input__field" type="tel" placeholder="Телефон" name="user_phone">
                 </div>
                 <!-- /.input -->
 
@@ -995,6 +995,8 @@
                 </label>
 
                 <button class="form__button button button-primary mx-auto">Отправить</button>
+
+                <div class="form__info form__info--error mx-auto mt-3">Вы ошиблись при вводе! Попробуйте снова!</div>
               </form>
             </div>
             <!-- /.callback -->
@@ -1484,13 +1486,13 @@
 
         <div class="modal__content">
           <form action="" class="form form-callback">
-            <div class="input input__error mb-4">
-              <input class="input__field" type="text" placeholder="Как к вам обращаться" name="user_name">
+            <div class="input mb-4">
+              <input data-required class="input__field" type="text" placeholder="Как к вам обращаться" name="user_name">
             </div>
             <!-- /.input -->
 
             <div class="input mb-4">
-              <input pattern="+7" class="input__field" type="tel" placeholder="Телефон" name="user_phone">
+              <input data-required class="input__field" type="tel" placeholder="Телефон" name="user_phone">
             </div>
             <!-- /.input -->
 
@@ -1500,6 +1502,8 @@
             <!-- /.input -->
 
             <button class="form__button button button-primary mx-auto">Отправить</button>
+
+            <div class="form__info form__info--error mx-auto mt-3">Вы ошиблись при вводе! Попробуйте снова!</div>
           </form>
         </div>
         <!-- /.modal__content -->
@@ -1547,6 +1551,7 @@
   <script src="scripts/calculator.js"></script>
   <script src="scripts/service.js"></script>
   <script src="scripts/controller.js"></script>
+  <script src="scripts/forms.js"></script>
   <!-- endbuild -->
 </body>
 

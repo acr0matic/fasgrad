@@ -23,16 +23,6 @@ const modalParams = {
 
 MicroModal.init(modalParams);
 
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-  phone = form.querySelector('input[type=tel]');
-
-  IMask(phone, {
-    mask: '+{7} (000) 000-00-00',
-    prepare: (appended, masked) => (appended === '8' && masked.value === '') ? '' : appended
-  });
-});
-
 // Прелоадер
 const preloader = document.getElementById('preloader');
 document.addEventListener("DOMContentLoaded", function () {
