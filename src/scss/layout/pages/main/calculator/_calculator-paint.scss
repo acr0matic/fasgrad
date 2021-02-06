@@ -37,9 +37,11 @@
     }
 
     &:not(:nth-child(6n)) {
-      margin-right: 12px;
+      margin-right: 8px;
+    }
 
-      @include breakpoint($breakpoint-computer) {
+    @include breakpoint($breakpoint-computer) {
+      &:not(:nth-child(5n)) {
         margin-right: 8px;
       }
     }
