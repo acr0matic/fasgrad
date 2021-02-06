@@ -230,6 +230,7 @@
 
   // Слева снизу
   &:nth-child(5) {
+    z-index: 10;
     width: 50%;
 
     .stage-item__wrapper {
@@ -254,6 +255,7 @@
 
   // Справа снизу
   &:nth-child(6) {
+    z-index: 10;
     width: 50%;
 
     .stage-item__wrapper {

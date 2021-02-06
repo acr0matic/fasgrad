@@ -7,15 +7,13 @@
   }
 
   &__info {
-    font-size: $font-size-5;
+    font-size: $font-size-6;
     transition: all 0.15s ease;
+
+    margin-top: -20px;
 
     opacity: 0;
     visibility: hidden;
-
-    @include breakpoint($breakpoint-computer) {
-      font-size: $font-size-6;
-    }
 
     @include breakpoint($breakpoint-tablet-large) {
       font-size: 12px;
@@ -24,6 +22,8 @@
     }
 
     &--show {
+      margin-top: 25px;
+
       opacity: 1;
       visibility: visible;
     }
