@@ -23,6 +23,16 @@
       width: 113%;
       transform: translate(-48%, -50%);
     }
+
+    @include breakpoint($breakpoint-tablet-large) {
+      display: none;
+    }
+  }
+
+  &__line {
+    @include breakpoint($breakpoint-tablet) {
+      display: block;
+    }
   }
 
   &__wrapper {

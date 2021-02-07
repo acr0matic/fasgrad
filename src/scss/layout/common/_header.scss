@@ -16,9 +16,19 @@ header {
     }
   }
 
+  &__logo {
+    @include breakpoint($breakpoint-tablet-large) {
+      width: 170px;
+    }
+  }
+
   &__communication {
     display: flex;
     margin-left: auto;
+
+    @include breakpoint($breakpoint-tablet-large) {
+      flex-direction: column;
+    }
   }
 
   &__contact {
@@ -50,7 +60,6 @@ header {
   }
 
   &__copy {
-
   }
 
   &__tooltip {

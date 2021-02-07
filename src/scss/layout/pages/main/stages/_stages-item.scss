@@ -114,6 +114,10 @@
       margin-bottom: 80px;
     }
 
+    @include breakpoint($breakpoint-tablet-large) {
+      order: 1;
+    }
+
     .stage-item__wrapper {
       margin-left: auto;
       margin-right: 20%;
@@ -165,6 +169,10 @@
 
   // Слева сверху
   &:nth-child(2) {
+    @include breakpoint($breakpoint-tablet-large) {
+      order: 6;
+    }
+
     .stage-item__step {
       right: -50px;
     }
@@ -198,10 +206,18 @@
     @include breakpoint($breakpoint-computer) {
       margin-bottom: 30px;
     }
+
+    @include breakpoint($breakpoint-tablet-large) {
+      display: none;
+    }
   }
 
   // Справа сверху
   &:nth-child(4) {
+    @include breakpoint($breakpoint-tablet-large) {
+      order: 2;
+    }
+
     .stage-item__step {
       left: -50px;
     }
@@ -233,6 +249,10 @@
     z-index: 10;
     width: 50%;
 
+    @include breakpoint($breakpoint-tablet-large) {
+      order: 5;
+    }
+
     .stage-item__wrapper {
       margin-left: 40%;
       margin-right: auto;
@@ -257,6 +277,10 @@
   &:nth-child(6) {
     z-index: 10;
     width: 50%;
+
+    @include breakpoint($breakpoint-tablet-large) {
+      order: 3;
+    }
 
     .stage-item__wrapper {
       margin-left: auto;
@@ -289,6 +313,10 @@
     top: -100px;
     width: 100%;
 
+    @include breakpoint($breakpoint-tablet-large) {
+      order: 4;
+    }
+
     @include breakpoint($breakpoint-computer) {
       top: -75px;
     }
@@ -313,6 +341,40 @@
       @include breakpoint($breakpoint-computer) {
         right: -20px;
       }
+    }
+  }
+
+  @include breakpoint($breakpoint-tablet-large) {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 45% !important;
+    margin-bottom: 100px !important;
+
+    .stage-item__wrapper {
+      width: 120px;
+      height: 120px;
+
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .stage-item__step {
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+
+      display: none;
+    }
+
+    .stage-item__info {
+      top: unset !important;
+      right: unset !important;
+      bottom: unset !important;
+      left: 150px !important;
     }
   }
 }
