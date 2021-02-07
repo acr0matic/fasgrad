@@ -257,9 +257,8 @@ const Calculator = (() => {
 
       if (currentMaterial) {
         totalPrice.base = value * material.price + ((value * 1.1) * 250);
-        totalPrice.warming = ((value * 1.05) * 480) + value * 200;
-        totalPrice.wind = ((value * 1.1) * 46) + value * 130;
-
+        totalPrice.wind = ((value * 1.05) * 480) + value * 200;
+        totalPrice.warming = ((value * 1.1) * 46) + value * 130;
 
         if (currentMaterial === 'stoneware')
           totalPrice.final = value * 1.05 * material.work_price;
