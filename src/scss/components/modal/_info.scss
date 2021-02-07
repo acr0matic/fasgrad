@@ -1,0 +1,28 @@
+.modal-info {
+  .modal__container {
+    max-width: 80%;
+
+    padding: 65px 25px 65px 25px;
+
+    @include breakpoint($breakpoint-computer) {
+      max-width: 90%;
+    }
+  }
+
+  .modal__content {
+    max-height: 500px;
+    margin-top: 30px;
+
+    overflow-y: auto;
+
+    pre {
+      white-space: pre-wrap;
+      font-family: OpenSans, sans-serif;
+      font-size: $font-size-4;
+
+      @include breakpoint($breakpoint-computer) {
+        font-size: $font-size-6;
+      }
+    }
+  }
+}

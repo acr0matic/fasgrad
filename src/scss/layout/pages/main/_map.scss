@@ -31,10 +31,10 @@
   &__address {
     font-family: NotoSans, sans-serif;
     font-weight: $weight-bold;
-    font-size: $font-size-4;
+    font-size: $font-size-3 - 4;
 
     @include breakpoint($breakpoint-computer) {
-      font-size: $font-size-7;
+      font-size: $font-size-6;
     }
   }
 }
