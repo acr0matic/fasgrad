@@ -35,3 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     preloader.classList.add('preloader--hide');
   }, 1500);
 });
+
+const social = document.getElementById('social');
+const socialIcons = document.querySelectorAll('.social__link--hide')
+
+social.addEventListener('click', () => {
+  socialIcons.forEach(icon => {
+    icon.classList.toggle('social__link--hide');
+  });
+});
