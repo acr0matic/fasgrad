@@ -1,21 +1,21 @@
 {
   "material": {
     "composite": {
-      "picture": "https://acr0matic.dev/api/material/composite/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/composite/picture.jpg",
       "name": "Композит",
       "description": "Особо прочный облицовочный материал экстра-класса. Делают его из различных смесей молотых горных пород (кварц, шпат) на основе глин высокого качества и естественных минеральных красителей.",
       "price": 2600,
       "work_price": 2000,
       "color": [
-        ["Цвет 1", "#F0FBFD", "https://acr0matic.dev/api/material/composite/color/1.jpg"],
-        ["Цвет 2", "#979797", "https://acr0matic.dev/api/material/composite/color/2.jpg"],
-        ["Цвет 3", "#485464", "https://acr0matic.dev/api/material/composite/color/3.jpg"],
-        ["Цвет 4", "#205490", "https://acr0matic.dev/api/material/composite/color/4.jpg"],
-        ["Цвет 5", "#1E2142", "https://acr0matic.dev/api/material/composite/color/5.jpg"],
-        ["Цвет 6", "#749B28", "https://acr0matic.dev/api/material/composite/color/6.jpg"],
-        ["Цвет 7", "#0E0701", "https://acr0matic.dev/api/material/composite/color/7.jpg"],
-        ["Цвет 8", "#482917", "https://acr0matic.dev/api/material/composite/color/8.jpg"],
-        ["Цвет 9", "#69191C", "https://acr0matic.dev/api/material/composite/color/9.jpg"]
+        ["Цвет 1", "#F0FBFD", "https://fasgrad.ru/api/material/composite/color/1.jpg"],
+        ["Цвет 2", "#979797", "https://fasgrad.ru/api/material/composite/color/2.jpg"],
+        ["Цвет 3", "#485464", "https://fasgrad.ru/api/material/composite/color/3.jpg"],
+        ["Цвет 4", "#205490", "https://fasgrad.ru/api/material/composite/color/4.jpg"],
+        ["Цвет 5", "#1E2142", "https://fasgrad.ru/api/material/composite/color/5.jpg"],
+        ["Цвет 6", "#749B28", "https://fasgrad.ru/api/material/composite/color/6.jpg"],
+        ["Цвет 7", "#0E0701", "https://fasgrad.ru/api/material/composite/color/7.jpg"],
+        ["Цвет 8", "#482917", "https://fasgrad.ru/api/material/composite/color/8.jpg"],
+        ["Цвет 9", "#69191C", "https://fasgrad.ru/api/material/composite/color/9.jpg"]
       ],
       "advantage": [
         "Разнообразие цветов",
@@ -24,18 +24,18 @@
     },
 
     "stoneware": {
-      "picture": "https://acr0matic.dev/api/material/stoneware/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/stoneware/picture.jpg",
       "name": "Керамогранит",
       "description": "Неоднородный сплошной материал, состоящий из двух или более компонентов, среди которых можно выделить армирующие элементы, обеспечивающие необходимые механические характеристики материала и совместную работу армирующих элементов.",
       "price": 1800,
       "work_price": 1100,
       "color": [
-        ["Цвет 1", "#323D51", "https://acr0matic.dev/api/material/stoneware/color/1.jpg"],
-        ["Цвет 2", "#E9DFCB", "https://acr0matic.dev/api/material/stoneware/color/2.jpg"],
-        ["Цвет 3", "#9A9994", "https://acr0matic.dev/api/material/stoneware/color/3.jpg"],
-        ["Цвет 4", "#2F5F8F", "https://acr0matic.dev/api/material/stoneware/color/4.jpg"],
-        ["Цвет 5", "#B7903B", "https://acr0matic.dev/api/material/stoneware/color/5.jpg"],
-        ["Цвет 6", "#51755B", "https://acr0matic.dev/api/material/stoneware/color/6.jpg"]
+        ["Цвет 1", "#323D51", "https://fasgrad.ru/api/material/stoneware/color/1.jpg"],
+        ["Цвет 2", "#E9DFCB", "https://fasgrad.ru/api/material/stoneware/color/2.jpg"],
+        ["Цвет 3", "#9A9994", "https://fasgrad.ru/api/material/stoneware/color/3.jpg"],
+        ["Цвет 4", "#2F5F8F", "https://fasgrad.ru/api/material/stoneware/color/4.jpg"],
+        ["Цвет 5", "#B7903B", "https://fasgrad.ru/api/material/stoneware/color/5.jpg"],
+        ["Цвет 6", "#51755B", "https://fasgrad.ru/api/material/stoneware/color/6.jpg"]
       ],
       "advantage": [
         "Красивый дизайн",
@@ -44,15 +44,15 @@
     },
 
     "stone": {
-      "picture": "https://acr0matic.dev/api/material/stone/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/stone/picture.jpg",
       "name": "Искусственный камень",
       "description": "Отделочный материал, содержащий в составе бетон, скальную крошку и синтетические компоненты, внешний вид максимально приближен к натуральным каменным породам.",
       "price": 2900,
       "work_price": 2500,
       "color": [
-        ["Цвет 1", "#342A29", "https://acr0matic.dev/api/material/stone/color/1.jpg"],
-        ["Цвет 2", "#E4CFBC", "https://acr0matic.dev/api/material/stone/color/2.jpg"],
-        ["Цвет 3", "#A06F54", "https://acr0matic.dev/api/material/stone/color/3.jpg"]
+        ["Цвет 1", "#342A29", "https://fasgrad.ru/api/material/stone/color/1.jpg"],
+        ["Цвет 2", "#E4CFBC", "https://fasgrad.ru/api/material/stone/color/2.jpg"],
+        ["Цвет 3", "#A06F54", "https://fasgrad.ru/api/material/stone/color/3.jpg"]
       ],
       "advantage": [
         "Не выцветает и не выгорает",
@@ -61,20 +61,20 @@
     },
 
     "panels": {
-      "picture": "https://acr0matic.dev/api/material/panels/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/panels/picture.jpg",
       "name": "Линеарный панели",
       "description": "Выгодный вариант облицовки вентилируемых фасадов. Он стал доступен сравнительно недавно. Использование линеарных панелей позволяет придавать фасадам выразительный и оригинальный внешний вид с четкой геометрией профиля. Линеарные панели изготавливаются из рулонного тонколистового стального или алюминиевого проката, имеющего защитно-декоративное покрытие различной цветовой гаммы.",
       "price": 1500,
       "work_price": 1200,
       "color": [
-        ["Цвет 1", "#4E78A2", "https://acr0matic.dev/api/material/panels/color/1.jpg"],
-        ["Цвет 2", "#C24042", "https://acr0matic.dev/api/material/panels/color/2.jpg"],
-        ["Цвет 3", "#D4DEE6", "https://acr0matic.dev/api/material/panels/color/3.jpg"],
-        ["Цвет 4", "#413E43", "https://acr0matic.dev/api/material/panels/color/4.jpg"],
-        ["Цвет 5", "#687175", "https://acr0matic.dev/api/material/panels/color/5.jpg"],
-        ["Цвет 6", "#5E3C2F", "https://acr0matic.dev/api/material/panels/color/6.jpg"],
-        ["Цвет 7", "#98B55A", "https://acr0matic.dev/api/material/panels/color/7.jpg"],
-        ["Цвет 8", "#9D9EA2", "https://acr0matic.dev/api/material/panels/color/8.jpg"]
+        ["Цвет 1", "#4E78A2", "https://fasgrad.ru/api/material/panels/color/1.jpg"],
+        ["Цвет 2", "#C24042", "https://fasgrad.ru/api/material/panels/color/2.jpg"],
+        ["Цвет 3", "#D4DEE6", "https://fasgrad.ru/api/material/panels/color/3.jpg"],
+        ["Цвет 4", "#413E43", "https://fasgrad.ru/api/material/panels/color/4.jpg"],
+        ["Цвет 5", "#687175", "https://fasgrad.ru/api/material/panels/color/5.jpg"],
+        ["Цвет 6", "#5E3C2F", "https://fasgrad.ru/api/material/panels/color/6.jpg"],
+        ["Цвет 7", "#98B55A", "https://fasgrad.ru/api/material/panels/color/7.jpg"],
+        ["Цвет 8", "#9D9EA2", "https://fasgrad.ru/api/material/panels/color/8.jpg"]
       ],
       "advantage": [
         "Соединения скрыты",
@@ -83,19 +83,19 @@
     },
 
     "concrete": {
-      "picture": "https://acr0matic.dev/api/material/concrete/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/concrete/picture.jpg",
       "name": "Фиброцемент",
       "description": "Универсальный многокомпонентный строительный материал - нетоксичный, негорючий, универсальный материал, панели из которого широко используют при облицовке фасадов.",
       "price": 2000,
       "work_price": 2500,
       "color": [
-        ["Цвет 1", "#5D6267", "https://acr0matic.dev/api/material/concrete/color/1.jpg"],
-        ["Цвет 2", "#B8B9C4", "https://acr0matic.dev/api/material/concrete/color/2.jpg"],
-        ["Цвет 3", "#C6CACD", "https://acr0matic.dev/api/material/concrete/color/3.jpg"],
-        ["Цвет 4", "#BDA28F", "https://acr0matic.dev/api/material/concrete/color/4.jpg"],
-        ["Цвет 5", "#995C48", "https://acr0matic.dev/api/material/concrete/color/5.jpg"],
-        ["Цвет 6", "#735A4E", "https://acr0matic.dev/api/material/concrete/color/6.jpg"],
-        ["Цвет 7", "#353430", "https://acr0matic.dev/api/material/concrete/color/7.jpg"]
+        ["Цвет 1", "#5D6267", "https://fasgrad.ru/api/material/concrete/color/1.jpg"],
+        ["Цвет 2", "#B8B9C4", "https://fasgrad.ru/api/material/concrete/color/2.jpg"],
+        ["Цвет 3", "#C6CACD", "https://fasgrad.ru/api/material/concrete/color/3.jpg"],
+        ["Цвет 4", "#BDA28F", "https://fasgrad.ru/api/material/concrete/color/4.jpg"],
+        ["Цвет 5", "#995C48", "https://fasgrad.ru/api/material/concrete/color/5.jpg"],
+        ["Цвет 6", "#735A4E", "https://fasgrad.ru/api/material/concrete/color/6.jpg"],
+        ["Цвет 7", "#353430", "https://fasgrad.ru/api/material/concrete/color/7.jpg"]
       ],
       "advantage": [
         "Разнообразие цветов",
@@ -104,20 +104,20 @@
     },
 
     "metal": {
-      "picture": "https://acr0matic.dev/api/material/metal/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/metal/picture.jpg",
       "name": "Металлокассеты",
       "description": "Фасадная кассета (металлокассета) — облицовочный материал, разновидность фасадного покрытия. Внешне представляет собой загнутую по бокам завершенную металлическую конструкцию. В отличие от керамогранита, фасадная кассета крепится жестко на саморез или заклепку к фасаду, что обеспечивает целостность облицовки на весь период её эксплуатации.",
       "price": 1500,
       "work_price": 1600,
       "color": [
-        ["Цвет 1", "#0A0A0D", "https://acr0matic.dev/api/material/metal/color/1.jpg"],
-        ["Цвет 2", "#80371B", "https://acr0matic.dev/api/material/metal/color/2.jpg"],
-        ["Цвет 3", "#005829", "https://acr0matic.dev/api/material/metal/color/3.jpg"],
-        ["Цвет 4", "#004D92", "https://acr0matic.dev/api/material/metal/color/4.jpg"],
-        ["Цвет 5", "#A02F4C", "https://acr0matic.dev/api/material/metal/color/5.jpg"],
-        ["Цвет 6", "#ED7300", "https://acr0matic.dev/api/material/metal/color/6.jpg"],
-        ["Цвет 7", "#E6F700", "https://acr0matic.dev/api/material/metal/color/7.jpg"],
-        ["Цвет 8", "#A4A8A6", "https://acr0matic.dev/api/material/metal/color/8.jpg"]
+        ["Цвет 1", "#0A0A0D", "https://fasgrad.ru/api/material/metal/color/1.jpg"],
+        ["Цвет 2", "#80371B", "https://fasgrad.ru/api/material/metal/color/2.jpg"],
+        ["Цвет 3", "#005829", "https://fasgrad.ru/api/material/metal/color/3.jpg"],
+        ["Цвет 4", "#004D92", "https://fasgrad.ru/api/material/metal/color/4.jpg"],
+        ["Цвет 5", "#A02F4C", "https://fasgrad.ru/api/material/metal/color/5.jpg"],
+        ["Цвет 6", "#ED7300", "https://fasgrad.ru/api/material/metal/color/6.jpg"],
+        ["Цвет 7", "#E6F700", "https://fasgrad.ru/api/material/metal/color/7.jpg"],
+        ["Цвет 8", "#A4A8A6", "https://fasgrad.ru/api/material/metal/color/8.jpg"]
       ],
       "advantage": [
         "Негорючий материал",
@@ -126,15 +126,15 @@
     },
 
     "plate": {
-      "picture": "https://acr0matic.dev/api/material/plate/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/plate/picture.jpg",
       "name": "Клинкерная плитка",
       "description": "Разновидность декоративной керамики, отличающаяся обжигом формы при температурах свыше 1200 градусов. В результате такой обработки продукт становится прочным как камень.",
       "price": 2100,
       "work_price": 2000,
       "color": [
-        ["Цвет 1", "#A06F54", "https://acr0matic.dev/api/material/plate/color/1.jpg"],
-        ["Цвет 2", "#E4CFBC", "https://acr0matic.dev/api/material/plate/color/2.jpg"],
-        ["Цвет 3", "#342A29", "https://acr0matic.dev/api/material/plate/color/3.jpg"]
+        ["Цвет 1", "#A06F54", "https://fasgrad.ru/api/material/plate/color/1.jpg"],
+        ["Цвет 2", "#E4CFBC", "https://fasgrad.ru/api/material/plate/color/2.jpg"],
+        ["Цвет 3", "#342A29", "https://fasgrad.ru/api/material/plate/color/3.jpg"]
       ],
       "advantage": [
         "Высокая прочность",
@@ -143,17 +143,17 @@
     },
 
     "list": {
-      "picture": "https://acr0matic.dev/api/material/list/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/list/picture.jpg",
       "name": "Профлист",
       "description": "Оцинкованный или покрытый полимером стальной лист с отличными показателями прочности. Материал используют для укрепления стен и фундамента объекта. он может быть волнообразным или гофрированным. Толщина листа от 0,4 мм до 1 миллиметра.",
       "price": 1300,
       "work_price": 800,
       "color": [
-        ["Цвет 1", "#262626", "https://acr0matic.dev/api/material/list/color/1.jpg"],
-        ["Цвет 2", "#814344", "https://acr0matic.dev/api/material/list/color/2.jpg"],
-        ["Цвет 3", "#49699C", "https://acr0matic.dev/api/material/list/color/3.jpg"],
-        ["Цвет 4", "#A29EA7", "https://acr0matic.dev/api/material/list/color/4.jpg"],
-        ["Цвет 5", "#314531", "https://acr0matic.dev/api/material/list/color/5.jpg"]
+        ["Цвет 1", "#262626", "https://fasgrad.ru/api/material/list/color/1.jpg"],
+        ["Цвет 2", "#814344", "https://fasgrad.ru/api/material/list/color/2.jpg"],
+        ["Цвет 3", "#49699C", "https://fasgrad.ru/api/material/list/color/3.jpg"],
+        ["Цвет 4", "#A29EA7", "https://fasgrad.ru/api/material/list/color/4.jpg"],
+        ["Цвет 5", "#314531", "https://fasgrad.ru/api/material/list/color/5.jpg"]
       ],
       "advantage": [
         "Универсальность",
@@ -162,15 +162,15 @@
     },
 
     "wood": {
-      "picture": "https://acr0matic.dev/api/material/wood/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/wood/picture.jpg",
       "name": "Термодерево",
       "description": "Термомодифицированная доска для фасада, надёжный и долговечный материал. Устранены основные недостатки натурального дерева: деформация, гниение и выгорание цвета, поэтому термическая обработка дерева позволяет применение доски с утеплителем на вентилируемой подсистеме.",
       "price": 2800,
       "work_price": 4000,
       "color": [
-        ["Цвет 1", "#9B7F58", "https://acr0matic.dev/api/material/wood/color/1.jpg"],
-        ["Цвет 2", "#934B1A", "https://acr0matic.dev/api/material/wood/color/2.jpg"],
-        ["Цвет 3", "#C98F5E", "https://acr0matic.dev/api/material/wood/color/3.jpg"]
+        ["Цвет 1", "#9B7F58", "https://fasgrad.ru/api/material/wood/color/1.jpg"],
+        ["Цвет 2", "#934B1A", "https://fasgrad.ru/api/material/wood/color/2.jpg"],
+        ["Цвет 3", "#C98F5E", "https://fasgrad.ru/api/material/wood/color/3.jpg"]
       ],
       "advantage": [
         "Долговечность",
@@ -179,15 +179,15 @@
     },
 
     "plank": {
-      "picture": "https://acr0matic.dev/api/material/plank/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/plank/picture.jpg",
       "name": "Планкен",
       "description": "Деревянная доска, на которой фаска снята с каждой стороны. Фасад «планкен» очень схож с термодревесиной, но имеет множество особенностей. Например, по сравнению с обычной вагонкой, планкен имеет округлые края.",
       "price": 2300,
       "work_price": 3000,
       "color": [
-        ["Цвет 1", "#9B7F58", "https://acr0matic.dev/api/material/plank/color/1.jpg"],
-        ["Цвет 2", "#934B1A", "https://acr0matic.dev/api/material/plank/color/2.jpg"],
-        ["Цвет 3", "#C98F5E", "https://acr0matic.dev/api/material/plank/color/3.jpg"]
+        ["Цвет 1", "#9B7F58", "https://fasgrad.ru/api/material/plank/color/1.jpg"],
+        ["Цвет 2", "#934B1A", "https://fasgrad.ru/api/material/plank/color/2.jpg"],
+        ["Цвет 3", "#C98F5E", "https://fasgrad.ru/api/material/plank/color/3.jpg"]
       ],
       "advantage": [
         "Высокая износостойкость",
@@ -196,19 +196,19 @@
     },
 
     "siding": {
-      "picture": "https://acr0matic.dev/api/material/siding/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/siding/picture.jpg",
       "name": "Металлосайдинг",
       "description": "Современный материал, предназначенный для облицовки фасадов различных зданий и сооружений, как вновь построенных, так и реконструированных. Металлосайдинг позволяет придать устаревшим и непривлекательным зданиям новый эстетичный внешний вид. Представляет собой удлиненные металлические панели, предназначенные для установки на специальный каркас.",
       "price": 1500,
       "work_price": 1000,
       "color": [
-        ["Цвет 1", "#263B97", "https://acr0matic.dev/api/material/siding/color/1.jpg"],
-        ["Цвет 2", "#A3465F", "https://acr0matic.dev/api/material/siding/color/2.jpg"],
-        ["Цвет 3", "#B8BAB4", "https://acr0matic.dev/api/material/siding/color/3.jpg"],
-        ["Цвет 4", "#563F44", "https://acr0matic.dev/api/material/siding/color/4.jpg"],
-        ["Цвет 5", "#71918C", "https://acr0matic.dev/api/material/siding/color/5.jpg"],
-        ["Цвет 6", "#9C5E2B", "https://acr0matic.dev/api/material/siding/color/6.jpg"],
-        ["Цвет 7", "#AE7C58", "https://acr0matic.dev/api/material/siding/color/7.jpg"]
+        ["Цвет 1", "#263B97", "https://fasgrad.ru/api/material/siding/color/1.jpg"],
+        ["Цвет 2", "#A3465F", "https://fasgrad.ru/api/material/siding/color/2.jpg"],
+        ["Цвет 3", "#B8BAB4", "https://fasgrad.ru/api/material/siding/color/3.jpg"],
+        ["Цвет 4", "#563F44", "https://fasgrad.ru/api/material/siding/color/4.jpg"],
+        ["Цвет 5", "#71918C", "https://fasgrad.ru/api/material/siding/color/5.jpg"],
+        ["Цвет 6", "#9C5E2B", "https://fasgrad.ru/api/material/siding/color/6.jpg"],
+        ["Цвет 7", "#AE7C58", "https://fasgrad.ru/api/material/siding/color/7.jpg"]
       ],
       "advantage": [
         "Свободно циркулирует воздух",
@@ -217,18 +217,18 @@
     },
 
     "facade": {
-      "picture": "https://acr0matic.dev/api/material/facade/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/facade/picture.jpg",
       "name": "Фасадные панели",
       "description": "Внешняя декоративная отделка стен, схожая с натуральными материалами, такими как кирпич и камень, в результате дом выглядит эстетически привлекательным. Производятся из тех же материалов, что и сайдинг. В отличие от сайдинга, фасадные панели более толстые и прочные, а технология их производства позволяет имитировать более широкий ряд отделочных материалов. Фасадные панели обладают целым рядом преимуществ.",
       "price": 1800,
       "work_price": 1200,
       "color": [
-        ["Цвет 1", "#97958B", "https://acr0matic.dev/api/material/facade/color/1.jpg"],
-        ["Цвет 2", "#C6BEB4", "https://acr0matic.dev/api/material/facade/color/2.jpg"],
-        ["Цвет 3", "#423C2E", "https://acr0matic.dev/api/material/facade/color/3.jpg"],
-        ["Цвет 4", "#D6E0E9", "https://acr0matic.dev/api/material/facade/color/4.jpg"],
-        ["Цвет 5", "#B8926F", "https://acr0matic.dev/api/material/facade/color/4.jpg"],
-        ["Цвет 6", "#A57350", "https://acr0matic.dev/api/material/facade/color/4.jpg"]
+        ["Цвет 1", "#97958B", "https://fasgrad.ru/api/material/facade/color/1.jpg"],
+        ["Цвет 2", "#C6BEB4", "https://fasgrad.ru/api/material/facade/color/2.jpg"],
+        ["Цвет 3", "#423C2E", "https://fasgrad.ru/api/material/facade/color/3.jpg"],
+        ["Цвет 4", "#D6E0E9", "https://fasgrad.ru/api/material/facade/color/4.jpg"],
+        ["Цвет 5", "#B8926F", "https://fasgrad.ru/api/material/facade/color/4.jpg"],
+        ["Цвет 6", "#A57350", "https://fasgrad.ru/api/material/facade/color/4.jpg"]
       ],
       "advantage": [
         "Приемлемая стоимость",
@@ -237,24 +237,24 @@
     },
 
     "plaster": {
-      "picture": "https://acr0matic.dev/api/material/plaster/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/plaster/picture.jpg",
       "name": "Штукатурный фасад",
       "description": "Фасад с использованием штукатурных смесей, в качестве внешнего защитного слоя на утеплителе. В состав входит утеплитель, армирующая сетка, штукатурный состав, финишная отделка (краска). ",
       "price": 2000,
       "work_price": 800,
       "color": [
-        ["Цвет 1", "#FFDB00", "https://acr0matic.dev/api/material/plaster/color/1.jpg"],
-        ["Цвет 2", "#A20000", "https://acr0matic.dev/api/material/plaster/color/2.jpg"],
-        ["Цвет 3", "#0045A8", "https://acr0matic.dev/api/material/plaster/color/3.jpg"],
-        ["Цвет 4", "#000000", "https://acr0matic.dev/api/material/plaster/color/4.jpg"],
-        ["Цвет 5", "#BCBDC2", "https://acr0matic.dev/api/material/plaster/color/5.jpg"],
-        ["Цвет 6", "#96C4E2", "https://acr0matic.dev/api/material/plaster/color/6.jpg"],
-        ["Цвет 7", "#E7E4D0", "https://acr0matic.dev/api/material/plaster/color/7.jpg"],
-        ["Цвет 8", "#A8A9AE", "https://acr0matic.dev/api/material/plaster/color/8.jpg"],
-        ["Цвет 9", "#007751", "https://acr0matic.dev/api/material/plaster/color/9.jpg"],
-        ["Цвет 10", "#BAE3A4", "https://acr0matic.dev/api/material/plaster/color/10.jpg"],
-        ["Цвет 11", "#522513", "https://acr0matic.dev/api/material/plaster/color/11.jpg"],
-        ["Цвет 12", "#E8D7B5", "https://acr0matic.dev/api/material/plaster/color/12.jpg"]
+        ["Цвет 1", "#FFDB00", "https://fasgrad.ru/api/material/plaster/color/1.jpg"],
+        ["Цвет 2", "#A20000", "https://fasgrad.ru/api/material/plaster/color/2.jpg"],
+        ["Цвет 3", "#0045A8", "https://fasgrad.ru/api/material/plaster/color/3.jpg"],
+        ["Цвет 4", "#000000", "https://fasgrad.ru/api/material/plaster/color/4.jpg"],
+        ["Цвет 5", "#BCBDC2", "https://fasgrad.ru/api/material/plaster/color/5.jpg"],
+        ["Цвет 6", "#96C4E2", "https://fasgrad.ru/api/material/plaster/color/6.jpg"],
+        ["Цвет 7", "#E7E4D0", "https://fasgrad.ru/api/material/plaster/color/7.jpg"],
+        ["Цвет 8", "#A8A9AE", "https://fasgrad.ru/api/material/plaster/color/8.jpg"],
+        ["Цвет 9", "#007751", "https://fasgrad.ru/api/material/plaster/color/9.jpg"],
+        ["Цвет 10", "#BAE3A4", "https://fasgrad.ru/api/material/plaster/color/10.jpg"],
+        ["Цвет 11", "#522513", "https://fasgrad.ru/api/material/plaster/color/11.jpg"],
+        ["Цвет 12", "#E8D7B5", "https://fasgrad.ru/api/material/plaster/color/12.jpg"]
       ],
       "advantage": [
         "Небольшая масса",
@@ -263,7 +263,7 @@
     },
 
     "carving": {
-      "picture": "https://acr0matic.dev/api/material/carving/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/carving/picture.jpg",
       "name": "Отделка цоколя",
       "description": "Отделку цоколя можно произвести из практически из любого материала. Под каждый проект подбирается индивидуально.",
       "price": "Не указана",
@@ -276,7 +276,7 @@
     },
 
     "warming": {
-      "picture": "https://acr0matic.dev/api/material/warming/picture.jpg",
+      "picture": "https://fasgrad.ru/api/material/warming/picture.jpg",
       "name": "Утепление здания",
       "description": "Дополнительная услуга нашей компании. При выполнении фасадных работ можем сделать утепление здания. Материалы подберем самостоятельно.",
       "price": "Не указана",

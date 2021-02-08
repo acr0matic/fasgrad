@@ -20,6 +20,10 @@
     @include breakpoint($breakpoint-tablet-large) {
       font-size: $font-size-5;
     }
+
+    @include breakpoint($breakpoint-mobile-medium) {
+      font-size: $font-size-6;
+    }
   }
 
   &__price {
@@ -35,6 +39,10 @@
 
     @include breakpoint($breakpoint-tablet-large) {
       font-size: $font-size-5;
+    }
+
+    @include breakpoint($breakpoint-mobile-medium) {
+      font-size: $font-size-6;
     }
   }
 
@@ -60,6 +68,10 @@
 
       @include breakpoint($breakpoint-computer) {
         font-size: $font-size-7;
+      }
+
+      @include breakpoint($breakpoint-mobile-medium) {
+        font-size: $font-size-8;
       }
 
       &::before {
@@ -141,6 +153,14 @@
       left: unset;
 
       border-radius: 16px 16px 0 16px;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      right: 0 !important;
+      bottom: 25px !important;
+      left: unset !important;
+
+      width: 300px;
     }
   }
 }
