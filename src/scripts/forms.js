@@ -1,12 +1,10 @@
 const forms = document.querySelectorAll('form');
-let selectedValue;
 
 forms.forEach(form => {
   const formMessage = form.querySelector('.form__info');
-  const formType = form.getAttribute('data-form');
-
-  const fields = form.querySelectorAll('input, textarea');
   const requiredFields = form.querySelectorAll('[data-required]');
+
+  const caclulator = form.querySelector('input[name=include_calc]');
 
   let formData;
 
@@ -30,8 +28,11 @@ forms.forEach(form => {
 
     if (InputValidation(requiredFields)) {
       formData = new FormData(form);
-      formData.append('user_select', selectedValue);
-      formData.append('form_type', formType);
+
+      if (caclulator && caclulator.checked) {
+        formData.append('include_calc', 'true');
+        formData.append('data', JSON.stringify(CalculatorData));
+      }
 
       try {
         let response = await fetch('php/mail.php', {

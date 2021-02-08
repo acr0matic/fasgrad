@@ -1,4 +1,6 @@
 const CalculatorData = {
+  "Материал": "Не указан",
+  "Площадь": "Не указана",
   "Цвет": "Не указан",
   "3D-Визуализация": "Нет",
   "Утепление": "Нет",
@@ -92,6 +94,7 @@ const Calculator = (() => {
       });
 
       calculatorInput.addEventListener('input', () => {
+        CalculatorData["Площадь"] = calculatorInput.value + ' м²';
         Calculator.Activate(calculatorInput.value);
         Calculator.ChangePrice(calculatorInput.value);
         Calculator.ChangeFinal();
@@ -170,6 +173,8 @@ const Calculator = (() => {
         let material = selected.getAttribute('data-material')
         calculatorMaterial.innerHTML = selected.getAttribute('data-name');
 
+        CalculatorData["Материал"] = selected.getAttribute('data-name');
+
         calculatorCurrent = material;
         Calculator.SetMaterial(material)
         Calculator.WriteTotal('size');
@@ -233,7 +238,7 @@ const Calculator = (() => {
       calculatorCurrentColor.style.backgroundColor = color.style.backgroundColor;
       calculatorCurrentColor.style.border = 'none';
 
-      CalculatorData['color'] = colorName;
+      CalculatorData['Цвет'] = colorName;
     },
 
     WriteTotal: (option) => {

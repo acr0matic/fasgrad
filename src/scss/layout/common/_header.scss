@@ -91,7 +91,7 @@ header {
       }
     }
 
-    span {
+    span, a {
       font-size: $font-size-5;
 
       @include breakpoint($breakpoint-computer) {
