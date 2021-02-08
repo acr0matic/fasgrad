@@ -1,4 +1,4 @@
-fetch('../src/data/production.json')
+fetch('../data/production.json')
 .then((response) => response.json())
 .then((data) => {
   Calculator.Init(data);
