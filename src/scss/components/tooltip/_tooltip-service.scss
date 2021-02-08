@@ -15,6 +15,11 @@
 
   @include breakpoint($breakpoint-mobile-large) {
     max-width: 200px;
+    max-height: 140px;
+
+    overflow-y: auto;
+
     font-size: $font-size-9;
+    line-height: 20px;
   }
 }

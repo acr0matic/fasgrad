@@ -219,6 +219,10 @@
       font-size: $font-size-5;
     }
 
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-6;
+    }
+
     &:hover {
       background-color: $button-service__hover;
     }
@@ -230,6 +234,10 @@
 
   &__info {
     position: relative;
+
+    @include breakpoint($breakpoint-mobile-large) {
+      position: static;
+    }
   }
 
   &__tooltip {
@@ -237,14 +245,18 @@
     bottom: 25px;
     left: 30px;
 
-
     &--left {
       right: 30px;
       left: unset;
       border-radius: 16px 16px 0 16px;
 
       @include breakpoint($breakpoint-mobile-large) {
+        right: 50%;
+        bottom: 0;
 
+        border-radius: 5px 5px 5px 5px;
+
+        transform: translateX(50%);
       }
     }
   }

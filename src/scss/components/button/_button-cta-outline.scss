@@ -12,6 +12,10 @@
     font-size: $font-size-6 - 1;
   }
 
+  @include breakpoint($breakpoint-mobile-large) {
+    font-size: $font-size-7;
+  }
+
   &:hover {
     color: $text-white;
     background-color: $button-cta-outline__hover;
