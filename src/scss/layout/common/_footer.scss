@@ -33,6 +33,10 @@
 
   &__contact {
     display: flex;
+
+    @include breakpoint($breakpoint-mobile-large) {
+      flex-direction: column;
+    }
   }
 
   &__logo {

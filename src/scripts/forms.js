@@ -2,6 +2,8 @@ const forms = document.querySelectorAll('form');
 
 forms.forEach(form => {
   const formMessage = form.querySelector('.form__info');
+
+  const fields = form.querySelectorAll('input, textarea');
   const requiredFields = form.querySelectorAll('[data-required]');
 
   const caclulator = form.querySelector('input[name=include_calc]');
@@ -43,9 +45,10 @@ forms.forEach(form => {
         // let result = await response.json();
         // console.log(result)
 
+        MicroModal.close('modal-callback');
         MicroModal.show('modal-accept', modalParams);
 
-        ClearForm(requiredFields);
+        ClearForm(fields);
       }
 
       catch {
@@ -86,6 +89,7 @@ function InputValidation(inputs) {
 }
 
 function ClearForm(fields) {
+  console.log("🚀 ~ file: forms.js ~ line 91 ~ ClearForm ~ fields", fields)
   fields.forEach(field => {
     field.value = '';
 

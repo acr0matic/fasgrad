@@ -8,7 +8,7 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenuButton.classList.toggle('is-active');
 });
 
-mobileMenuClose.addEventListener('touchmove', () => {
+mobileMenuClose.addEventListener('click', () => {
   mobileMenu.classList.toggle('mobile-menu--open');
   mobileMenuButton.classList.toggle('is-active');
 });

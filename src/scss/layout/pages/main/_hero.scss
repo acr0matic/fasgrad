@@ -9,10 +9,6 @@
     @include background("../img/section/hero/hero__background--mobile.jpg");
     margin-top: 80px;
   }
-
-  @include breakpoint($breakpoint-mobile-large) {
-    margin-top: 60px;
-  }
 }
 
 .hero {
