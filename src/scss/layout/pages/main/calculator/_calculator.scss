@@ -13,6 +13,11 @@
     padding: 48px;
 
     background-color: $palette-white;
+
+    @include breakpoint($breakpoint-mobile-large) {
+      padding: 15px;
+      border-radius: 0;
+    }
   }
 }
 

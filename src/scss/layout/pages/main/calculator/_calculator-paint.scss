@@ -59,9 +59,7 @@
     }
 
     @include breakpoint($breakpoint-tablet) {
-      &:not(:nth-child(6n)) {
-        margin-right: 12px;
-      }
+      margin-right: 12px;
     }
 
     &:not(:only-child) {
