@@ -30,6 +30,9 @@
   }
 
   &__icon {
+    @include breakpoint($breakpoint-mobile-large) {
+      width: 50px;
+    }
   }
 
   &__title {
