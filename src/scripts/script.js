@@ -26,7 +26,6 @@ const modalParams = {
   disableFocus: false,
 };
 
-
 MicroModal.init(modalParams);
 
 // Прелоадер

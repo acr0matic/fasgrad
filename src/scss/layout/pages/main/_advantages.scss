@@ -48,5 +48,10 @@
       font-size: $font-size-7;
       line-height: 25px;
     }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-8;
+      line-height: 22px;
+    }
   }
 }

@@ -1,0 +1,35 @@
+.hamburger {
+  padding: 0;
+  outline: none;
+
+  &-box {
+    width: 35px;
+  }
+
+  &-inner,
+  &-inner::before,
+  &-inner::after {
+    border-radius: 0;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    &::before {
+      width: 100%;
+    }
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: $palette-white;
+}

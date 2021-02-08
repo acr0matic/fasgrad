@@ -65,20 +65,34 @@ const Service = (() => {
 
     GenerateCards: (data) => {
       const container = serviceWrapper.querySelector('.service .row');
+      const materials = data.material;
+
       container.innerHTML = '';
 
-      if (!window.matchMedia("(max-width: 1024px)").matches) {
-        const materials = data.material;
-
+      if (!window.matchMedia("(max-width: 996px)").matches) {
         for (const key in materials) {
           const material = materials[key];
-
-          container.innerHTML += ServiceLaptopTemplate(material, key);
+          container.innerHTML +=
+            '<div class="col-12 col-lg-6 col-xl-4 mb-5">'
+            + ServiceTemplate(material, key) +
+            '</div>';
         }
       }
 
       else {
+        container.innerHTML += '<div class="swiper-container service__slider"> <div class="swiper-wrapper"></div></div>';
+        const wrapper = container.querySelector('.swiper-wrapper');
 
+        for (const key in materials) {
+          const material = materials[key];
+
+          wrapper.innerHTML +=
+            ' <div class="swiper-slide">'
+            + ServiceTemplate(material, key) +
+            '</div>';
+        }
+
+        serviceSlider.init();
       }
     },
 
@@ -107,7 +121,7 @@ const Service = (() => {
 })();
 
 
-function ServiceLaptopTemplate(data, key) {
+function ServiceTemplate(data, key) {
   let advantages = '';
   let colors = '';
   let price = ''
@@ -133,7 +147,6 @@ function ServiceLaptopTemplate(data, key) {
   else link = "#calculator";
 
   return `
-<div class="col-12 col-lg-6 col-xl-4 mb-5">
 <div class="service__card service-card" data-material=${key}>
   <div class="service-card__picture">
     <img src="${data.picture}" data-color-default="${data.picture}" alt="" class="service-card__image">
@@ -196,6 +209,5 @@ function ServiceLaptopTemplate(data, key) {
 </div>
 <!-- /.service__card service-card -->
 </div>
-<!-- /.col-4 -->
 `
 }

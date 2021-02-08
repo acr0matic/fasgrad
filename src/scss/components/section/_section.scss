@@ -13,6 +13,14 @@
       font-size: $font-size-2;
     }
 
+    @include breakpoint($breakpoint-tablet) {
+      font-size: $font-size-3;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-4;
+    }
+
     &--underline {
       display: inline-block;
 
@@ -55,6 +63,11 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-6;
       line-height: 28px;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-8;
+      line-height: 22px;
     }
 
     &--center {

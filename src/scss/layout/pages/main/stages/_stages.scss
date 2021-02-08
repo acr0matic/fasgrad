@@ -12,6 +12,10 @@
     margin-bottom: 80px;
   }
 
+  @include breakpoint($breakpoint-tablet) {
+    margin-bottom: -20px;
+  }
+
   &__circle {
     position: absolute;
     top: 50%;
@@ -30,6 +34,11 @@
   }
 
   &__line {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 90%;
+
     @include breakpoint($breakpoint-tablet) {
       display: block;
     }

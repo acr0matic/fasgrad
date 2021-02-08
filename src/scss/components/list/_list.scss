@@ -11,6 +11,11 @@
       font-size: $font-size-7;
     }
 
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-9;
+      line-height: 18px;
+    }
+
     &::before {
       content: '';
       flex-shrink: 0;
@@ -23,6 +28,12 @@
       margin-right: 10px;
 
       background-color: #000000;
+
+      @include breakpoint($breakpoint-mobile-large) {
+        border-radius: 5px;
+        width: 4px;
+        height: 4px;
+      }
     }
 
     &:not(:last-child) {

@@ -18,6 +18,10 @@
     @include breakpoint($breakpoint-computer) {
       height: 250px;
     }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      height: 200px;
+    }
   }
 
   &__image {
@@ -48,6 +52,10 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-4;
     }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-6;
+    }
   }
 
   &__subtitle {
@@ -59,6 +67,10 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-6;
     }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-9;
+    }
   }
 
   &__section {
@@ -67,6 +79,10 @@
   &__palette {
     display: flex;
     flex-wrap: wrap;
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-7;
+    }
   }
 
   &__color {
@@ -86,6 +102,12 @@
     @include breakpoint($breakpoint-computer) {
       width: 27px;
       height: 27px;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      border-radius: 2px;
+      width: 20px;
+      height: 20px;
     }
 
     &:hover {
@@ -113,6 +135,10 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.15s ease;
+
+      @include breakpoint($breakpoint-mobile-large) {
+        content: '';
+      }
     }
 
     &--selected {
@@ -141,6 +167,11 @@
 
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-5;
+    }
+
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-6;
     }
 
     &::after {
@@ -206,10 +237,15 @@
     bottom: 25px;
     left: 30px;
 
+
     &--left {
       right: 30px;
       left: unset;
       border-radius: 16px 16px 0 16px;
+
+      @include breakpoint($breakpoint-mobile-large) {
+
+      }
     }
   }
 }

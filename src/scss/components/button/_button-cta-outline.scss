@@ -4,6 +4,7 @@
   padding: 20px 40px;
 
   font-size: $font-size-6 + 2;
+  color: $text-orange;
 
   @include breakpoint($breakpoint-computer) {
     padding: 18px 40px;

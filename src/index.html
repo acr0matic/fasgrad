@@ -115,7 +115,56 @@
           </div>
           <!-- /.header__communication -->
 
-          <button data-micromodal-trigger="modal-callback" class="button button-outline">Обратный звонок</button>
+          <button data-micromodal-trigger="modal-callback" class="header__button button button-outline">Обратный звонок</button>
+
+          <button id="mobile-button" class="header__hamburger hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+
+          <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu__container">
+              <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__nav-list">
+                  <li class="mobile-menu__item">
+                    <a href="#about" class="mobile-menu__link">О нас</a>
+                  </li>
+
+                  <li class="mobile-menu__item">
+                    <a href="#service" class="mobile-menu__link">Услуги</a>
+                  </li>
+
+                  <li class="mobile-menu__item">
+                    <a href="#stages" class="mobile-menu__link">Этапы работы</a>
+                  </li>
+
+                  <li class="mobile-menu__item">
+                    <a href="#map" class="mobile-menu__link">Карта работы</a>
+                  </li>
+
+                  <li class="mobile-menu__item">
+                    <a href="#visualization" class="mobile-menu__link">3D-визуализация</a>
+                  </li>
+
+                  <li class="mobile-menu__item">
+                    <a href="#calculator" class="mobile-menu__link">Калькулятор</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="mobile-menu__action mt-4 ms-4 ms-sm-0">
+                <a class="me-3" href="https://www.instagram.com/_dobroe__delo/?hl=ru" target="_blank"><img src="img/icons/instagram--mini.svg" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCxHBmQKflcd1XM4vG9ShY4g" target="_blank"><img src="img/icons/youtube--mini.svg" alt=""></a>
+              </div>
+              <!-- /.mobile-menu__action -->
+
+              <div class="mobile-menu__close"></div>
+              <!-- /.mobile-menu__close -->
+            </div>
+            <!-- /.mobile-menu__container -->
+          </div>
+          <!-- /.mobile-menu -->
         </div>
         <!-- /.header__row -->
 
@@ -132,7 +181,6 @@
           </nav>
         </div>
         <!-- /.header__row -->
-
       </div>
       <!-- /.header -->
     </div>
@@ -166,7 +214,7 @@
               <p class="hero__description section__description">Сроки работ рассчитываются индивидуально под каждый проект. Оставьте заявку — мы приедем и бесплатно проведем замеры.</p>
 
               <div class="hero__action">
-                <button href="#service" class="button button-cta me-3">Выбрать фасад</button>
+                <button href="#service" class="button button-cta me-3 mb-3 mb-md-0">Выбрать фасад</button>
                 <button href="#calculator" class="button button-cta-outline">Калькулятор</button>
               </div>
               <!-- /.hero__action -->
@@ -371,6 +419,15 @@
         <!-- /.row -->
 
         <div class="service">
+          <div class="input mb-5">
+            <input id="search" autocomplete="off" type="text" class="input__field input-search" placeholder="Керамогранит...">
+            <div class="input-search__wrapper">
+
+            </div>
+            <!-- /.input-search__wrapper -->
+          </div>
+          <!-- /.input -->
+
           <div class="row">
             <!--- ДИНАМИЧЕСКИЙ КОНТЕНТ --->
           </div>
@@ -395,6 +452,7 @@
 
         <div class="stages">
           <img class="stages__circle" src="img/section/stages/background.svg" alt="">
+          <img class="stages__line" src="img/section/stages/line.svg" alt="">
           <div class="stages__wrapper">
             <div class="stages__item stage-item">
               <div class="stage-item__wrapper">
@@ -515,98 +573,98 @@
 
         <div class="map mt-5">
           <div class="row align-items-center">
-            <div class="col-12 col-lg-6 col-xxl-5">
+            <div class="col-12 col-lg-6 col-xxl-5 mb-5 mb-md-0">
               <div class="map__list">
                 <div class="row">
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Н. Новгород</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Городец</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Дзержинск</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Богородск</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Заволжье</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Бор</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Кстово</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Сергач</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6 mb-5">
+                  <div class="col-4 col-lg-6 mb-3 mb-md-5">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Ворсма</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
 
-                  <div class="col-3 col-lg-6">
+                  <div class="col-4 col-lg-6">
                     <div class="map__item">
                       <img src="img/icons/geo--darkblue.svg" alt="" class="map__icon me-3">
                       <span class="map__address">Горбатов</span>
                     </div>
                     <!-- /.map__item -->
                   </div>
-                  <!-- /.col-3 col-lg-6 -->
+                  <!-- /.col-4 col-lg-6 -->
                 </div>
                 <!-- /.row -->
               </div>
@@ -665,7 +723,7 @@
 
         <div class="calculator">
           <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6 mb-4 mb-md-0 order-1 order-md-1">
               <div class="row">
                 <div class="col-12 mb-4">
                   <div class="select">
@@ -693,7 +751,7 @@
                 <div class="col-8"></div>
                 <!-- /.col-8 -->
 
-                <div class="col-8 col-lg-5 col-xxl-4">
+                <div class="col-12 col-sm-8 col-lg-5 col-xxl-4 mb-4">
                   <div class="calculator__paint calculator-paint">
                     <div class="calculator-paint__current">
                       Цвет:
@@ -713,17 +771,10 @@
             </div>
             <!-- /.col-6 -->
 
-            <div class="col-6 ps-5">
+            <div class="col-12 col-md-6 ps-md-5 order-3 order-md-2">
               <div class="calculator__total calculator-total">
                 <div data-calculator="size" class="calculator-total__service mb-4">
                   <div class="calculator-total__value"><span class="calculator-total__material">Композит</span> <b>x</b> <span class="calculator-total__size">1 000</span></div>
-                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price"></div>
-                </div>
-                <!-- /.calculator__service -->
-
-                <div data-calculator="visualization" class="calculator-total__service mb-4">
-                  <div class="calculator-total__value">3D Визуализация</span></div>
                   <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
                   <div class="calculator-total__price"></div>
                 </div>
@@ -746,13 +797,10 @@
               <!-- /.calculator__total -->
             </div>
             <!-- /.col-6 -->
-          </div>
-          <!-- /.row -->
 
-          <div class="row align-items-end mt-4 mt-xxl-0">
-            <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 order-2 order-md-3">
               <div class="calculator__advanced calculator-advanced">
-                <label class="checkbox me-5">
+                <label class="checkbox me-5 mb-3 mb-sm-0">
                   <input data-calculator="visualization" type="checkbox">
                   <span class="checkbox__mark"></span>
                   <span class="checkbox__label">3d-визуализация</span>
@@ -764,7 +812,7 @@
                   <span class="checkbox__label">Утепление</span>
                 </label>
 
-                <div class="calculator-advanced__extra mt-0 mt-lg-3 mt-xxl-0">
+                <div class="calculator-advanced__extra mt-3 mt-md-0 mt-lg-3 mt-xxl-0">
                   <label class="checkbox me-2">
                     <input data-calculator="wind" type="checkbox">
                     <span class="checkbox__mark"></span>
@@ -791,7 +839,7 @@
             </div>
             <!-- /.col-6 -->
 
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 order-4 order-md-4">
               <div class="calculator__final calculator-final">
                 <div class="calculator-final__label">
                   Итого:
@@ -1507,7 +1555,7 @@
 
         <div class="modal__content">
           <p>
-            <pre>
+          <pre>
 1. Определения
 
 1.1. Условия Соглашения регулируют отношения Правообладателя и Пользователя и содержат следующие определения:
@@ -1692,6 +1740,7 @@
   <script src="scripts/libraries/micromodal.js"></script>
   <script src="scripts/libraries/smoothScroll.js"></script>
   <script src="scripts/libraries/imask.js"></script>
+  <script src="scripts/libraries/autocomplete.js"></script>
 
   <script src="scripts/script.js"></script>
   <script src="scripts/sliders.js"></script>
@@ -1702,6 +1751,7 @@
   <script src="scripts/service.js"></script>
   <script src="scripts/controller.js"></script>
   <script src="scripts/forms.js"></script>
+  <script src="scripts/mobile-menu.js"></script>
   <!-- endbuild -->
 </body>
 

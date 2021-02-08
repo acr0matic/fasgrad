@@ -36,7 +36,7 @@
 
   &__wrapper {
     position: absolute;
-    z-index: 100;
+    z-index: 10;
     top: 0;
     left: 0;
 
@@ -62,7 +62,7 @@
     }
 
     @include breakpoint($breakpoint-mobile-large) {
-      border-radius: 30px;
+      border-radius: 5px;
       padding: 0 15px;
     }
   }

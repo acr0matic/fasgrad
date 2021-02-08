@@ -36,6 +36,18 @@
       margin-bottom: 8px;
     }
 
+    @include breakpoint($breakpoint-tablet) {
+      width: 36px;
+      height: 36px;
+
+      margin-bottom: 12px;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      width: 30px;
+      height: 30px;
+    }
+
     &:not(:nth-child(6n)) {
       margin-right: 8px;
     }
@@ -43,6 +55,12 @@
     @include breakpoint($breakpoint-computer) {
       &:not(:nth-child(5n)) {
         margin-right: 8px;
+      }
+    }
+
+    @include breakpoint($breakpoint-tablet) {
+      &:not(:nth-child(6n)) {
+        margin-right: 12px;
       }
     }
 

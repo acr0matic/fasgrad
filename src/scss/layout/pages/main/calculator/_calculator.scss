@@ -3,6 +3,10 @@
 
   background-color: $palette-gray;
 
+  @include breakpoint($breakpoint-tablet) {
+    padding-top: 70px;
+  }
+
   .container {
     overflow: hidden;
     border-radius: 12px;

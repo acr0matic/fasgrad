@@ -6,4 +6,12 @@
   @include breakpoint($breakpoint-computer) {
     height: 640px;
   }
+
+  @include breakpoint($breakpoint-tablet) {
+    height: 340px;
+  }
+
+  @include breakpoint($breakpoint-mobile-large) {
+    height: 270px;
+  }
 }

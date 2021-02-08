@@ -1,0 +1,51 @@
+.input-search {
+  display: none;
+
+  padding-left: 60px;
+
+  background-image: url("../img/icons/control/search.svg");
+  background-size: 25px;
+  background-position: left 20px center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-color: #fff;
+
+  @include breakpoint($breakpoint-tablet) {
+    display: block;
+  }
+
+  &__wrapper {
+    position: absolute;
+    z-index: 99;
+    top: 110%;
+    right: 0;
+    left: 0;
+
+    overflow: hidden;
+    border: 2px solid $input__hover;
+    border-radius: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    padding: 22px 32px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__active {
+    color: #ffffff;
+  }
+}

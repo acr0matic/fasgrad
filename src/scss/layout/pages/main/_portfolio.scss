@@ -88,6 +88,10 @@
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-5;
     }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-7;
+    }
   }
 
   &__characteristic {
@@ -95,6 +99,10 @@
 
     @include breakpoint($breakpoint-computer) {
       font-size: $font-size-7;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-9;
     }
   }
 
@@ -114,6 +122,10 @@
 
     font-weight: $weight-medium;
     line-height: 150%;
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-8;
+    }
   }
 
   &__action {

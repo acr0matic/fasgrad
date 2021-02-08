@@ -3,7 +3,17 @@
 // -----------------------------------------------------------------------------
 header {
   position: relative;
+  background-color: $palette-white;
+
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+
+  @include breakpoint($breakpoint-tablet) {
+    position: fixed;
+    z-index: $z-index-header;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .header {
@@ -13,12 +23,28 @@ header {
 
     &--underline {
       border-bottom: 1px solid #e8e8e8;
+
+      @include breakpoint($breakpoint-tablet) {
+        border-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      @include breakpoint($breakpoint-tablet) {
+        display: none;
+      }
     }
   }
 
   &__logo {
     @include breakpoint($breakpoint-tablet-large) {
       width: 170px;
+    }
+  }
+
+  &__nav {
+    @include breakpoint($breakpoint-tablet) {
+      display: none;
     }
   }
 
@@ -33,6 +59,10 @@ header {
 
   &__contact {
     position: relative;
+
+    @include breakpoint($breakpoint-tablet) {
+      display: none;
+    }
   }
 
   &__link {
@@ -68,5 +98,23 @@ header {
     right: 100%;
 
     margin-right: 20px;
+  }
+
+  &__button {
+    @include breakpoint($breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  &__hamburger {
+    position: relative;
+    z-index: 10;
+    display: none;
+
+    outline: none;
+
+    @include breakpoint($breakpoint-tablet) {
+      display: block;
+    }
   }
 }

@@ -12,4 +12,9 @@
   @include breakpoint($breakpoint-computer) {
     font-size: $font-size-7;
   }
+
+  @include breakpoint($breakpoint-mobile-large) {
+    max-width: 200px;
+    font-size: $font-size-9;
+  }
 }

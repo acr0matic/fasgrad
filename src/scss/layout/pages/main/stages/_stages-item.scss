@@ -377,4 +377,14 @@
       left: 150px !important;
     }
   }
+
+  @include breakpoint($breakpoint-tablet-large) {
+    width: 100% !important;
+  }
+
+  @include breakpoint($breakpoint-mobile-large) {
+    .stage-item__title {
+      font-size: $font-size-7;
+    }
+  }
 }
