@@ -37,6 +37,8 @@
     position: absolute;
     top: 0;
     left: 50px;
+    display: none;
+
     height: 90%;
 
     @include breakpoint($breakpoint-tablet) {
