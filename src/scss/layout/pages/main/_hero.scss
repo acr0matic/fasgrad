@@ -36,6 +36,11 @@
     }
 
     @include breakpoint($breakpoint-mobile-large) {
+      font-size: $font-size-3 - 4;
+      line-height: 36px;
+    }
+
+    @include breakpoint($breakpoint-mobile-medium) {
       font-size: $font-size-4;
       line-height: 32px;
     }

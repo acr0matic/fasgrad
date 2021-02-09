@@ -25,6 +25,11 @@ header {
     @include flex();
     padding: 23px 0;
 
+    @include breakpoint($breakpoint-tablet) {
+      padding-top: 23px;
+      padding-bottom: 10px;
+    }
+
     &--underline {
       border-bottom: 1px solid #e8e8e8;
 

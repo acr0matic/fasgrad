@@ -1,4 +1,10 @@
 .modal-info {
+  .modal__title {
+    @include breakpoint($breakpoint-tablet) {
+      font-size: $font-size-4;
+      line-height: 34px;
+    }
+  }
   .modal__container {
     max-width: 80%;
 
@@ -15,6 +21,10 @@
 
     overflow-y: auto;
 
+    @include breakpoint($breakpoint-tablet) {
+      max-height: 300px;
+    }
+
     pre {
       white-space: pre-wrap;
       font-family: OpenSans, sans-serif;
@@ -22,6 +32,11 @@
 
       @include breakpoint($breakpoint-computer) {
         font-size: $font-size-6;
+      }
+
+      @include breakpoint($breakpoint-tablet) {
+        font-size: $font-size-7;
+        line-height: 24px;
       }
     }
   }

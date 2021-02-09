@@ -19,3 +19,10 @@ mobileMenuItems.forEach(item => {
     mobileMenuButton.classList.toggle('is-active');
   });
 });
+
+window.addEventListener('touchstart', (e) => {
+  if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+    mobileMenuButton.classList.remove('is-active');
+    mobileMenu.classList.remove('mobile-menu--open');
+  }
+});

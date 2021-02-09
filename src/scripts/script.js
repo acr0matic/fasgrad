@@ -6,7 +6,13 @@ headerContact.forEach(contact => {
   let text = '';
 
   if (copyBlock) {
-    text = copyBlock.querySelector('span').innerHTML;
+    const element = copyBlock.querySelector('a');
+    element.addEventListener('click', (e) => {
+      if (window.matchMedia("(max-width: 996px)").matches) return;
+      else e.preventDefault();
+    });
+
+    text = element.innerHTML;
 
     copyBlock.addEventListener('click', () => {
       tooltip.classList.add('tooltip--visible');
@@ -18,7 +24,6 @@ headerContact.forEach(contact => {
     });
   }
 });
-
 
 const modalParams = {
   awaitCloseAnimation: true,
@@ -44,3 +49,10 @@ social.addEventListener('click', () => {
     icon.classList.toggle('social__link--hide');
   });
 });
+
+['click', 'touchstart'].forEach(evt =>
+  window.addEventListener(evt, (e) => {
+    if (!social.contains(e.target))
+      socialIcons.forEach(icon => icon.classList.add('social__link--hide'));
+  })
+);

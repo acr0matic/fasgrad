@@ -1,3 +1,8 @@
+var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+  navigator.userAgent &&
+  navigator.userAgent.indexOf('CriOS') == -1 &&
+  navigator.userAgent.indexOf('FxiOS') == -1;
+
 const forms = document.querySelectorAll('form');
 
 forms.forEach(form => {
@@ -5,6 +10,12 @@ forms.forEach(form => {
 
   const fields = form.querySelectorAll('input, textarea');
   const requiredFields = form.querySelectorAll('[data-required]');
+  const timeField = form.querySelector('input[name=user_time]');
+
+  if (!isSafari) {
+    timeField.addEventListener('focus', () => timeField.type = 'time');
+    timeField.addEventListener('blur', () => timeField.type = 'text');
+  }
 
   const caclulator = form.querySelector('input[name=include_calc]');
 

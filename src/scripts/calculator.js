@@ -293,8 +293,8 @@ const Calculator = (() => {
 
         if (type === 'size') price.innerHTML = Calculator.FormatNumber(size.innerHTML * materialPrice);
         if (type === 'visualization') price.innerHTML = Calculator.FormatNumber(calculatorData.option.visualization);
-        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
-        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
+        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
+        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
       });
     },
 
