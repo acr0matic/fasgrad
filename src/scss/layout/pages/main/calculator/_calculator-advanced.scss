@@ -52,11 +52,13 @@
     }
 
     @include breakpoint($breakpoint-mobile-large) {
-      right: -150px !important;
+      right: unset !important;
       bottom: 35px;
-      left: unset !important;
+      left: -130px !important;
 
-      width: 300px;
+      width: 280px;
+
+      border-radius: 16px;
     }
   }
 }

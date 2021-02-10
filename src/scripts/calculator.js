@@ -197,14 +197,30 @@ const Calculator = (() => {
       const tooltipBounding = advancedTooltip.getBoundingClientRect();
 
       function Hover(trigger, element) {
-        trigger.addEventListener('mouseover', () => {
-          if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
-            element.classList.add('service-card__tooltip--left');
+        if (window.matchMedia("(max-width: 996px)").matches) {
+          trigger.addEventListener('touchstart', () => {
+            if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+              element.classList.add('service-card__tooltip--left');
 
-          element.classList.add('tooltip--visible');
-        });
+            element.classList.add('tooltip--visible');
+          });
 
-        trigger.addEventListener('mouseout', () => element.classList.remove('tooltip--visible'));
+          window.addEventListener('touchstart', (e) => {
+            if (!trigger.contains(e.target) && !element.contains(e.target))
+              element.classList.remove('tooltip--visible');
+          })
+        }
+
+        else {
+          trigger.addEventListener('mouseover', () => {
+            if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+              element.classList.add('service-card__tooltip--left');
+
+            element.classList.add('tooltip--visible');
+          });
+
+          trigger.addEventListener('mouseout', () => element.classList.remove('tooltip--visible'));
+        }
       }
 
       Hover(finalIcon, finalTooltip);

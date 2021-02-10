@@ -4,6 +4,11 @@
       font-size: $font-size-4;
       line-height: 34px;
     }
+
+    @include breakpoint($breakpoint-mobile-medium) {
+      font-size: $font-size-6;
+      line-height: 23px;
+    }
   }
   .modal__container {
     max-width: 80%;
@@ -12,6 +17,10 @@
 
     @include breakpoint($breakpoint-computer) {
       max-width: 90%;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      padding: 65px 25px 45px 25px;
     }
   }
 
@@ -25,6 +34,10 @@
       max-height: 300px;
     }
 
+    @include breakpoint($breakpoint-mobile-large) {
+      margin-top: 10px;
+    }
+
     pre {
       white-space: pre-wrap;
       font-family: OpenSans, sans-serif;
@@ -36,6 +49,11 @@
 
       @include breakpoint($breakpoint-tablet) {
         font-size: $font-size-7;
+        line-height: 24px;
+      }
+
+      @include breakpoint($breakpoint-mobile-large) {
+        font-size: $font-size-8;
         line-height: 24px;
       }
     }

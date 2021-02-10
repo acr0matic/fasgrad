@@ -100,7 +100,6 @@ function InputValidation(inputs) {
 }
 
 function ClearForm(fields) {
-  console.log("🚀 ~ file: forms.js ~ line 91 ~ ClearForm ~ fields", fields)
   fields.forEach(field => {
     field.value = '';
 
