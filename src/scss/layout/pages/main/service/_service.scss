@@ -2,18 +2,6 @@
   overflow: hidden;
 
   background-color: $palette-gray;
-
-  padding-top: 190px;
-  padding-bottom: 130px;
-
-  @include breakpoint($breakpoint-computer) {
-    padding-top: 130px;
-    padding-bottom: 70px;
-  }
-
-  @include breakpoint($breakpoint-mobile-large) {
-    padding-top: 60px;
-  }
 }
 
 .service {

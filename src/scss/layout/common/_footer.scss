@@ -33,6 +33,19 @@
 
   &__contact {
     display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($breakpoint-mobile-small) {
+      flex-direction: column;
+    }
+
+    & > * {
+      &:not(:last-child) {
+        @include breakpoint($breakpoint-mobile-small) {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
   }
 
   &__logo {

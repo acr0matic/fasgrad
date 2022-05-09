@@ -6,16 +6,21 @@ headerContact.forEach(contact => {
   let text = '';
 
   if (copyBlock) {
-    text = copyBlock.querySelector('span').innerHTML;
+    const elem = copyBlock.querySelector('a');
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      elem.addEventListener('click', (e) => e.preventDefault());
 
-    copyBlock.addEventListener('click', () => {
-      tooltip.classList.add('tooltip--visible');
-      new ClipboardJS(contact, {
-        text: () => text
+      text = elem.innerHTML;
+
+      copyBlock.addEventListener('click', () => {
+        tooltip.classList.add('tooltip--visible');
+        new ClipboardJS(contact, {
+          text: () => text
+        });
+
+        setTimeout(() => tooltip.classList.remove("tooltip--visible"), 1000);
       });
-
-      setTimeout(() => tooltip.classList.remove("tooltip--visible"), 1000);
-    });
+    }
   }
 });
 
@@ -44,3 +49,14 @@ social.addEventListener('click', () => {
     icon.classList.toggle('social__link--hide');
   });
 });
+
+const scrollParams = {
+  speed: 500,
+  speedAsDuration: true,
+  offset: 0,
+}
+
+if (window.matchMedia('(max-width: 768px)').matches) scrollParams.offset = 105;
+else scrollParams.offset = -15;
+
+const scrollController = new SmoothScroll('a[href*="#"]', scrollParams);

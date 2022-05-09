@@ -91,19 +91,13 @@ header {
       }
     }
 
-    span {
+    a {
       font-size: $font-size-5;
 
       @include breakpoint($breakpoint-computer) {
         font-size: $font-size-7;
       }
 
-      @include breakpoint($breakpoint-tablet) {
-        font-size: $font-size-8;
-      }
-    }
-
-    a {
       @include breakpoint($breakpoint-tablet) {
         font-size: $font-size-8;
       }
