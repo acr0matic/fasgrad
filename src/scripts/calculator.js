@@ -1,4 +1,6 @@
 const CalculatorData = {
+  "Материал": "Не указан",
+  "Площадь": "Не указана",
   "Цвет": "Не указан",
   "3D-Визуализация": "Нет",
   "Утепление": "Нет",
@@ -92,6 +94,7 @@ const Calculator = (() => {
       });
 
       calculatorInput.addEventListener('input', () => {
+        CalculatorData["Площадь"] = calculatorInput.value + ' м²';
         Calculator.Activate(calculatorInput.value);
         Calculator.ChangePrice(calculatorInput.value);
         Calculator.ChangeFinal();
@@ -170,6 +173,8 @@ const Calculator = (() => {
         let material = selected.getAttribute('data-material')
         calculatorMaterial.innerHTML = selected.getAttribute('data-name');
 
+        CalculatorData["Материал"] = selected.getAttribute('data-name');
+
         calculatorCurrent = material;
         Calculator.SetMaterial(material)
         Calculator.WriteTotal('size');
@@ -192,14 +197,30 @@ const Calculator = (() => {
       const tooltipBounding = advancedTooltip.getBoundingClientRect();
 
       function Hover(trigger, element) {
-        trigger.addEventListener('mouseover', () => {
-          if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
-            element.classList.add('service-card__tooltip--left');
+        if (window.matchMedia("(max-width: 996px)").matches) {
+          trigger.addEventListener('touchstart', () => {
+            if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+              element.classList.add('service-card__tooltip--left');
 
-          element.classList.add('tooltip--visible');
-        });
+            element.classList.add('tooltip--visible');
+          });
 
-        trigger.addEventListener('mouseout', () => element.classList.remove('tooltip--visible'));
+          window.addEventListener('touchstart', (e) => {
+            if (!trigger.contains(e.target) && !element.contains(e.target))
+              element.classList.remove('tooltip--visible');
+          })
+        }
+
+        else {
+          trigger.addEventListener('mouseover', () => {
+            if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+              element.classList.add('service-card__tooltip--left');
+
+            element.classList.add('tooltip--visible');
+          });
+
+          trigger.addEventListener('mouseout', () => element.classList.remove('tooltip--visible'));
+        }
       }
 
       Hover(finalIcon, finalTooltip);
@@ -233,7 +254,7 @@ const Calculator = (() => {
       calculatorCurrentColor.style.backgroundColor = color.style.backgroundColor;
       calculatorCurrentColor.style.border = 'none';
 
-      CalculatorData['color'] = colorName;
+      CalculatorData['Цвет'] = colorName;
     },
 
     WriteTotal: (option) => {
@@ -288,8 +309,8 @@ const Calculator = (() => {
 
         if (type === 'size') price.innerHTML = Calculator.FormatNumber(size.innerHTML * materialPrice);
         if (type === 'visualization') price.innerHTML = Calculator.FormatNumber(calculatorData.option.visualization);
-        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
-        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
+        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
+        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
       });
     },
 

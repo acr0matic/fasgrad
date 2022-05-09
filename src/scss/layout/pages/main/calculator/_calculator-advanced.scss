@@ -41,5 +41,24 @@
     left: 20px;
 
     max-width: 520px;
+
+    @include breakpoint($breakpoint-mobile-large) {
+      right: -45px !important;
+      left: unset !important;
+
+      width: 300px;
+
+      font-size: $font-size-8;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      right: unset !important;
+      bottom: 35px;
+      left: -130px !important;
+
+      width: 280px;
+
+      border-radius: 16px;
+    }
   }
 }

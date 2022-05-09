@@ -8,7 +8,7 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenuButton.classList.toggle('is-active');
 });
 
-mobileMenuClose.addEventListener('touchmove', () => {
+mobileMenuClose.addEventListener('click', () => {
   mobileMenu.classList.toggle('mobile-menu--open');
   mobileMenuButton.classList.toggle('is-active');
 });
@@ -18,4 +18,11 @@ mobileMenuItems.forEach(item => {
     mobileMenu.classList.toggle('mobile-menu--open');
     mobileMenuButton.classList.toggle('is-active');
   });
+});
+
+window.addEventListener('touchstart', (e) => {
+  if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+    mobileMenuButton.classList.remove('is-active');
+    mobileMenu.classList.remove('mobile-menu--open');
+  }
 });

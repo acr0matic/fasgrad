@@ -165,6 +165,10 @@
   &:nth-child(4) {
     width: 33%;
 
+    @include breakpoint($breakpoint-laptop) {
+      width: unset;
+    }
+
     .stage-item__wrapper {
       margin-left: auto;
       margin-right: auto;

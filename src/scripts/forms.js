@@ -1,12 +1,23 @@
+var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+  navigator.userAgent &&
+  navigator.userAgent.indexOf('CriOS') == -1 &&
+  navigator.userAgent.indexOf('FxiOS') == -1;
+
 const forms = document.querySelectorAll('form');
-let selectedValue;
 
 forms.forEach(form => {
   const formMessage = form.querySelector('.form__info');
-  const formType = form.getAttribute('data-form');
 
   const fields = form.querySelectorAll('input, textarea');
   const requiredFields = form.querySelectorAll('[data-required]');
+  const timeField = form.querySelector('input[name=user_time]');
+
+  if (!isSafari) {
+    timeField.addEventListener('focus', () => timeField.type = 'time');
+    timeField.addEventListener('blur', () => timeField.type = 'text');
+  }
+
+  const caclulator = form.querySelector('input[name=include_calc]');
 
   let formData;
 
@@ -30,8 +41,11 @@ forms.forEach(form => {
 
     if (InputValidation(requiredFields)) {
       formData = new FormData(form);
-      formData.append('user_select', selectedValue);
-      formData.append('form_type', formType);
+
+      if (caclulator && caclulator.checked) {
+        formData.append('include_calc', 'true');
+        formData.append('data', JSON.stringify(CalculatorData));
+      }
 
       try {
         let response = await fetch('php/mail.php', {
@@ -42,9 +56,10 @@ forms.forEach(form => {
         // let result = await response.json();
         // console.log(result)
 
+        MicroModal.close('modal-callback');
         MicroModal.show('modal-accept', modalParams);
 
-        ClearForm(requiredFields);
+        ClearForm(fields);
       }
 
       catch {

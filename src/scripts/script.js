@@ -25,12 +25,6 @@ headerContact.forEach(contact => {
 });
 
 
-const modalParams = {
-  awaitCloseAnimation: true,
-  disableScroll: true,
-  disableFocus: false,
-};
-
 MicroModal.init(modalParams);
 
 // Прелоадер
@@ -49,12 +43,6 @@ social.addEventListener('click', () => {
     icon.classList.toggle('social__link--hide');
   });
 });
-
-const scrollParams = {
-  speed: 500,
-  speedAsDuration: true,
-  offset: 0,
-}
 
 if (window.matchMedia('(max-width: 768px)').matches) scrollParams.offset = 105;
 else scrollParams.offset = -15;

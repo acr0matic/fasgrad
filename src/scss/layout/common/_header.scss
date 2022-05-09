@@ -25,6 +25,11 @@ header {
     @include flex();
     padding: 23px 0;
 
+    @include breakpoint($breakpoint-tablet) {
+      padding-top: 23px;
+      padding-bottom: 10px;
+    }
+
     &--underline {
       border-bottom: 1px solid #e8e8e8;
 
@@ -92,52 +97,55 @@ header {
     }
 
     a {
-      font-size: $font-size-5;
+      span,
+      a {
+        font-size: $font-size-5;
 
-      @include breakpoint($breakpoint-computer) {
-        font-size: $font-size-7;
+        @include breakpoint($breakpoint-computer) {
+          font-size: $font-size-7;
+        }
+
+        @include breakpoint($breakpoint-tablet) {
+          font-size: $font-size-8;
+        }
       }
+
+      path {
+        transition: all 0.15s ease;
+      }
+    }
+
+    &__copy {
+    }
+
+    &__tooltip {
+      position: absolute;
+      top: 0;
+      right: 100%;
+
+      margin-right: 20px;
+    }
+
+    &__button {
+      @include breakpoint($breakpoint-tablet) {
+        display: none;
+      }
+    }
+
+    &__hamburger {
+      position: absolute;
+      z-index: 10;
+
+      top: 25px;
+      right: 12px;
+
+      display: none;
+
+      outline: none;
 
       @include breakpoint($breakpoint-tablet) {
-        font-size: $font-size-8;
+        display: block;
       }
-    }
-
-    path {
-      transition: all 0.15s ease;
-    }
-  }
-
-  &__copy {
-  }
-
-  &__tooltip {
-    position: absolute;
-    top: 0;
-    right: 100%;
-
-    margin-right: 20px;
-  }
-
-  &__button {
-    @include breakpoint($breakpoint-tablet) {
-      display: none;
-    }
-  }
-
-  &__hamburger {
-    position: absolute;
-    z-index: 10;
-
-    top: 25px;
-    right: 12px;
-
-    display: none;
-
-    outline: none;
-
-    @include breakpoint($breakpoint-tablet) {
-      display: block;
     }
   }
 }

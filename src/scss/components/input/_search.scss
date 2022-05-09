@@ -10,7 +10,7 @@
   background-origin: border-box;
   background-color: #fff;
 
-  @include breakpoint($breakpoint-tablet) {
+  @include breakpoint($breakpoint-tablet-large) {
     display: block;
   }
 

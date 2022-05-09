@@ -39,14 +39,30 @@ const Service = (() => {
           }
         });
 
-        icon.addEventListener('mouseover', () => {
-          if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
-            tooltip.classList.add('service-card__tooltip--left');
+        if (window.matchMedia("(max-width: 996px)").matches) {
+          icon.addEventListener('touchstart', () => {
+            if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+              tooltip.classList.add('service-card__tooltip--left');
 
-          tooltip.classList.add('tooltip--visible');
-        });
+            tooltip.classList.add('tooltip--visible');
+          });
 
-        icon.addEventListener('mouseout', () => tooltip.classList.remove('tooltip--visible'));
+          window.addEventListener('touchstart', (e) => {
+            if (!icon.contains(e.target) && !tooltip.contains(e.target))
+              tooltip.classList.remove('tooltip--visible');
+          })
+        }
+
+        else {
+          icon.addEventListener('mouseover', () => {
+            if (tooltipBounding.right > (window.innerWidth || document.documentElement.clientWidth))
+              tooltip.classList.add('service-card__tooltip--left');
+
+            tooltip.classList.add('tooltip--visible');
+          });
+
+          icon.addEventListener('mouseout', () => tooltip.classList.remove('tooltip--visible'));
+        }
 
         colors.forEach(color => {
           color.addEventListener('click', (e) => {
