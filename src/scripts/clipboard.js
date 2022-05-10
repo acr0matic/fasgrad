@@ -23,28 +23,3 @@ headerContact.forEach(contact => {
     }
   }
 });
-
-
-MicroModal.init(modalParams);
-
-// Прелоадер
-const preloader = document.getElementById('preloader');
-document.addEventListener("DOMContentLoaded", function () {
-  window.setTimeout(function () {
-    preloader.classList.add('preloader--hide');
-  }, 1500);
-});
-
-const social = document.getElementById('social');
-const socialIcons = document.querySelectorAll('.social__link--hide')
-
-social.addEventListener('click', () => {
-  socialIcons.forEach(icon => {
-    icon.classList.toggle('social__link--hide');
-  });
-});
-
-if (window.matchMedia('(max-width: 768px)').matches) scrollParams.offset = 105;
-else scrollParams.offset = -15;
-
-const scrollController = new SmoothScroll('a[href*="#"]', scrollParams);

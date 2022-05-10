@@ -4,6 +4,9 @@
 
 .map {
   &__container {
+    position: relative;
+    z-index: 5;
+
     max-width: 670px;
     height: 670px;
     overflow: hidden;

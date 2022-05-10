@@ -177,12 +177,12 @@
   </header>
 
   <!-- Прелоадер -->
-  <div class="preloader" id="preloader">
-    <div class="preloader__wrapper">
-      <div class="preloader__logo"><img src="img/preloader.gif" alt=""></div>
-      <!-- /.preloader__logo -->
+  <div class="page-loader" id="page-loader">
+    <div class="page-loader__wrapper">
+      <div class="page-loader__logo"><img src="img/preloader.gif" alt=""></div>
+      <!-- /.page-loader__logo -->
     </div>
-    <!-- /.preloader__wrapper -->
+    <!-- /.page-loader__wrapper -->
   </div>
 
   <!-- Основной контент -->
@@ -661,10 +661,11 @@
             </div>
             <!-- /.col-5 -->
 
-            <div class="col-12 col-lg-5 col-xxl-6 offset-0 offset-lg-1">
+            <div style="position: relative;" class="col-12 col-lg-5 col-xxl-6 offset-0 offset-lg-1">
               <div id="yandexMap" class="map__container">
-
               </div>
+
+              <img src="img/misc/preloader.svg" alt="" class="preloader">
             </div>
             <!-- /.col-7 -->
           </div>
@@ -686,9 +687,10 @@
         </div>
         <!-- /.row -->
 
-        <div class="visualization">
-          <iframe title="A 3D model" width="100%" height="100%" src="https://sketchfab.com/models/c237936f37a14d138a2e6a8e86427afe/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
-            webkitallowfullscreen="true"></iframe>
+        <div class="visualization lazy">
+          <iframe class="lazy__item" title="A 3D model" width="100%" height="100%" data-src="https://sketchfab.com/models/c237936f37a14d138a2e6a8e86427afe/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr"
+            mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          <img src="img/misc/preloader.svg" alt="" class="preloader">
         </div>
         <!-- /.visualization -->
       </div>
@@ -1490,23 +1492,24 @@
   </div>
   <!-- /.modal -->
 
-  <div class="social">
-    <a class="social__link social__link--hide" href="viber://contact?number=%279193231200">
-      <img src="img/social/viber.svg" alt="" class="social__icon">
+  <div class="widget">
+    <a class="widget__link widget__link--hide" href="viber://contact?number=%279193231200">
+      <img src="img/social/viber.svg" alt="" class="widget__icon">
     </a>
 
-    <a class="social__link social__link--hide" href="https://api.whatsapp.com/send?phone=79193231200%E2%80%99" target="_blank">
-      <img src="img/social/whatsapp.svg" alt="" class="social__icon">
+    <a class="widget__link widget__link--hide" href="https://api.whatsapp.com/send?phone=79193231200%E2%80%99" target="_blank">
+      <img src="img/social/whatsapp.svg" alt="" class="widget__icon">
     </a>
 
-    <img id="social" src="img/social/messenger.svg" alt="" class="social__icon">
+    <img id="widget" src="img/social/messenger.svg" alt="" class="widget__icon">
   </div>
-  <!-- /.social -->
+  <!-- /.widget -->
 
   <!-- Скрипты -->
 
   <!-- build:js -->
   <script src="scripts/libraries/clipboard.js"></script>
+  <script src="scripts/libraries/lazyload.js"></script>
   <script src="scripts/libraries/swiper.js"></script>
   <script src="scripts/libraries/fslightbox.js"></script>
   <script src="scripts/libraries/micromodal.js"></script>
@@ -1516,7 +1519,9 @@
   <script src="scripts/libraries/smoothScroll.js"></script>
 
   <script src="scripts/base.js"></script>
-  <script src="scripts/script.js"></script>
+  <script src="scripts/init.js"></script>
+  <script src="scripts/misc.js"></script>
+  <script src="scripts/clipboard.js"></script>
   <script src="scripts/sliders.js"></script>
   <script src="scripts/yMap.js"></script>
   <script src="scripts/portfolio.js"></script>

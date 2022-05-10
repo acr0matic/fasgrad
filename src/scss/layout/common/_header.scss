@@ -96,56 +96,59 @@ header {
       }
     }
 
+    span, a {
+      font-size: $font-size-5;
+
+      @include breakpoint($breakpoint-computer) {
+        font-size: $font-size-7;
+      }
+
+      @include breakpoint($breakpoint-tablet) {
+        font-size: $font-size-8;
+      }
+    }
+
     a {
-      span,
-      a {
-        font-size: $font-size-5;
-
-        @include breakpoint($breakpoint-computer) {
-          font-size: $font-size-7;
-        }
-
-        @include breakpoint($breakpoint-tablet) {
-          font-size: $font-size-8;
-        }
-      }
-
-      path {
-        transition: all 0.15s ease;
-      }
-    }
-
-    &__copy {
-    }
-
-    &__tooltip {
-      position: absolute;
-      top: 0;
-      right: 100%;
-
-      margin-right: 20px;
-    }
-
-    &__button {
       @include breakpoint($breakpoint-tablet) {
-        display: none;
+        font-size: $font-size-8;
       }
     }
 
-    &__hamburger {
-      position: absolute;
-      z-index: 10;
+    path {
+      transition: all 0.15s ease;
+    }
+  }
 
-      top: 25px;
-      right: 12px;
+  &__copy {
+  }
 
+  &__tooltip {
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    margin-right: 20px;
+  }
+
+  &__button {
+    @include breakpoint($breakpoint-tablet) {
       display: none;
+    }
+  }
 
-      outline: none;
+  &__hamburger {
+    position: absolute;
+    z-index: 10;
 
-      @include breakpoint($breakpoint-tablet) {
-        display: block;
-      }
+    top: 25px;
+    right: 12px;
+
+    display: none;
+
+    outline: none;
+
+    @include breakpoint($breakpoint-tablet) {
+      display: block;
     }
   }
 }

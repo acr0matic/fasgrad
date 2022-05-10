@@ -110,6 +110,8 @@ const Service = (() => {
 
         serviceSlider.init();
       }
+
+      lazyLoadInstance.update();
     },
 
     ChangePicture: (card, color) => {
@@ -164,8 +166,9 @@ function ServiceTemplate(data, key) {
 
   return `
 <div class="service__card service-card" data-material=${key}>
-  <div class="service-card__picture">
-    <img src="${data.picture}" data-color-default="${data.picture}" alt="" class="service-card__image">
+  <div class="service-card__picture lazy">
+    <img data-src="${data.picture}" data-color-default="${data.picture}" alt="" class="service-card__image lazy__item">
+    <img src="img/misc/preloader.svg" alt="" class="preloader">
   </div>
   <div class="service-card__wrapper">
     <div class="service-card__header">

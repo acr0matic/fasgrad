@@ -1,0 +1,19 @@
+.lazy {
+  position: relative;
+
+  &__item {
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.2s ease;
+  }
+}
+
+.loaded {
+  opacity: 1;
+  visibility: visible;
+
+  pointer-events: initial;
+}

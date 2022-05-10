@@ -11,3 +11,6 @@ const scrollParams = {
   speedAsDuration: true,
   offset: 0,
 }
+
+if (window.matchMedia('(max-width: 768px)').matches) scrollParams.offset = 105;
+else scrollParams.offset = -15;

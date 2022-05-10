@@ -1,4 +1,4 @@
-.social {
+.widget {
   position: fixed;
   z-index: 50;
   right: 20px;
@@ -8,7 +8,7 @@
     &--hide {
       pointer-events: none;
 
-      .social__icon {
+      .widget__icon {
         opacity: 0;
         visibility: hidden;
       }
