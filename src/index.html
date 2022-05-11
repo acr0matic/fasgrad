@@ -60,7 +60,7 @@
 
   <!-- /Yandex.Metrika counter -->
 
-  <script src='https://api-maps.yandex.ru/2.1/?lang=ru_RU'></script>
+  <script async src='https://api-maps.yandex.ru/2.1/?lang=ru_RU'></script>
 
   <!-- Стили -->
   <!-- build:css -->
@@ -203,8 +203,8 @@
               <p class="hero__description section__description">Сроки работ рассчитываются индивидуально под каждый проект. Оставьте заявку — мы приедем и бесплатно проведем замеры.</p>
 
               <div class="hero__action">
-                <button href="#service" class="button button-cta me-3 mb-3 mb-md-0">Выбрать фасад</button>
-                <button href="#calculator" class="button button-cta-outline">Калькулятор</button>
+                <a href="#service" class="button button-cta me-3 mb-3 mb-md-0">Выбрать фасад</a>
+                <a href="#calculator" class="button button-cta-outline">Калькулятор</a>
               </div>
               <!-- /.hero__action -->
             </div>
@@ -940,9 +940,10 @@
             <div class="swiper-wrapper align-items-stretch">
               <div class="swiper-slide">
                 <div class="portfolio__card">
-                  <div class="portfolio__picture">
+                  <div class="portfolio__picture lazy">
                     <a href="img/section/portfolio/1/full.jpg" class="glightbox" data-fslightbox="gallery-1">
-                      <img src="img/section/portfolio/1/thumb.jpg" alt="image" class="portfolio__image" />
+                      <img data-src="img/section/portfolio/1/thumb.jpg" alt="image" class="portfolio__image lazy__item" />
+                      <img src="img/misc/preloader.svg" alt="" class="preloader">
                       <img src="img/icons/control/zoom.svg" alt="" class="portfolio__zoom">
                     </a>
                   </div>
@@ -1013,9 +1014,10 @@
 
               <div class="swiper-slide">
                 <div class="portfolio__card">
-                  <div class="portfolio__picture">
+                  <div class="portfolio__picture lazy">
                     <a href="img/section/portfolio/2/full.jpg" class="glightbox" data-fslightbox="gallery-2">
-                      <img src="img/section/portfolio/2/thumb.jpg" alt="image" class="portfolio__image" />
+                      <img data-src="img/section/portfolio/2/thumb.jpg" alt="image" class="portfolio__image lazy__item" />
+                      <img src="img/misc/preloader.svg" alt="" class="preloader">
                       <img src="img/icons/control/zoom.svg" alt="" class="portfolio__zoom">
                     </a>
                   </div>

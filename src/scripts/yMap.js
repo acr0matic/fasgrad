@@ -2,10 +2,7 @@ const mapContainer = document.getElementById('yandexMap');;
 
 const CheckContainer = function () {
   const mapContainerOffset = mapContainer.offsetTop
-  console.log(`${mapContainerOffset} ${window.scrollY}`);
-
   if (window.scrollY >= mapContainerOffset - 500) {
-    console.log("reached");
     GenerateMap();
     window.removeEventListener('scroll', CheckContainer);
   }

@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   outline: none;
   border: none;
 
@@ -8,6 +9,8 @@
 
   font-weight: $weight-bold;
   font-size: $font-size-6 - 1;
+
+  text-align: center;
 
   cursor: pointer;
   transition: all 0.15s ease;
