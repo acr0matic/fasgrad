@@ -1,4 +1,4 @@
-const path = '../src';
+const path = '../';
 
 const modalParams = {
   awaitCloseAnimation: true,

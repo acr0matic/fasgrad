@@ -64,18 +64,18 @@ const Service = (() => {
           icon.addEventListener('mouseout', () => tooltip.classList.remove('tooltip--visible'));
         }
 
-        colors.forEach(color => {
-          color.addEventListener('click', (e) => {
-            if (e.target.classList.contains('service-card__color--selected')) {
-              Service.ChangePicture(card, color);
-            }
+        // colors.forEach(color => {
+        //   color.addEventListener('click', (e) => {
+        //     if (e.target.classList.contains('service-card__color--selected')) {
+        //       Service.ChangePicture(card, color);
+        //     }
 
-            else {
-              Service.ResetColor(colors);
-              Service.ChangePicture(card, color);
-            }
-          });
-        });
+        //     else {
+        //       Service.ResetColor(colors);
+        //       Service.ChangePicture(card, color);
+        //     }
+        //   });
+        // });
       });
     },
 
