@@ -57,7 +57,23 @@
   <meta name="yandex-verification" content="" />
 
   <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+    ym(88229531, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/88229531" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
   <!-- /Yandex.Metrika counter -->
 
   <script async src='https://api-maps.yandex.ru/2.1/?lang=ru_RU'></script>
@@ -764,26 +780,68 @@
 
             <div class="col-12 col-md-6 ps-md-5 order-3 order-md-2">
               <div class="calculator__total calculator-total">
-                <div data-calculator="size" class="calculator-total__service mb-4">
-                  <div class="calculator-total__value"><span class="calculator-total__material">Композит</span> <b>x</b> <span class="calculator-total__size">1 000</span></div>
-                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price"></div>
-                </div>
-                <!-- /.calculator__service -->
+                <div data-type="price" class="calculator__group">
+                  <h3 class="calculator__title">Стоимость материалов:</h3>
 
-                <div data-calculator="warming" class="calculator-total__service mb-4">
-                  <div class="calculator-total__value">Утепление <b>x</b> <span class="calculator-total__size">1 000</span></div>
-                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price"></div>
-                </div>
-                <!-- /.calculator__service -->
+                  <div data-calculator="material" class="calculator-total__service">
+                    <div class="calculator-total__value"><span class="calculator-total__material">Композит</span> <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price"></div>
+                  </div>
+                  <!-- /.calculator__service -->
 
-                <div data-calculator="wind" class="calculator-total__service mb-4">
-                  <div class="calculator-total__value">Ветрозащита <b>x</b> <span class="calculator-total__size">1 000</span></div>
-                  <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
-                  <div class="calculator-total__price"></div>
+                  <div data-calculator="warming" class="calculator-total__service">
+                    <div class="calculator-total__value">Утепление <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price"></div>
+                  </div>
+                  <!-- /.calculator__service -->
+
+                  <div data-calculator="wind" class="calculator-total__service">
+                    <div class="calculator-total__value">Ветрозащита <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price"></div>
+                  </div>
+                  <!-- /.calculator__service -->
                 </div>
-                <!-- /.calculator__service -->
+                <!-- /.calculator__group -->
+
+                <div data-type="assembly" class="calculator__group">
+                  <h3 class="calculator__title">Стоимость работ:</h3>
+
+                  <div data-calculator="material" class="calculator-total__service">
+                    <div class="calculator-total__value"><span class="calculator-total__material">Монтажные работы </span> <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price"></div>
+                  </div>
+                  <!-- /.calculator__service -->
+
+                  <div data-calculator="warming" class="calculator-total__service">
+                    <div class="calculator-total__value">Монтаж утепления <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price"></div>
+                  </div>
+                  <!-- /.calculator__service -->
+
+                  <div data-calculator="wind" class="calculator-total__service">
+                    <div class="calculator-total__value">Монтаж ветрозащиты <b>x</b> <span class="calculator-total__size">1 000</span></div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price"></div>
+                  </div>
+                  <!-- /.calculator__service -->
+                </div>
+                <!-- /.calculator__group -->
+
+                <div class="calculator__group">
+                  <div data-calculator="visualization" class="calculator-total__service">
+                    <div class="calculator-total__value">3D-визуализация</div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="">Бесплатно</div>
+                  </div>
+                  <!-- /.calculator__service -->
+                </div>
+                <!-- /.calculator__group -->
+
               </div>
               <!-- /.calculator__total -->
             </div>
@@ -830,7 +888,7 @@
             </div>
             <!-- /.col-6 -->
 
-            <div class="col-12 col-lg-6 order-4 order-md-4">
+            <div class="col-12 col-lg-6 ps-md-5 order-4 order-md-4">
               <div class="calculator__final calculator-final">
                 <div class="calculator-final__label">
                   Итого:

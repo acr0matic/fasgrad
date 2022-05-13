@@ -14,7 +14,7 @@
   }
 
   @include breakpoint($breakpoint-mobile-large) {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   &:hover &__list {
@@ -109,6 +109,7 @@
     width: 24px;
 
     cursor: pointer;
+    transition: 0.2s ease;
 
     @include breakpoint($breakpoint-computer) {
       top: 30px;

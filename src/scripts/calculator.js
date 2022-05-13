@@ -31,7 +31,6 @@ const Calculator = (() => {
       calculator = document.getElementById('calculator');
       calculatorInput = calculator.querySelector('.input__field');
       calculatorSelect = calculator.querySelector('.select');
-      calculatorSelectItems = calculatorSelect.querySelectorAll('.select__item');
       calculatorTotal = calculator.querySelector('.calculator-total');
       calculatorService = calculatorTotal.querySelectorAll('.calculator-total__service');
       calculatorMaterial = calculatorTotal.querySelector('.calculator-total__material');
@@ -48,10 +47,14 @@ const Calculator = (() => {
       materialData = data;
 
       totalPrice = {
-        "base": 0,
+        "work": 0,
+        "scaffold": 0,
         "visualization": materialData.option.visualization,
         "wind": 0,
+        "wind_work": 0,
         "warming": 0,
+        "warming_work": 0,
+        "material": 0,
         "final": 0,
       }
 
@@ -62,10 +65,6 @@ const Calculator = (() => {
       Calculator.SetTooltip();
 
       calculatorData = data;
-
-      Calculator.Activate();
-      Calculator.ChangePrice(calculatorInput.value);
-      Calculator.ChangeFinal();
     },
 
     SetList: (data) => {
@@ -81,6 +80,7 @@ const Calculator = (() => {
       }
 
       InitSelect(calculatorSelect);
+      calculatorSelectItems = calculatorSelect.querySelectorAll('.select__item');
     },
 
     GetList: () => {
@@ -110,6 +110,8 @@ const Calculator = (() => {
           checkbox.addEventListener('change', () => {
             if (checkbox.checked) CalculatorData['3D-Визуализация'] = 'Да';
             else CalculatorData['3D-Визуализация'] = 'Нет';
+
+            Calculator.WriteTotal(type);
           });
         }
 
@@ -177,7 +179,7 @@ const Calculator = (() => {
 
         calculatorCurrent = material;
         Calculator.SetMaterial(material)
-        Calculator.WriteTotal('size');
+        Calculator.WriteTotal('material');
 
         Calculator.SetPalette();
         Calculator.Activate();
@@ -258,14 +260,17 @@ const Calculator = (() => {
     },
 
     WriteTotal: (option) => {
-      const total = calculatorTotal.querySelector(`[data-calculator=${option}]`);
+      const total = calculatorTotal.querySelectorAll(`[data-calculator=${option}]`);
 
-      if (option !== 'size') {
-        total.classList.toggle('calculator-total__service--visible');
-        total.classList.toggle('calculator-total__service--checked');
-      }
+      total.forEach(item => {
+        if (option !== 'material') {
+          item.classList.toggle('calculator-total__service--visible');
+          item.classList.toggle('calculator-total__service--checked');
+        }
 
-      else total.classList.add('calculator-total__service--visible');
+        else item.classList.add('calculator-total__service--visible');
+      });
+
 
       Calculator.ChangeFinal();
     },
@@ -277,23 +282,49 @@ const Calculator = (() => {
       sizeData = value;
 
       if (currentMaterial) {
-        totalPrice.base = value * material.price + ((value * 1.1) * 250);
-        totalPrice.wind = ((value * 1.05) * 480) + value * 200;
-        totalPrice.warming = ((value * 1.1) * 46) + value * 130;
+        totalPrice.work = value * material.work_price;
+        // console.log("Цена за работу: " + totalPrice.work);
 
-        if (currentMaterial === 'stoneware')
-          totalPrice.final = value * 1.05 * material.work_price;
+        totalPrice.scaffold = (value * 1.1) * 250;
+        // console.log("Цена за строительные леса: " + totalPrice.scaffold);
 
-        else if (currentMaterial === 'composite')
-          totalPrice.final = value * 1.3 * material.work_price;
+        totalPrice.warming = ((value * 1.08) * 480) + value * 200;
+        totalPrice.warming_work = value * 200;
+        // console.log("Цена за утепление: " + totalPrice.warming);
+
+        totalPrice.wind = ((value * 1.10) * 46) + value * 130;
+        totalPrice.wind_work = value * 130;
+        // console.log("Цена за ветрозащиту: " + totalPrice.wind);
+
+        if (currentMaterial === 'stoneware') totalPrice.material = value * 1.05 * material.price;
+        else if (currentMaterial === 'composite') totalPrice.material = value * 1.30 * material.price;
+        else totalPrice.material = value * 1.10 * material.price;
+
+        // console.log("Цена за материалы: " + totalPrice.material);
+
+        if (CalculatorData['Утепление'] === 'Да' && CalculatorData['Ветрозащита'] === 'Да')
+          totalPrice.final = totalPrice.work + totalPrice.warming + totalPrice.wind + totalPrice.material;
+
+        else if (CalculatorData['Утепление'] === 'Да')
+          totalPrice.final = totalPrice.work + totalPrice.warming + totalPrice.material;
 
         else
-          totalPrice.final = value * 1.1 * material.work_price;
+          totalPrice.final = totalPrice.work + totalPrice.material;
+
+        if (value > 50) {
+          totalPrice.final += totalPrice.scaffold;
+          totalPrice.final *= 1.02;
+        }
+
+        // console.log("Итого без скидки: " + totalPrice.final);
       }
 
       calculatorService.forEach(service => {
+        const category = service.closest('.calculator__group').dataset.type;
+
         const size = service.querySelector('.calculator-total__size');
         const price = service.querySelector('.calculator-total__price');
+
         const type = service.getAttribute('data-calculator');
 
         let materialPrice;
@@ -303,14 +334,21 @@ const Calculator = (() => {
           else size.innerHTML = 1;
         }
 
-        if (calculatorData.material[currentMaterial])
-          materialPrice = calculatorData.material[currentMaterial].price;
-        else materialPrice = 0;
+        if (category === 'price') {
+          if (calculatorData.material[currentMaterial])
+            materialPrice = calculatorData.material[currentMaterial].price;
+          else materialPrice = 0;
 
-        if (type === 'size') price.innerHTML = Calculator.FormatNumber(size.innerHTML * materialPrice);
-        if (type === 'visualization') price.innerHTML = Calculator.FormatNumber(calculatorData.option.visualization);
-        if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
-        if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
+          if (type === 'material') price.innerHTML = Calculator.FormatNumber(totalPrice.material);
+          if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.warming);
+          if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.wind);
+        }
+
+        else if (category === 'assembly') {
+          if (type === 'material') price.innerHTML = Calculator.FormatNumber(totalPrice.work);
+          if (type === 'warming') price.innerHTML = Calculator.FormatNumber(totalPrice.warming_work);
+          if (type === 'wind') price.innerHTML = Calculator.FormatNumber(totalPrice.wind_work);
+        }
       });
     },
 
@@ -319,39 +357,22 @@ const Calculator = (() => {
       const oldPrice = calculatorFinal.querySelector('.calculator-final__cost--old');
 
       const discount = Calculator.GetDiscount();
-      let cost, costFinal;
+      let costFinal;
 
       if (currentMaterial) {
-        let total = totalPrice.base + totalPrice.final;
-
-        if (CalculatorData["3D-Визуализация"] === "Да")
-          total += totalPrice.visualization;
-
-        if (totalPrice.warming !== 0 && CalculatorData["Утепление"] === "Да")
-          total += totalPrice.warming;
-
-        if (totalPrice.wind !== 0 && CalculatorData["Ветрозащита"] === "Да")
-          total += totalPrice.wind;
-
-        cost = total * 1.02;
-
-        if (discount !== 1)
-          costFinal = Math.ceil(cost * ((100 - discount) / 100));
-        else
-          costFinal = cost
+        if (discount !== 1) costFinal = Math.ceil(totalPrice.final * ((100 - discount) / 100));
+        else costFinal = totalPrice.final;
       }
-
-      else cost = 0;
 
       if (discount !== 1 && currentMaterial) {
         oldPrice.classList.remove('calculator-final__cost--hide')
-        oldPrice.innerHTML = Calculator.FormatNumber(cost);
+        oldPrice.innerHTML = Calculator.FormatNumber(totalPrice.final);
         price.innerHTML = Calculator.FormatNumber(costFinal);
       }
 
       else {
         oldPrice.classList.add('calculator-final__cost--hide')
-        price.innerHTML = Calculator.FormatNumber(cost);
+        price.innerHTML = Calculator.FormatNumber(totalPrice.final);
       };
 
       Calculator.ChangeDiscount(Calculator.GetDiscount());

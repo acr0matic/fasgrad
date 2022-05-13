@@ -224,7 +224,7 @@ function ServiceTemplate(data, key) {
   </div>
   <!-- /.service-card__wrapper -->
 
-  <button href="${link}" class="service-card__button">Заказать</button>
+  <a href="${link}" class="service-card__button">Заказать</a>
 </div>
 <!-- /.service__card service-card -->
 </div>

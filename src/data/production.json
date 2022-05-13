@@ -4,7 +4,7 @@
       "picture": "http://fasgrad.ru/api/material/composite/picture.jpg",
       "name": "Композит",
       "description": "Особо прочный облицовочный материал экстра-класса. Делают его из различных смесей молотых горных пород (кварц, шпат) на основе глин высокого качества и естественных минеральных красителей.",
-      "price": 2800,
+      "price": 1830,
       "work_price": 2120,
       "color": [
         ["Цвет 1", "#F0FBFD", "http://fasgrad.ru/api/material/composite/color/1.jpg"],

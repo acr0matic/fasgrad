@@ -23,4 +23,33 @@
 
 .calculator {
   margin-top: 90px;
+
+  @include breakpoint($breakpoint-mobile-large) {
+    margin-top: 30px;
+  }
+
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 70px;
+
+      @include breakpoint($breakpoint-computer) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-weight: $weight-medium;
+    font-size: 27px;
+
+    @include breakpoint($breakpoint-computer) {
+      margin-bottom: 20px;
+      font-size: 21px;
+    }
+
+    @include breakpoint($breakpoint-mobile-large) {
+      font-size: 18px;
+    }
+  }
 }
