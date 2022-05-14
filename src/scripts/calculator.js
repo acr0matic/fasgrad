@@ -33,7 +33,9 @@ const Calculator = (() => {
       calculatorSelect = calculator.querySelector('.select');
       calculatorTotal = calculator.querySelector('.calculator-total');
       calculatorService = calculatorTotal.querySelectorAll('.calculator-total__service');
+
       calculatorMaterial = calculatorTotal.querySelector('.calculator-total__material');
+      calculatorCurrent = '';
 
       calculatorColor = calculator.querySelector('.calculator-paint');
       calculatorCurrentColor = calculatorColor.querySelector('.calculator-paint__current .calculator-paint__color');
@@ -43,6 +45,8 @@ const Calculator = (() => {
       calculatorFinal = calculator.querySelector('.calculator-final');
       calculatorOptions = calculatorAdvanced.querySelectorAll('input[type=checkbox]');
       calculatorOptionExtra = calculatorAdvanced.querySelector('.calculator-advanced__extra');
+
+      otherPrice = calculator.querySelector('[data-calculator=other]');
 
       materialData = data;
 
@@ -55,6 +59,7 @@ const Calculator = (() => {
         "warming": 0,
         "warming_work": 0,
         "material": 0,
+        "other": 0,
         "final": 0,
       }
 
@@ -95,7 +100,6 @@ const Calculator = (() => {
 
       calculatorInput.addEventListener('input', () => {
         CalculatorData["Площадь"] = calculatorInput.value + ' м²';
-        Calculator.Activate(calculatorInput.value);
         Calculator.ChangePrice(calculatorInput.value);
         Calculator.ChangeFinal();
       });
@@ -127,12 +131,14 @@ const Calculator = (() => {
             if (checkbox.checked) CalculatorData['Утепление'] = 'Да';
             else CalculatorData['Утепление'] = 'Нет';
 
-            calculatorOptionExtra.classList.toggle('calculator-advanced__extra--visible')
+            if (calculatorCurrent !== 'plaster') {
+              calculatorOptionExtra.classList.toggle('calculator-advanced__extra--visible')
 
-            Calculator.WriteTotal(type);
+              Calculator.WriteTotal(type);
 
-            Calculator.ChangePrice(calculatorInput.value);
-            Calculator.ChangeFinal();
+              Calculator.ChangePrice(calculatorInput.value);
+              Calculator.ChangeFinal();
+            }
           });
         }
 
@@ -151,20 +157,12 @@ const Calculator = (() => {
     },
 
     Activate: () => {
-      calculatorOptions.forEach(option => {
-        if (currentMaterial) {
-          calculatorInput.parentElement.classList.remove('input--disabled')
-          calculatorInput.removeAttribute("disabled");
-          option.parentElement.classList.remove('checkbox--disabled');
-          option.removeAttribute("disabled");
-        }
+      calculatorInput.parentElement.classList.remove('input--disabled')
+      calculatorInput.removeAttribute("disabled");
 
-        else {
-          calculatorInput.parentElement.classList.add('input--disabled');
-          calculatorInput.setAttribute("disabled", "disabled");
-          option.parentElement.classList.add('checkbox--disabled');
-          option.setAttribute("disabled", "disabled");
-        }
+      calculatorOptions.forEach(option => {
+        option.parentElement.classList.remove('checkbox--disabled');
+        option.removeAttribute("disabled");
       });
     },
 
@@ -183,6 +181,34 @@ const Calculator = (() => {
 
         Calculator.SetPalette();
         Calculator.Activate();
+
+        if (calculatorCurrent === 'plaster') {
+          Calculator.WriteTotal('warming');
+          Calculator.WriteTotal('wind');
+          calculatorOptionExtra.classList.remove('calculator-advanced__extra--visible');
+
+          calculatorOptions.forEach(checkbox => {
+            const type = checkbox.getAttribute('data-calculator');
+
+            if (type === 'warming') {
+              checkbox.checked = true;
+              checkbox.parentElement.classList.add('checkbox--disabled');
+              checkbox.setAttribute("disabled", "disabled");
+            }
+          });
+        }
+
+        else {
+          calculatorOptions.forEach(checkbox => {
+            const type = checkbox.getAttribute('data-calculator');
+
+            if (type === 'warming') {
+              checkbox.checked = false;
+              checkbox.parentElement.classList.remove('checkbox--disabled');
+              checkbox.removeAttribute("disabled");
+            }
+          });
+        }
       }
 
       Calculator.ChangePrice(calculatorInput.value);
@@ -263,9 +289,13 @@ const Calculator = (() => {
       const total = calculatorTotal.querySelectorAll(`[data-calculator=${option}]`);
 
       total.forEach(item => {
-        if (option !== 'material') {
+        console.log(option);
+        if ((option === 'warming' || option === 'wind') && currentMaterial === 'plaster') {
+          item.classList.remove('calculator-total__service--visible');
+        }
+
+        else if (option !== 'material') {
           item.classList.toggle('calculator-total__service--visible');
-          item.classList.toggle('calculator-total__service--checked');
         }
 
         else item.classList.add('calculator-total__service--visible');
@@ -288,7 +318,7 @@ const Calculator = (() => {
         totalPrice.scaffold = (value * 1.1) * 250;
         // console.log("Цена за строительные леса: " + totalPrice.scaffold);
 
-        totalPrice.warming = ((value * 1.08) * 480) + value * 200;
+        totalPrice.warming = ((value * 1.08) * 380) + value * 300;
         totalPrice.warming_work = value * 200;
         // console.log("Цена за утепление: " + totalPrice.warming);
 
@@ -302,7 +332,10 @@ const Calculator = (() => {
 
         // console.log("Цена за материалы: " + totalPrice.material);
 
-        if (CalculatorData['Утепление'] === 'Да' && CalculatorData['Ветрозащита'] === 'Да')
+        if (calculatorCurrent === 'plaster')
+          totalPrice.final = totalPrice.work + totalPrice.material;
+
+        else if (CalculatorData['Утепление'] === 'Да' && CalculatorData['Ветрозащита'] === 'Да')
           totalPrice.final = totalPrice.work + totalPrice.warming + totalPrice.wind + totalPrice.material;
 
         else if (CalculatorData['Утепление'] === 'Да')
@@ -312,8 +345,15 @@ const Calculator = (() => {
           totalPrice.final = totalPrice.work + totalPrice.material;
 
         if (value > 50) {
-          totalPrice.final += totalPrice.scaffold;
-          totalPrice.final *= 1.02;
+          totalPrice.other = (totalPrice.final + totalPrice.scaffold) * 0.02;
+          totalPrice.final += totalPrice.other;
+
+          otherPrice.querySelector('.calculator-total__price').innerHTML = Calculator.FormatNumber(totalPrice.other);
+          otherPrice.classList.add('calculator-total__service--visible');
+        }
+
+        else {
+          otherPrice.classList.remove('calculator-total__service--visible');
         }
 
         // console.log("Итого без скидки: " + totalPrice.final);
@@ -326,8 +366,6 @@ const Calculator = (() => {
         const price = service.querySelector('.calculator-total__price');
 
         const type = service.getAttribute('data-calculator');
-
-        let materialPrice;
 
         if (size) {
           if (value) size.innerHTML = value;

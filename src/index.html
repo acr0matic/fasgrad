@@ -717,12 +717,12 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 class="section__title">Калькулятор стоимости фасадных работ</h2>
+            <h2 class="section__title">Калькулятор стоимости фасада</h2>
           </div>
           <!-- /.col-12 -->
 
           <div class="col-12 col-lg-6">
-            <p class="section__description mb-2">Заполните данные о вашем объекте, чтобы узнать примерную стоимость работ.</p>
+            <p class="section__description mb-2">Заполните данные о вашем объекте, чтобы узнать примерную стоимость.</p>
           </div>
           <!-- /.col-6 -->
         </div>
@@ -747,8 +747,8 @@
                 <!-- /.col-12 -->
 
                 <div class="col-8 col-md-6 col-lg-4 mb-5">
-                  <div class="input d-flex align-items-center">
-                    <input oninput="this.value = Math.abs(this.value)" class="input__field" type="number" value="1">
+                  <div class="input input--disabled d-flex align-items-center">
+                    <input disabled oninput="this.value = Math.abs(this.value)" class="input__field" type="number" value="1">
                     <span class="input__label ms-3">м²</span>
                   </div>
                   <!-- /.input -->
@@ -839,6 +839,13 @@
                     <div class="">Бесплатно</div>
                   </div>
                   <!-- /.calculator__service -->
+
+                  <div data-calculator="other" class="calculator-total__service">
+                    <div class="calculator-total__value">Прочие расходы</div>
+                    <span class="calculator-total__dots">.........................................................................................................................................................................................................................................................................................</span>
+                    <div class="calculator-total__price">Бесплатно</div>
+                  </div>
+                  <!-- /.calculator__service -->
                 </div>
                 <!-- /.calculator__group -->
 
@@ -849,21 +856,21 @@
 
             <div class="col-12 col-lg-6 mb-5 mb-lg-0 order-2 order-md-3">
               <div class="calculator__advanced calculator-advanced">
-                <label class="checkbox me-5 mb-3 mb-sm-0">
-                  <input data-calculator="visualization" type="checkbox">
+                <label class="checkbox checkbox--disabled me-5 mb-3 mb-sm-0">
+                  <input disabled data-calculator="visualization" type="checkbox">
                   <span class="checkbox__mark"></span>
                   <span class="checkbox__label">3d-визуализация</span>
                 </label>
 
-                <label class="checkbox me-5">
-                  <input data-calculator="warming" type="checkbox">
+                <label class="checkbox checkbox--disabled me-5">
+                  <input disabled data-calculator="warming" type="checkbox">
                   <span class="checkbox__mark"></span>
                   <span class="checkbox__label">Утепление</span>
                 </label>
 
                 <div class="calculator-advanced__extra mt-3 mt-md-0 mt-lg-3 mt-xxl-0">
-                  <label class="checkbox me-2">
-                    <input data-calculator="wind" type="checkbox">
+                  <label class="checkbox checkbox--disabled me-2">
+                    <input disabled data-calculator="wind" type="checkbox">
                     <span class="checkbox__mark"></span>
                     <span class="checkbox__label">Ветрозащита</span>
                   </label>
@@ -896,15 +903,15 @@
                 <!-- /.calculator-price__label -->
 
                 <div class="calculator-final__price">
-                  <div class="calculator-final__cost calculator-final__cost--old"></div>
+                  <div class="calculator-final__cost calculator-final__cost--old calculator-final__cost--hide"></div>
                   <!-- /.calculator-final__cost calculator-final__cost--old -->
 
-                  <div class="calculator-final__cost calculator-final__cost--new"></div>
+                  <div class="calculator-final__cost calculator-final__cost--new">0</div>
                   <!-- /.calculator-final__cost -->
                 </div>
                 <!-- /.calculator-final__price -->
 
-                <div class="calculator-final__discount">
+                <div class="calculator-final__discount calculator-final__discount--hide">
                   <div class="calculator-final__reduction">
                     <span class="calculator-final__percent">10</span>
                   </div>

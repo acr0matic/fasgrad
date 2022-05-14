@@ -17,6 +17,8 @@ input::-webkit-inner-spin-button {
   &--disabled {
     opacity: 0.5;
     cursor: default;
+
+    pointer-events: none;
   }
 
   &::after {

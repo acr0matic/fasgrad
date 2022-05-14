@@ -17,7 +17,7 @@ forms.forEach(form => {
     timeField.addEventListener('blur', () => timeField.type = 'text');
   }
 
-  const caclulator = form.querySelector('input[name=include_calc]');
+  const caclulator = form.querySelector('input[data-calculator=using]');
 
   let formData;
 
@@ -45,6 +45,10 @@ forms.forEach(form => {
       if (caclulator && caclulator.checked) {
         formData.append('include_calc', 'true');
         formData.append('data', JSON.stringify(CalculatorData));
+      }
+
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
       }
 
       try {
